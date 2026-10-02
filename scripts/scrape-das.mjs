@@ -95,9 +95,11 @@ function parseTableRows(tableHtml) {
   return rows;
 }
 
-// 型番セルの「HD1-REUT※12」のような脚注記号を取り除いて、正味の型番だけにする
+// 型番セルの「HD1-REUT※12」のような脚注記号を取り除いて、正味の型番だけにする。
+// 「HDJA-UTN/LDC」のように"/"を含む型番（本体同梱パッケージ向けの型番）もあるため、
+// "/"も型番の一部として許可する（これを除外すると"/"以降が丸ごと欠落してしまう）。
 function cleanModelCode(text) {
-  const m = text.match(/^[A-Z0-9][A-Z0-9\-]*/i);
+  const m = text.match(/^[A-Z0-9][A-Z0-9\-\/]*/i);
   return m ? m[0] : text;
 }
 
@@ -224,8 +226,11 @@ function extractOwnVariants(html) {
       }
       if (cells.length < 3) continue;
 
-      // 1列目が型番らしい文字列（大文字英数字とハイフンのみ）の行だけを価格行として扱う
-      if (!/^[A-Z][A-Z0-9\-]+$/.test(cells[0])) continue;
+      // 1列目が型番らしい文字列（大文字英数字・ハイフン・"/"）の行だけを価格行として扱う。
+      // "HDJA-UTN1/LDC"のように"/"を含む型番の商品があるため、"/"も許可する
+      // （許可しないと、この手の型番の商品が価格表ごと丸ごと検出できず、対応表に
+      // 載っているのにDASセレクターの検索結果から漏れてしまう）。
+      if (!/^[A-Z][A-Z0-9\-\/]+$/.test(cells[0])) continue;
       const rowText = cells.join(" ");
 
       const capMatch = rowText.match(/(\d+(?:\.\d+)?)\s*(TB|GB)/i);
@@ -295,6 +300,20 @@ function extractImageUrl(html, pageUrl) {
     const resolved = resolveImageUrl(imgMatch[1], pageUrl);
     if (resolved) return resolved;
   }
+  // 上記2パターンに当てはまらない商品ページもある（画像ファイル名がハッシュ値で
+  // "_l"サフィックスが付かないパターン等）。その場合の最後の手段として、
+  // alt属性に「シリーズ」を含む<img>タグ（型番の代表画像によく見られる書き方）を探す。
+  const imgTagRe = /<img\b[^>]*>/gi;
+  let tagMatch;
+  while ((tagMatch = imgTagRe.exec(html)) !== null) {
+    const tag = tagMatch[0];
+    const altMatch = tag.match(/alt=["']([^"']*)["']/i);
+    const srcMatch = tag.match(/src=["']([^"']+)["']/i);
+    if (altMatch && srcMatch && /シリーズ/.test(altMatch[1])) {
+      const resolved = resolveImageUrl(srcMatch[1], pageUrl);
+      if (resolved) return resolved;
+    }
+  }
   return null;
 }
 
@@ -343,6 +362,19 @@ function extractRaidModes(text, driveCount) {
   return modes;
 }
 
+// <meta name="description">の中身を取り出す。
+// 実例：HDW-UTNCシリーズのドライブ数（2ドライブ）は本文には書かれておらず、
+// このメタディスクリプションにしか書かれていなかった。通常のタグ除去
+// （<[^>]+>を空白に置換する処理）だとメタタグごと丸ごと消えてcontent属性の
+// 中身も失われてしまうため、タグを除去する前に別途ここで抜き出しておく。
+function extractMetaDescription(html) {
+  if (!html) return "";
+  const m =
+    html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["']/i) ||
+    html.match(/<meta[^>]+content=["']([^"']*)["'][^>]+name=["']description["']/i);
+  return m ? m[1] : "";
+}
+
 // 型番の表示テキストは他商品と衝突しうる（実例：「HDW-UTB」という表示名が
 // 別々の2商品ページに使われているケースがあった）ので、IDは重複しないURL側から作る。
 function idFromKey(key) {
@@ -371,15 +403,18 @@ async function fetchDasProductDetail(sourceUrl) {
   }
   await sleep(REQUEST_INTERVAL_MS);
 
+  let specHtml = "";
   let specText = "";
   try {
-    specText = (await fetchText(specUrl)).replace(/<[^>]+>/g, " ");
+    specHtml = await fetchText(specUrl);
+    specText = specHtml.replace(/<[^>]+>/g, " ");
   } catch (err) {
     console.warn("  -> spec.htm取得失敗:", specUrl, "(" + err.message + ")");
   }
   await sleep(REQUEST_INTERVAL_MS);
 
-  const combined = indexText + " " + specText;
+  const metaDescription = extractMetaDescription(indexHtml) + " " + extractMetaDescription(specHtml);
+  const combined = metaDescription + " " + indexText + " " + specText;
   const variants = extractOwnVariants(indexHtml);
   const { driveCount, warrantyYears, cartridge } = extractDriveWarrantyCartridge(combined);
   const imageUrl = extractImageUrl(indexHtml, indexUrl);
@@ -408,6 +443,7 @@ async function main() {
     let cartridge = detail.cartridge;
     // 本体(アダプター)側のページ画像を優先する。無ければ後段でカートリッジ側を使う。
     let imageUrl = detail.imageUrl;
+    let requiresSeparateEnclosure = false;
 
     // HD1-REUT（カートリッジ式アダプター本体）は、それ自体には容量バリエーションが無く、
     // 別売りの交換用カートリッジ(HDLH-OPAシリーズ)の容量がそのまま選択肢になる。
@@ -418,6 +454,10 @@ async function main() {
         if (cartridgeDetail.variants.length > 0) {
           variants = cartridgeDetail.variants;
           cartridge = true;
+          // この場合の価格は「交換用カートリッジ単体」の価格であり、本体ケース
+          // （entry.modelCode、例："HD1-REUT"）は別売り。カートリッジだけ買っても
+          // 本体ケースが無いと使えないため、その旨をサイト側で案内するためのフラグ。
+          requiresSeparateEnclosure = true;
         }
         if (!imageUrl) imageUrl = cartridgeDetail.imageUrl;
         await sleep(REQUEST_INTERVAL_MS);
@@ -450,6 +490,7 @@ async function main() {
       driveType: driveTypeFromCount(detail.driveCount),
       driveCount: detail.driveCount,
       cartridge,
+      requiresSeparateEnclosure,
       warrantyYears: detail.warrantyYears,
       connection: entry.connection,
       interfaceDetail: detail.interfaceDetail,

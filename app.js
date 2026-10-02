@@ -524,6 +524,10 @@
     if (p.warrantyYears) badges.push(`<span class="badge">${p.warrantyYears}年保証</span>`);
     if (best.status === "生産終了") badges.push(`<span class="badge badge--warn">生産終了品</span>`);
 
+    const enclosureNote = p.requiresSeparateEnclosure
+      ? `<p class="das-card__enclosure-note">⚠ これは交換用カートリッジの価格です。本体ケース「${escapeHtml(p.modelCode)}」は別売りです。本体ケースをお持ちでない場合は、カートリッジだけ購入しても使用できません。</p>`
+      : "";
+
     const allBtn = m.qualifying.length > 1
       ? `<button type="button" class="all-years-btn" data-role="all-variants-btn">型番をすべて表示する（${m.qualifying.length}件）</button>`
       : "";
@@ -546,6 +550,7 @@
           </label>
         </div>
         <div class="das-card__badges">${badges.join("")}</div>
+        ${enclosureNote}
         <div class="das-card__bottom-area" data-role="bottom-area">
           <div class="das-card__bottom" data-role="bottom">
             <p class="das-card__capacity" data-role="capacity">${formatTB(best.capacityTB)}</p>
@@ -685,6 +690,15 @@
       {
         label: "カートリッジ式",
         cells: items.map((it) => ({ plain: it.product.cartridge ? "○" : "—", html: it.product.cartridge ? "○" : "—" }))
+      },
+      {
+        label: "本体ケース",
+        cells: items.map((it) => ({
+          plain: it.product.requiresSeparateEnclosure ? "別売り" : "付属",
+          html: it.product.requiresSeparateEnclosure
+            ? `<span class="compare-table__warn">⚠ 別売り（カートリッジのみ。本体ケース「${escapeHtml(it.product.modelCode)}」が別途必要）</span>`
+            : "付属"
+        }))
       },
       {
         label: "保証年数",
