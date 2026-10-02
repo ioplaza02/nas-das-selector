@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T08:22:17.052Z",
+  "updatedAt": "2026-10-02T08:36:17.916Z",
   "products": [
     {
       "id": "hd1-reut",
@@ -90,7 +90,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd1-reut/index.htm",
-      "lastCheckedAt": "2026-10-02T08:19:14.105Z"
+      "lastCheckedAt": "2026-10-02T08:33:07.294Z"
     },
     {
       "id": "hd4-utnc",
@@ -178,7 +178,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/index.htm",
-      "lastCheckedAt": "2026-10-02T08:19:19.064Z"
+      "lastCheckedAt": "2026-10-02T08:33:12.935Z"
     },
     {
       "id": "hd4-utn",
@@ -266,7 +266,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utn/index.htm",
-      "lastCheckedAt": "2026-10-02T08:19:23.894Z"
+      "lastCheckedAt": "2026-10-02T08:33:17.914Z"
     },
     {
       "id": "hdw-utn",
@@ -377,7 +377,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utn/",
-      "lastCheckedAt": "2026-10-02T08:19:28.906Z"
+      "lastCheckedAt": "2026-10-02T08:33:23.017Z"
     },
     {
       "id": "hdw-utnc",
@@ -496,7 +496,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/",
-      "lastCheckedAt": "2026-10-02T08:19:33.622Z"
+      "lastCheckedAt": "2026-10-02T08:33:28.109Z"
     },
     {
       "id": "hdw-utnb",
@@ -615,7 +615,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/",
-      "lastCheckedAt": "2026-10-02T08:19:38.587Z"
+      "lastCheckedAt": "2026-10-02T08:33:33.141Z"
     },
     {
       "id": "hdw-utu",
@@ -678,7 +678,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utu/",
-      "lastCheckedAt": "2026-10-02T08:19:43.346Z"
+      "lastCheckedAt": "2026-10-02T08:33:38.123Z"
     },
     {
       "id": "hdja-utnc",
@@ -793,7 +793,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/",
-      "lastCheckedAt": "2026-10-02T08:19:47.980Z"
+      "lastCheckedAt": "2026-10-02T08:33:43.195Z"
     },
     {
       "id": "hdja-utnb",
@@ -908,7 +908,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnb/",
-      "lastCheckedAt": "2026-10-02T08:19:52.698Z"
+      "lastCheckedAt": "2026-10-02T08:33:48.380Z"
     },
     {
       "id": "hdja-utu",
@@ -967,7 +967,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utu/",
-      "lastCheckedAt": "2026-10-02T08:19:57.576Z"
+      "lastCheckedAt": "2026-10-02T08:33:53.324Z"
     },
     {
       "id": "hdja-utnldc",
@@ -1082,7 +1082,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/",
-      "lastCheckedAt": "2026-10-02T08:20:02.220Z"
+      "lastCheckedAt": "2026-10-02T08:33:58.509Z"
     },
     {
       "id": "hdja-utnldb",
@@ -1197,7 +1197,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/",
-      "lastCheckedAt": "2026-10-02T08:20:06.906Z"
+      "lastCheckedAt": "2026-10-02T08:34:03.796Z"
     },
     {
       "id": "hdja-utn",
@@ -1247,7 +1247,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utn/",
-      "lastCheckedAt": "2026-10-02T08:20:11.587Z"
+      "lastCheckedAt": "2026-10-02T08:34:08.695Z"
     },
     {
       "id": "hdja-utnld",
@@ -1289,7 +1289,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnld/",
-      "lastCheckedAt": "2026-10-02T08:20:16.369Z"
+      "lastCheckedAt": "2026-10-02T08:34:13.517Z"
     },
     {
       "id": "hdja-utr",
@@ -1355,7 +1355,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utr/",
-      "lastCheckedAt": "2026-10-02T08:20:21.043Z"
+      "lastCheckedAt": "2026-10-02T08:34:18.340Z"
     },
     {
       "id": "hdd-utb",
@@ -1436,7 +1436,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/",
-      "lastCheckedAt": "2026-10-02T08:20:25.770Z"
+      "lastCheckedAt": "2026-10-02T08:34:23.361Z"
     },
     {
       "id": "hdw-utcs",
@@ -1504,7 +1504,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/index.htm",
-      "lastCheckedAt": "2026-10-02T08:20:30.452Z"
+      "lastCheckedAt": "2026-10-02T08:34:28.165Z"
     },
     {
       "id": "zhd4-utxr",
@@ -1583,7 +1583,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd4-utxr/",
-      "lastCheckedAt": "2026-10-02T08:20:35.194Z"
+      "lastCheckedAt": "2026-10-02T08:34:33.067Z"
     },
     {
       "id": "hdw-utb",
@@ -1684,7 +1684,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utb/index.htm",
-      "lastCheckedAt": "2026-10-02T08:20:40.209Z"
+      "lastCheckedAt": "2026-10-02T08:34:38.090Z"
     },
     {
       "id": "hdw-utc",
@@ -1753,7 +1753,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utc/index.htm",
-      "lastCheckedAt": "2026-10-02T08:20:45.005Z"
+      "lastCheckedAt": "2026-10-02T08:34:43.094Z"
     },
     {
       "id": "zhd2-utx",
@@ -1829,7 +1829,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd2-utx/",
-      "lastCheckedAt": "2026-10-02T08:20:50.097Z"
+      "lastCheckedAt": "2026-10-02T08:34:48.101Z"
     },
     {
       "id": "hds2-utxs",
@@ -1873,7 +1873,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hds2-utxs/",
-      "lastCheckedAt": "2026-10-02T08:20:54.970Z"
+      "lastCheckedAt": "2026-10-02T08:34:52.995Z"
     },
     {
       "id": "hdja-utrwhq",
@@ -1914,7 +1914,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utrwhq/",
-      "lastCheckedAt": "2026-10-02T08:21:09.198Z"
+      "lastCheckedAt": "2026-10-02T08:35:07.567Z"
     },
     {
       "id": "hdja-utwld",
@@ -1987,7 +1987,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utwld/",
-      "lastCheckedAt": "2026-10-02T08:21:13.962Z"
+      "lastCheckedAt": "2026-10-02T08:35:12.677Z"
     },
     {
       "id": "hdd-ut",
@@ -2093,7 +2093,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-ut/",
-      "lastCheckedAt": "2026-10-02T08:21:19.001Z"
+      "lastCheckedAt": "2026-10-02T08:35:17.836Z"
     },
     {
       "id": "hdcz-utc",
@@ -2198,7 +2198,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-utc/",
-      "lastCheckedAt": "2026-10-02T08:21:23.974Z"
+      "lastCheckedAt": "2026-10-02T08:35:22.947Z"
     },
     {
       "id": "zhd-utx",
@@ -2263,7 +2263,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd-utx/",
-      "lastCheckedAt": "2026-10-02T08:21:28.821Z"
+      "lastCheckedAt": "2026-10-02T08:35:27.823Z"
     },
     {
       "id": "hdcz-ut",
@@ -2360,7 +2360,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-ut/",
-      "lastCheckedAt": "2026-10-02T08:21:33.715Z"
+      "lastCheckedAt": "2026-10-02T08:35:32.874Z"
     },
     {
       "id": "hdcl-ute",
@@ -2465,7 +2465,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcl-ute/",
-      "lastCheckedAt": "2026-10-02T08:21:43.363Z"
+      "lastCheckedAt": "2026-10-02T08:35:42.672Z"
     },
     {
       "id": "rhd-ux",
@@ -2514,7 +2514,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/rhd-ux/",
-      "lastCheckedAt": "2026-10-02T08:21:48.302Z"
+      "lastCheckedAt": "2026-10-02T08:35:47.853Z"
     },
     {
       "id": "hdja-sutr",
@@ -2559,7 +2559,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-sutr/index.htm",
-      "lastCheckedAt": "2026-10-02T08:22:12.181Z"
+      "lastCheckedAt": "2026-10-02T08:36:12.802Z"
     },
     {
       "id": "hdw-ut",
@@ -2658,7 +2658,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-ut/index.htm",
-      "lastCheckedAt": "2026-10-02T08:22:17.052Z"
+      "lastCheckedAt": "2026-10-02T08:36:17.916Z"
     }
   ]
 }
