@@ -256,9 +256,14 @@ function extractOwnVariants(html) {
 }
 
 // 商品ページのテキストから、ドライブ数・保証年数・カートリッジ式かどうかを読み取る。
+//
+// ドライブ数の表記は商品によってバラバラ（例："2ドライブ搭載"、"2ドライブ 外付け
+// ハードディスク"、"2台のハードディスクを搭載"）なので、複数パターンを順に試す。
 function extractDriveWarrantyCartridge(combinedText) {
   let driveCount = 1; // 明記が無いモデルは基本的にシングルドライブ
-  const driveMatch = combinedText.match(/(\d)\s*ドライブ搭載/);
+  const driveMatch =
+    combinedText.match(/(\d)\s*ドライブ/) ||
+    combinedText.match(/(\d)\s*台のハードディスクを?\s*搭載/);
   if (driveMatch) driveCount = Number(driveMatch[1]);
 
   let warrantyYears = null;
@@ -268,6 +273,37 @@ function extractDriveWarrantyCartridge(combinedText) {
   const cartridge = /カートリッジ/.test(combinedText);
 
   return { driveCount, warrantyYears, cartridge };
+}
+
+// 商品ページ(index.htm)のHTMLから、筐体のメイン画像URLを取り出す。
+// 画像URLのパターンはページテンプレートによって異なる（例：フラットな
+// "iodata.jp/image/{slug}_l.jpg" と、ネストした
+// "iodata.jp/product/.../{slug}/image/{slug}_l.jpg" の両方が実在する）ため、
+// テンプレートから推測せず、各ページのHTMLから直接読み取る。
+// 優先順位: og:image メタタグ -> "_l.jpg"等で終わる<img src>
+function extractImageUrl(html, pageUrl) {
+  if (!html) return null;
+  const ogMatch =
+    html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
+    html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+  if (ogMatch) {
+    const resolved = resolveImageUrl(ogMatch[1], pageUrl);
+    if (resolved) return resolved;
+  }
+  const imgMatch = html.match(/<img[^>]+src=["']([^"']+_l\.(?:jpg|jpeg|png))["']/i);
+  if (imgMatch) {
+    const resolved = resolveImageUrl(imgMatch[1], pageUrl);
+    if (resolved) return resolved;
+  }
+  return null;
+}
+
+function resolveImageUrl(src, pageUrl) {
+  try {
+    return new URL(src, pageUrl).href;
+  } catch {
+    return null;
+  }
 }
 
 // 型番の表示テキストは他商品と衝突しうる（実例：「HDW-UTB」という表示名が
@@ -309,8 +345,9 @@ async function fetchDasProductDetail(sourceUrl) {
   const combined = indexText + " " + specText;
   const variants = extractOwnVariants(indexHtml);
   const { driveCount, warrantyYears, cartridge } = extractDriveWarrantyCartridge(combined);
+  const imageUrl = extractImageUrl(indexHtml, indexUrl);
 
-  return { variants, driveCount, warrantyYears, cartridge };
+  return { variants, driveCount, warrantyYears, cartridge, imageUrl };
 }
 
 async function main() {
@@ -329,6 +366,8 @@ async function main() {
     const detail = await fetchDasProductDetail(entry.sourceUrl);
     let variants = detail.variants;
     let cartridge = detail.cartridge;
+    // 本体(アダプター)側のページ画像を優先する。無ければ後段でカートリッジ側を使う。
+    let imageUrl = detail.imageUrl;
 
     // HD1-REUT（カートリッジ式アダプター本体）は、それ自体には容量バリエーションが無く、
     // 別売りの交換用カートリッジ(HDLH-OPAシリーズ)の容量がそのまま選択肢になる。
@@ -340,6 +379,7 @@ async function main() {
           variants = cartridgeDetail.variants;
           cartridge = true;
         }
+        if (!imageUrl) imageUrl = cartridgeDetail.imageUrl;
         await sleep(REQUEST_INTERVAL_MS);
       }
     }
@@ -373,6 +413,7 @@ async function main() {
       warrantyYears: detail.warrantyYears,
       connection: entry.connection,
       compatNasSeries: compatBySeries,
+      imageUrl,
       variants,
       sourceUrl: entry.sourceUrl,
       lastCheckedAt: new Date().toISOString()
