@@ -56,7 +56,8 @@
     "LAN DISK Z": "LANDISKZ",
     "LAN DISK LE": "LANDISKL",
     "LAN DISK LV": "LANDISKL",
-    "LAN DISK for SOHO": "LANDISKT"
+    "LAN DISK for SOHO": "LANDISKT",
+    "LAN DISK LX": "LANDISKLX"
   };
 
   // NASセレクター側で series が空（未分類）のまま残っている型番向けの保険。
