@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T06:19:03.015Z",
+  "updatedAt": "2026-10-02T07:14:20.958Z",
   "products": [
     {
       "id": "hd1-reut",
@@ -9,6 +9,9 @@
       "cartridge": true,
       "warrantyYears": null,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": false,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKLX": null,
         "LANDISKL": true,
@@ -86,7 +89,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd1-reut/index.htm",
-      "lastCheckedAt": "2026-10-02T06:15:57.416Z"
+      "lastCheckedAt": "2026-10-02T07:11:18.874Z"
     },
     {
       "id": "hd4-utnc",
@@ -96,6 +99,14 @@
       "cartridge": false,
       "warrantyYears": 3,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [
+        "RAID 10",
+        "RAID 5",
+        "RAID 0",
+        "マルチディスクモード"
+      ],
       "compatNasSeries": {
         "LANDISKLX": true,
         "LANDISKL": true,
@@ -165,7 +176,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/index.htm",
-      "lastCheckedAt": "2026-10-02T06:16:02.322Z"
+      "lastCheckedAt": "2026-10-02T07:11:24.353Z"
     },
     {
       "id": "hd4-utn",
@@ -175,6 +186,14 @@
       "cartridge": false,
       "warrantyYears": 5,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [
+        "RAID 10",
+        "RAID 5",
+        "RAID 0",
+        "マルチディスクモード"
+      ],
       "compatNasSeries": {
         "LANDISKLX": true,
         "LANDISKL": true,
@@ -244,7 +263,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utn/index.htm",
-      "lastCheckedAt": "2026-10-02T06:16:07.214Z"
+      "lastCheckedAt": "2026-10-02T07:11:29.748Z"
     },
     {
       "id": "hdw-utn",
@@ -254,6 +273,13 @@
       "cartridge": false,
       "warrantyYears": 5,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [
+        "RAID 1",
+        "RAID 0",
+        "マルチディスクモード"
+      ],
       "compatNasSeries": {
         "LANDISKLX": true,
         "LANDISKL": true,
@@ -347,7 +373,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utn/",
-      "lastCheckedAt": "2026-10-02T06:16:12.118Z"
+      "lastCheckedAt": "2026-10-02T07:11:34.985Z"
     },
     {
       "id": "hdw-utnc",
@@ -357,6 +383,9 @@
       "cartridge": false,
       "warrantyYears": 3,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKLX": null,
         "LANDISKL": true,
@@ -458,7 +487,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/",
-      "lastCheckedAt": "2026-10-02T06:16:16.789Z"
+      "lastCheckedAt": "2026-10-02T07:11:39.900Z"
     },
     {
       "id": "hdw-utnb",
@@ -468,6 +497,13 @@
       "cartridge": false,
       "warrantyYears": 5,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [
+        "RAID 1",
+        "RAID 0",
+        "マルチディスクモード"
+      ],
       "compatNasSeries": {
         "LANDISKLX": null,
         "LANDISKL": true,
@@ -569,7 +605,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/",
-      "lastCheckedAt": "2026-10-02T06:16:21.682Z"
+      "lastCheckedAt": "2026-10-02T07:11:44.604Z"
     },
     {
       "id": "hdw-utu",
@@ -579,6 +615,13 @@
       "cartridge": false,
       "warrantyYears": 5,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [
+        "RAID 1",
+        "RAID 0",
+        "マルチディスクモード"
+      ],
       "compatNasSeries": {
         "LANDISKLX": null,
         "LANDISKL": true,
@@ -624,7 +667,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utu/",
-      "lastCheckedAt": "2026-10-02T06:16:26.387Z"
+      "lastCheckedAt": "2026-10-02T07:11:49.289Z"
     },
     {
       "id": "hdja-utnc",
@@ -634,6 +677,9 @@
       "cartridge": false,
       "warrantyYears": 3,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKLX": true,
         "LANDISKL": true,
@@ -735,7 +781,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/",
-      "lastCheckedAt": "2026-10-02T06:16:31.417Z"
+      "lastCheckedAt": "2026-10-02T07:11:54.114Z"
     },
     {
       "id": "hdja-utnb",
@@ -745,6 +791,9 @@
       "cartridge": false,
       "warrantyYears": 5,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKLX": true,
         "LANDISKL": true,
@@ -846,7 +895,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnb/",
-      "lastCheckedAt": "2026-10-02T06:16:36.277Z"
+      "lastCheckedAt": "2026-10-02T07:11:58.944Z"
     },
     {
       "id": "hdja-utu",
@@ -856,6 +905,9 @@
       "cartridge": false,
       "warrantyYears": 5,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKLX": null,
         "LANDISKL": true,
@@ -901,7 +953,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utu/",
-      "lastCheckedAt": "2026-10-02T06:16:41.299Z"
+      "lastCheckedAt": "2026-10-02T07:12:03.623Z"
     },
     {
       "id": "hdja-utn",
@@ -911,6 +963,9 @@
       "cartridge": false,
       "warrantyYears": 3,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKLX": true,
         "LANDISKL": true,
@@ -947,7 +1002,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utn/",
-      "lastCheckedAt": "2026-10-02T06:16:56.309Z"
+      "lastCheckedAt": "2026-10-02T07:12:17.465Z"
     },
     {
       "id": "hdja-utr",
@@ -957,6 +1012,9 @@
       "cartridge": false,
       "warrantyYears": null,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKH": true,
         "LANDISKX": true,
@@ -1009,7 +1067,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utr/",
-      "lastCheckedAt": "2026-10-02T06:17:05.793Z"
+      "lastCheckedAt": "2026-10-02T07:12:26.662Z"
     },
     {
       "id": "hdd-utb",
@@ -1019,6 +1077,9 @@
       "cartridge": false,
       "warrantyYears": 1,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": false,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKH": true,
         "LANDISKX": true,
@@ -1086,7 +1147,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/",
-      "lastCheckedAt": "2026-10-02T06:17:10.781Z"
+      "lastCheckedAt": "2026-10-02T07:12:31.358Z"
     },
     {
       "id": "hdw-utcs",
@@ -1096,6 +1157,12 @@
       "cartridge": false,
       "warrantyYears": 1,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [
+        "RAID 1",
+        "RAID 0"
+      ],
       "compatNasSeries": {
         "LANDISKH": true,
         "LANDISKX": true,
@@ -1147,7 +1214,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/index.htm",
-      "lastCheckedAt": "2026-10-02T06:17:15.718Z"
+      "lastCheckedAt": "2026-10-02T07:12:35.854Z"
     },
     {
       "id": "zhd4-utxr",
@@ -1157,6 +1224,15 @@
       "cartridge": true,
       "warrantyYears": 3,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [
+        "RAID 10",
+        "RAID 6",
+        "RAID 5",
+        "RAID 1",
+        "RAID 0"
+      ],
       "compatNasSeries": {
         "LANDISKH": true,
         "LANDISKX": true,
@@ -1216,7 +1292,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd4-utxr/",
-      "lastCheckedAt": "2026-10-02T06:17:20.621Z"
+      "lastCheckedAt": "2026-10-02T07:12:40.659Z"
     },
     {
       "id": "hdw-utb",
@@ -1226,6 +1302,13 @@
       "cartridge": false,
       "warrantyYears": 5,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [
+        "RAID 1",
+        "RAID 0",
+        "マルチディスクモード"
+      ],
       "compatNasSeries": {
         "LANDISKH": true,
         "LANDISKX": true,
@@ -1309,7 +1392,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utb/index.htm",
-      "lastCheckedAt": "2026-10-02T06:17:25.554Z"
+      "lastCheckedAt": "2026-10-02T07:12:45.444Z"
     },
     {
       "id": "hdw-utc",
@@ -1319,6 +1402,13 @@
       "cartridge": false,
       "warrantyYears": 1,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [
+        "RAID 1",
+        "RAID 0",
+        "マルチディスクモード"
+      ],
       "compatNasSeries": {
         "LANDISKH": true,
         "LANDISKX": true,
@@ -1370,7 +1460,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utc/index.htm",
-      "lastCheckedAt": "2026-10-02T06:17:30.473Z"
+      "lastCheckedAt": "2026-10-02T07:12:50.097Z"
     },
     {
       "id": "zhd2-utx",
@@ -1380,6 +1470,12 @@
       "cartridge": true,
       "warrantyYears": 3,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [
+        "RAID 1",
+        "RAID 0"
+      ],
       "compatNasSeries": {
         "LANDISKH": null,
         "LANDISKX": null,
@@ -1439,7 +1535,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd2-utx/",
-      "lastCheckedAt": "2026-10-02T06:17:35.057Z"
+      "lastCheckedAt": "2026-10-02T07:12:54.848Z"
     },
     {
       "id": "hds2-utxs",
@@ -1449,6 +1545,12 @@
       "cartridge": false,
       "warrantyYears": 1,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": false,
+      "raidModes": [
+        "RAID 1",
+        "RAID 0"
+      ],
       "compatNasSeries": {
         "LANDISKH": true,
         "LANDISKX": true,
@@ -1476,7 +1578,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hds2-utxs/",
-      "lastCheckedAt": "2026-10-02T06:17:40.051Z"
+      "lastCheckedAt": "2026-10-02T07:12:59.610Z"
     },
     {
       "id": "hdja-utrwhq",
@@ -1486,6 +1588,9 @@
       "cartridge": false,
       "warrantyYears": 3,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKH": true,
         "LANDISKX": true,
@@ -1513,7 +1618,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utrwhq/",
-      "lastCheckedAt": "2026-10-02T06:17:54.876Z"
+      "lastCheckedAt": "2026-10-02T07:13:13.691Z"
     },
     {
       "id": "hdd-ut",
@@ -1523,6 +1628,9 @@
       "cartridge": false,
       "warrantyYears": 1,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": false,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKH": true,
         "LANDISKX": true,
@@ -1615,7 +1723,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-ut/",
-      "lastCheckedAt": "2026-10-02T06:18:05.132Z"
+      "lastCheckedAt": "2026-10-02T07:13:23.279Z"
     },
     {
       "id": "hdcz-utc",
@@ -1625,6 +1733,9 @@
       "cartridge": false,
       "warrantyYears": 1,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": false,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKH": true,
         "LANDISKX": true,
@@ -1716,7 +1827,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-utc/",
-      "lastCheckedAt": "2026-10-02T06:18:10.217Z"
+      "lastCheckedAt": "2026-10-02T07:13:28.132Z"
     },
     {
       "id": "zhd-utx",
@@ -1726,6 +1837,9 @@
       "cartridge": true,
       "warrantyYears": 3,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKH": null,
         "LANDISKX": null,
@@ -1777,7 +1891,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd-utx/",
-      "lastCheckedAt": "2026-10-02T06:18:14.769Z"
+      "lastCheckedAt": "2026-10-02T07:13:32.916Z"
     },
     {
       "id": "hdcz-ut",
@@ -1787,6 +1901,9 @@
       "cartridge": false,
       "warrantyYears": 1,
       "connection": "USB",
+      "interfaceDetail": "USB 3.1 Gen1",
+      "supports24h": false,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKH": true,
         "LANDISKX": true,
@@ -1870,7 +1987,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-ut/",
-      "lastCheckedAt": "2026-10-02T06:18:19.691Z"
+      "lastCheckedAt": "2026-10-02T07:13:37.645Z"
     },
     {
       "id": "hdcl-ute",
@@ -1880,6 +1997,9 @@
       "cartridge": false,
       "warrantyYears": 1,
       "connection": "USB",
+      "interfaceDetail": "USB 3.1 Gen1",
+      "supports24h": false,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKH": null,
         "LANDISKX": true,
@@ -1971,7 +2091,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcl-ute/",
-      "lastCheckedAt": "2026-10-02T06:18:29.328Z"
+      "lastCheckedAt": "2026-10-02T07:13:47.339Z"
     },
     {
       "id": "rhd-ux",
@@ -1981,6 +2101,9 @@
       "cartridge": true,
       "warrantyYears": 1,
       "connection": "USB",
+      "interfaceDetail": null,
+      "supports24h": false,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKH": null,
         "LANDISKX": null,
@@ -2016,7 +2139,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/rhd-ux/",
-      "lastCheckedAt": "2026-10-02T06:18:33.959Z"
+      "lastCheckedAt": "2026-10-02T07:13:52.155Z"
     },
     {
       "id": "hdja-sutr",
@@ -2026,6 +2149,9 @@
       "cartridge": false,
       "warrantyYears": 3,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
       "compatNasSeries": {
         "LANDISKZ": null
       },
@@ -2057,7 +2183,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-sutr/index.htm",
-      "lastCheckedAt": "2026-10-02T06:18:58.104Z"
+      "lastCheckedAt": "2026-10-02T07:14:16.124Z"
     },
     {
       "id": "hdw-ut",
@@ -2067,6 +2193,13 @@
       "cartridge": false,
       "warrantyYears": 3,
       "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [
+        "RAID 1",
+        "RAID 0",
+        "マルチディスクモード"
+      ],
       "compatNasSeries": {
         "LANDISKL": null,
         "LANDISKA": null,
@@ -2148,7 +2281,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-ut/index.htm",
-      "lastCheckedAt": "2026-10-02T06:19:03.015Z"
+      "lastCheckedAt": "2026-10-02T07:14:20.958Z"
     }
   ]
 }
