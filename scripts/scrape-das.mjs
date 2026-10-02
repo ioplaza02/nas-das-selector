@@ -306,6 +306,43 @@ function resolveImageUrl(src, pageUrl) {
   }
 }
 
+// 接続方式の詳細表記（例："USB 5Gbps（USB 3.2 Gen1）／USB 2.0"）から、
+// "USB 3.2 Gen1"のような規格名だけを取り出す。単に「USB」とだけ表示すると
+// 商品同士の違いが分からないため、商品比較表で使う。
+// 実際のページ文言（2026-10-02確認）："USB 5Gbps（USB 3.2 Gen1）／USB 2.0" 等。
+function extractInterfaceDetail(text) {
+  const m = text.match(/USB\s*3\.\d\s*Gen\s*\d/i);
+  if (!m) return null;
+  return m[0].replace(/\s+/g, " ").replace(/Gen\s*(\d)/i, "Gen$1").trim();
+}
+
+// 24時間連続稼働対応かどうか。実際のページ文言（2026-10-02確認）：
+// "もちろん、24時間連続稼働にも対応しています。"
+// "24時間常時稼働を前提に開発された高信頼NAS用ハードディスクを搭載"
+function extract24hSupport(text) {
+  return /24時間.{0,6}(連続稼働|常時稼働|常時稼動|稼働)/.test(text);
+}
+
+// 複数ドライブ機種が対応しているRAIDモードの一覧。1ドライブ機種はRAID非対応のため対象外。
+// 実際のページ文言（2026-10-02確認）：
+// 2ドライブ機："ミラーリング（RAID 1）" "ストライピング（RAID 0）"
+// 4ドライブ機："RAID 0（ストライピングモード）、RAID 5（分散パリティモード）、
+//              RAID 10（ミラーリング＋ストライピングモード）、マルチディスクモード"
+function extractRaidModes(text, driveCount) {
+  if (!driveCount || driveCount < 2) return [];
+  const modes = [];
+  const checks = [
+    ["RAID 10", /RAID\s?10/i],
+    ["RAID 6", /RAID\s?6/i],
+    ["RAID 5", /RAID\s?5/i],
+    ["RAID 1", /RAID\s?1(?!0)/i],
+    ["RAID 0", /RAID\s?0/i]
+  ];
+  checks.forEach(([label, re]) => { if (re.test(text)) modes.push(label); });
+  if (/マルチディスクモード/.test(text)) modes.push("マルチディスクモード");
+  return modes;
+}
+
 // 型番の表示テキストは他商品と衝突しうる（実例：「HDW-UTB」という表示名が
 // 別々の2商品ページに使われているケースがあった）ので、IDは重複しないURL側から作る。
 function idFromKey(key) {
@@ -346,8 +383,11 @@ async function fetchDasProductDetail(sourceUrl) {
   const variants = extractOwnVariants(indexHtml);
   const { driveCount, warrantyYears, cartridge } = extractDriveWarrantyCartridge(combined);
   const imageUrl = extractImageUrl(indexHtml, indexUrl);
+  const interfaceDetail = extractInterfaceDetail(combined);
+  const supports24h = extract24hSupport(combined);
+  const raidModes = extractRaidModes(combined, driveCount);
 
-  return { variants, driveCount, warrantyYears, cartridge, imageUrl };
+  return { variants, driveCount, warrantyYears, cartridge, imageUrl, interfaceDetail, supports24h, raidModes };
 }
 
 async function main() {
@@ -412,6 +452,9 @@ async function main() {
       cartridge,
       warrantyYears: detail.warrantyYears,
       connection: entry.connection,
+      interfaceDetail: detail.interfaceDetail,
+      supports24h: detail.supports24h,
+      raidModes: detail.raidModes,
       compatNasSeries: compatBySeries,
       imageUrl,
       variants,
