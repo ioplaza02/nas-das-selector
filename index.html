@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DASセレクター（試作）</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="password-gate" id="password-gate">
+  <form class="password-gate__box" id="password-form">
+    <p class="password-gate__title">DASセレクター（試作）</p>
+    <p class="password-gate__note">関係者限定の試作版です。パスワードを入力してください。</p>
+    <div class="password-gate__field">
+      <input type="password" id="password-input" class="password-gate__input" autocomplete="off">
+      <button type="button" id="password-toggle" class="password-gate__toggle" aria-label="パスワードを表示">👁</button>
+    </div>
+    <button type="submit" class="password-gate__submit">入る</button>
+    <p class="password-gate__error" id="password-error" hidden>パスワードが違います</p>
+  </form>
+</div>
+
+<div id="app-root" hidden>
+
+<header class="brand-banner">
+  <div class="brand-banner__left">
+    <p class="brand-banner__badge">DASセレクター</p>
+    <img src="landisk-logo.png" alt="LAN DISK" class="brand-banner__logo">
+  </div>
+  <div class="brand-banner__search">
+    <div class="search">
+      <input type="text" id="model-input" class="search__input" placeholder="NASの型番を入力してください" autocomplete="off">
+      <div class="search__suggest" id="model-suggest" hidden></div>
+    </div>
+  </div>
+</header>
+
+<div class="hint-bar">
+  <p class="hero__hint">容量まで含めた完全な型番でなくてもOK。例えば「HB06」だけでも「HDL6-HB06」が候補に出ます。</p>
+</div>
+
+<main class="layout">
+  <section class="result-area">
+    <div class="empty-state" id="empty-state">
+      <p class="empty-state__title">NASの型番を入力してください</p>
+      <p class="empty-state__body">上の検索欄にNASの型番（一部でも可）を入れると、そのNASの実効容量に合わせたバックアップ用HDD（DAS）の候補が表示されます。NASセレクターの比較画面から「おすすめのDASを見る」で来た場合は、自動的に選択された状態になります。</p>
+    </div>
+
+    <div id="nas-info" hidden class="nas-info">
+      <div class="nas-info__head">
+        <img class="nas-info__image" id="nas-image" src="" alt="" hidden>
+        <div class="nas-info__text">
+          <h2 id="nas-model"></h2>
+          <p class="nas-info__desc" id="nas-desc" hidden></p>
+        </div>
+      </div>
+
+      <div class="nas-info__raid" id="nas-raid-wrap" hidden>
+        <p class="nas-info__raid-label">RAIDモードを選択（実効容量が変わります）</p>
+        <div class="raid-btn-row" id="raid-btn-row"></div>
+      </div>
+
+      <div class="capacity-summary" id="capacity-summary"></div>
+    </div>
+
+    <div id="result-wrap" hidden>
+      <div class="result-head">
+        <h3 id="result-title"></h3>
+        <p class="result-count" id="result-count"></p>
+        <button type="button" class="share-btn" id="share-btn" hidden>このページのURLをコピー</button>
+        <span class="share-feedback" id="share-feedback" hidden></span>
+      </div>
+      <div id="das-groups"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="info-footer">
+  <div class="info-footer__inner">
+    <p class="info-footer__title">このツールについて</p>
+    <ul class="info-footer__list">
+      <li>容量の目安は「実効容量（RAIDモード適用後に実際に保存できる容量）× 2」です。バックアップ先は保存元より大きい容量を用意するのが基本的な考え方です。</li>
+      <li>対応関係は、I-O DATA公式の<a href="https://www.iodata.jp/pio/io/nas/landisk/hdd.htm" target="_blank" rel="noopener noreferrer">バックアップ用HDD対応表</a>に基づいています（NASの型番単位ではなく、シリーズ単位の対応表です）。正式な対応可否は購入前に公式ページでもご確認ください。</li>
+      <li>実効容量のデータが無い機種は、搭載HDD容量をそのまま使って計算しています（参考値です）。</li>
+    </ul>
+    <p class="info-footer__updated" id="updated-at"></p>
+  </div>
+</footer>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1828 @@
+{
+  "updatedAt": "2026-09-30T08:13:25.850Z",
+  "products": [
+    {
+      "id": "hd1-reut",
+      "modelCode": "HD1-REUT",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": true,
+      "warrantyYears": null,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKLX": null,
+        "LANDISKL": true,
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKT": true,
+        "LANDISKA": true,
+        "LANDISKZ": true
+      },
+      "variants": [
+        {
+          "sku": "HDLH-OPA1",
+          "capacityTB": 1,
+          "priceIncTax": 56100,
+          "priceExTax": 51000,
+          "jan": "4957180175355",
+          "status": "現行"
+        },
+        {
+          "sku": "HDLH-OPA2",
+          "capacityTB": 2,
+          "priceIncTax": 56100,
+          "priceExTax": 51000,
+          "jan": "4957180170022",
+          "status": "現行"
+        },
+        {
+          "sku": "HDLH-OPA3",
+          "capacityTB": 3,
+          "priceIncTax": 56100,
+          "priceExTax": 51000,
+          "jan": "4957180175362",
+          "status": "現行"
+        },
+        {
+          "sku": "HDLH-OPA4",
+          "capacityTB": 4,
+          "priceIncTax": 56100,
+          "priceExTax": 51000,
+          "jan": "4957180170039",
+          "status": "現行"
+        },
+        {
+          "sku": "HDLH-OPA6",
+          "capacityTB": 6,
+          "priceIncTax": 82500,
+          "priceExTax": 75000,
+          "jan": "4957180170060",
+          "status": "現行"
+        },
+        {
+          "sku": "HDLH-OPA8",
+          "capacityTB": 8,
+          "priceIncTax": 109780,
+          "priceExTax": 99800,
+          "jan": "4957180170077",
+          "status": "現行"
+        },
+        {
+          "sku": "HDLH-OPA20",
+          "capacityTB": 20,
+          "priceIncTax": 242000,
+          "priceExTax": 220000,
+          "jan": "4957180176970",
+          "status": "現行"
+        },
+        {
+          "sku": "HDLH-OPA24",
+          "capacityTB": 24,
+          "priceIncTax": 266200,
+          "priceExTax": 242000,
+          "jan": "4957180180083",
+          "status": "現行"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd1-reut/index.htm",
+      "lastCheckedAt": "2026-09-30T08:10:51.747Z"
+    },
+    {
+      "id": "hd4-utn",
+      "modelCode": "HD4-UTN",
+      "driveType": "quad",
+      "driveCount": 4,
+      "cartridge": false,
+      "warrantyYears": 5,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKLX": true,
+        "LANDISKL": true,
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKA": true,
+        "LANDISKZ": true,
+        "LANDISKT": null
+      },
+      "variants": [
+        {
+          "sku": "HD4-UTN08",
+          "capacityTB": 8,
+          "priceIncTax": 169730,
+          "priceExTax": 154300,
+          "jan": "4957180162096",
+          "status": "現行"
+        },
+        {
+          "sku": "HD4-UTN16",
+          "capacityTB": 16,
+          "priceIncTax": 231220,
+          "priceExTax": 210200,
+          "jan": "4957180162102",
+          "status": "現行"
+        },
+        {
+          "sku": "HD4-UTN32",
+          "capacityTB": 32,
+          "priceIncTax": 428120,
+          "priceExTax": 389200,
+          "jan": "4957180162126",
+          "status": "現行"
+        },
+        {
+          "sku": "HD4-UTN48",
+          "capacityTB": 48,
+          "priceIncTax": 615120,
+          "priceExTax": 559200,
+          "jan": "4957180162133",
+          "status": "現行"
+        },
+        {
+          "sku": "HD4-UTN80",
+          "capacityTB": 80,
+          "priceIncTax": 984170,
+          "priceExTax": 894700,
+          "jan": "4957180162157",
+          "status": "現行"
+        },
+        {
+          "sku": "HD4-UTN96",
+          "capacityTB": 96,
+          "priceIncTax": 1168750,
+          "priceExTax": 1062500,
+          "jan": "4957180179346",
+          "status": "現行"
+        },
+        {
+          "sku": "HD4-UTN128",
+          "capacityTB": 128,
+          "priceIncTax": 1476310,
+          "priceExTax": 1342100,
+          "jan": "4957180186085",
+          "status": "現行"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utn/index.htm",
+      "lastCheckedAt": "2026-09-30T08:10:56.595Z"
+    },
+    {
+      "id": "hdw-utn",
+      "modelCode": "HDW-UTN",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 5,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKLX": true,
+        "LANDISKL": true,
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKT": true,
+        "LANDISKA": true,
+        "LANDISKZ": true
+      },
+      "variants": [
+        {
+          "sku": "HDW-UTN2",
+          "capacityTB": 2,
+          "priceIncTax": 44220,
+          "priceExTax": 40200,
+          "jan": "4957180174815",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTN4",
+          "capacityTB": 4,
+          "priceIncTax": 61490,
+          "priceExTax": 55900,
+          "jan": "4957180174822",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTN6",
+          "capacityTB": 6,
+          "priceIncTax": 86020,
+          "priceExTax": 78200,
+          "jan": "4957180174839",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTN8",
+          "capacityTB": 8,
+          "priceIncTax": 110660,
+          "priceExTax": 100600,
+          "jan": "4957180174846",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTN12",
+          "capacityTB": 12,
+          "priceIncTax": 147620,
+          "priceExTax": 134200,
+          "jan": "4957180174853",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTN16",
+          "capacityTB": 16,
+          "priceIncTax": 172150,
+          "priceExTax": 156500,
+          "jan": "4957180174860",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTN24",
+          "capacityTB": 24,
+          "priceIncTax": 307560,
+          "priceExTax": 279600,
+          "jan": "4957180174877",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTN32",
+          "capacityTB": 32,
+          "priceIncTax": 405900,
+          "priceExTax": 369000,
+          "jan": "4957180174884",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTN40",
+          "capacityTB": 40,
+          "priceIncTax": 489610,
+          "priceExTax": 445100,
+          "jan": "4957180174891",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTN48",
+          "capacityTB": 48,
+          "priceIncTax": 588060,
+          "priceExTax": 534600,
+          "jan": "4957180179377",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utn/",
+      "lastCheckedAt": "2026-09-30T08:11:01.145Z"
+    },
+    {
+      "id": "hdw-utnb",
+      "modelCode": "HDW-UTNB",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 5,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKLX": null,
+        "LANDISKL": true,
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKT": true,
+        "LANDISKA": true,
+        "LANDISKZ": true
+      },
+      "variants": [
+        {
+          "sku": "HDW-UTNB2",
+          "capacityTB": 2,
+          "priceIncTax": 55110,
+          "priceExTax": 50100,
+          "jan": "4957180181080",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTNB4",
+          "capacityTB": 4,
+          "priceIncTax": 68640,
+          "priceExTax": 62400,
+          "jan": "4957180181097",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTNB6",
+          "capacityTB": 6,
+          "priceIncTax": 90970,
+          "priceExTax": 82700,
+          "jan": "4957180181103",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTNB8",
+          "capacityTB": 8,
+          "priceIncTax": 110660,
+          "priceExTax": 100600,
+          "jan": "4957180181110",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTNB12",
+          "capacityTB": 12,
+          "priceIncTax": 147620,
+          "priceExTax": 134200,
+          "jan": "4957180181127",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTNB16",
+          "capacityTB": 16,
+          "priceIncTax": 172150,
+          "priceExTax": 156500,
+          "jan": "4957180181134",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTNB24",
+          "capacityTB": 24,
+          "priceIncTax": 307560,
+          "priceExTax": 279600,
+          "jan": "4957180181141",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTNB32",
+          "capacityTB": 32,
+          "priceIncTax": 405900,
+          "priceExTax": 369000,
+          "jan": "4957180181158",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTNB40",
+          "capacityTB": 40,
+          "priceIncTax": 489610,
+          "priceExTax": 445100,
+          "jan": "4957180181165",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTNB48",
+          "capacityTB": 48,
+          "priceIncTax": 588060,
+          "priceExTax": 534600,
+          "jan": "4957180181172",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTNB64",
+          "capacityTB": 64,
+          "priceIncTax": 782100,
+          "priceExTax": 711000,
+          "jan": "4957180186955",
+          "status": "現行"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/",
+      "lastCheckedAt": "2026-09-30T08:11:05.734Z"
+    },
+    {
+      "id": "hdw-utu",
+      "modelCode": "HDW-UTU",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 5,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKLX": null,
+        "LANDISKL": true,
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKT": true,
+        "LANDISKA": true,
+        "LANDISKZ": true
+      },
+      "variants": [
+        {
+          "sku": "HDW-UTU16",
+          "capacityTB": 16,
+          "priceIncTax": 220550,
+          "priceExTax": 200500,
+          "jan": "4957180187037",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTU32",
+          "capacityTB": 32,
+          "priceIncTax": 454300,
+          "priceExTax": 413000,
+          "jan": "4957180187044",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTU40",
+          "capacityTB": 40,
+          "priceIncTax": 538010,
+          "priceExTax": 489100,
+          "jan": "4957180187051",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTU48",
+          "capacityTB": 48,
+          "priceIncTax": 636460,
+          "priceExTax": 578600,
+          "jan": "4957180187068",
+          "status": "現行"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utu/",
+      "lastCheckedAt": "2026-09-30T08:11:10.204Z"
+    },
+    {
+      "id": "hdja-utnb",
+      "modelCode": "HDJA-UTNB",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 5,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKLX": true,
+        "LANDISKL": true,
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKT": null,
+        "LANDISKA": true,
+        "LANDISKZ": true
+      },
+      "variants": [
+        {
+          "sku": "HDJA-UTN1B",
+          "capacityTB": 1,
+          "priceIncTax": 29260,
+          "priceExTax": 26600,
+          "jan": "4957180165721",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN2B",
+          "capacityTB": 2,
+          "priceIncTax": 34100,
+          "priceExTax": 31000,
+          "jan": "4957180165738",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN3B",
+          "capacityTB": 3,
+          "priceIncTax": 40260,
+          "priceExTax": 36600,
+          "jan": "4957180165745",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN4B",
+          "capacityTB": 4,
+          "priceIncTax": 48950,
+          "priceExTax": 44500,
+          "jan": "4957180165752",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN6B",
+          "capacityTB": 6,
+          "priceIncTax": 78430,
+          "priceExTax": 71300,
+          "jan": "4957180165769",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN8B",
+          "capacityTB": 8,
+          "priceIncTax": 91960,
+          "priceExTax": 83600,
+          "jan": "4957180165776",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN12B",
+          "capacityTB": 12,
+          "priceIncTax": 145090,
+          "priceExTax": 131900,
+          "jan": "4957180165783",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN16B",
+          "capacityTB": 16,
+          "priceIncTax": 182050,
+          "priceExTax": 165500,
+          "jan": "4957180165790",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN20B",
+          "capacityTB": 20,
+          "priceIncTax": 206580,
+          "priceExTax": 187800,
+          "jan": "4957180165806",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN24B",
+          "capacityTB": 24,
+          "priceIncTax": 243540,
+          "priceExTax": 221400,
+          "jan": "4957180177397",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN32B",
+          "capacityTB": 32,
+          "priceIncTax": 317350,
+          "priceExTax": 288500,
+          "jan": "4957180186061",
+          "status": "現行"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnb/",
+      "lastCheckedAt": "2026-09-30T08:11:14.761Z"
+    },
+    {
+      "id": "hdja-utu",
+      "modelCode": "HDJA-UTU",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 5,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKLX": null,
+        "LANDISKL": true,
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKT": null,
+        "LANDISKA": true,
+        "LANDISKZ": true
+      },
+      "variants": [
+        {
+          "sku": "HDJA-UTU8",
+          "capacityTB": 8,
+          "priceIncTax": 112860,
+          "priceExTax": 102600,
+          "jan": "4957180186993",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTU16",
+          "capacityTB": 16,
+          "priceIncTax": 194370,
+          "priceExTax": 176700,
+          "jan": "4957180187006",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTU20",
+          "capacityTB": 20,
+          "priceIncTax": 218900,
+          "priceExTax": 199000,
+          "jan": "4957180187013",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTU24",
+          "capacityTB": 24,
+          "priceIncTax": 255860,
+          "priceExTax": 232600,
+          "jan": "4957180187020",
+          "status": "現行"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utu/",
+      "lastCheckedAt": "2026-09-30T08:11:19.546Z"
+    },
+    {
+      "id": "hdja-utn",
+      "modelCode": "HDJA-UTN",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 3,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKLX": true,
+        "LANDISKL": true,
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKT": null,
+        "LANDISKA": true
+      },
+      "variants": [
+        {
+          "sku": "HDJA-UTN12",
+          "capacityTB": 12,
+          "priceIncTax": 120560,
+          "priceExTax": 109600,
+          "jan": "4957180161716",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDJA-UTN16",
+          "capacityTB": 16,
+          "priceIncTax": 157410,
+          "priceExTax": 143100,
+          "jan": "4957180161723",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDJA-UTN20",
+          "capacityTB": 20,
+          "priceIncTax": 194370,
+          "priceExTax": 176700,
+          "jan": "4957180161730",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utn/",
+      "lastCheckedAt": "2026-09-30T08:11:28.719Z"
+    },
+    {
+      "id": "hdja-utr",
+      "modelCode": "HDJA-UTR",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": null,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKL": true,
+        "LANDISKT": true,
+        "LANDISKA": true,
+        "LANDISKZ": true
+      },
+      "variants": [
+        {
+          "sku": "HDJA-UT1R",
+          "capacityTB": 1,
+          "priceIncTax": 26730,
+          "priceExTax": 24300,
+          "jan": "4957180141695",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UT2R",
+          "capacityTB": 2,
+          "priceIncTax": 30470,
+          "priceExTax": 27700,
+          "jan": "4957180141701",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UT3R",
+          "capacityTB": 3,
+          "priceIncTax": 34100,
+          "priceExTax": 31000,
+          "jan": "4957180141718",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDJA-UT4R",
+          "capacityTB": 4,
+          "priceIncTax": 40260,
+          "priceExTax": 36600,
+          "jan": "4957180141725",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UT8R",
+          "capacityTB": 8,
+          "priceIncTax": 59950,
+          "priceExTax": 54500,
+          "jan": "4957180182476",
+          "status": "現行"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utr/",
+      "lastCheckedAt": "2026-09-30T08:11:37.924Z"
+    },
+    {
+      "id": "hdd-utb",
+      "modelCode": "HDD-UTB",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 1,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKL": true,
+        "LANDISKT": true,
+        "LANDISKA": true
+      },
+      "variants": [
+        {
+          "sku": "HDD-UT1KB",
+          "capacityTB": 1,
+          "priceIncTax": 23100,
+          "priceExTax": 21000,
+          "jan": "4957180171982",
+          "status": "現行"
+        },
+        {
+          "sku": "HDD-UT2KB",
+          "capacityTB": 2,
+          "priceIncTax": 25520,
+          "priceExTax": 23200,
+          "jan": "4957180172002",
+          "status": "現行"
+        },
+        {
+          "sku": "HDD-UT2WB",
+          "capacityTB": 2,
+          "priceIncTax": 25520,
+          "priceExTax": 23200,
+          "jan": "4957180172019",
+          "status": "現行"
+        },
+        {
+          "sku": "HDD-UT4KB",
+          "capacityTB": 4,
+          "priceIncTax": 32890,
+          "priceExTax": 29900,
+          "jan": "4957180172026",
+          "status": "現行"
+        },
+        {
+          "sku": "HDD-UT4WB",
+          "capacityTB": 4,
+          "priceIncTax": 32890,
+          "priceExTax": 29900,
+          "jan": "4957180172033",
+          "status": "現行"
+        },
+        {
+          "sku": "HDD-UT6KB",
+          "capacityTB": 6,
+          "priceIncTax": 42790,
+          "priceExTax": 38900,
+          "jan": "4957180172040",
+          "status": "現行"
+        },
+        {
+          "sku": "HDD-UT8KB",
+          "capacityTB": 8,
+          "priceIncTax": 55110,
+          "priceExTax": 50100,
+          "jan": "4957180172057",
+          "status": "現行"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/",
+      "lastCheckedAt": "2026-09-30T08:11:42.437Z"
+    },
+    {
+      "id": "hdw-utcs",
+      "modelCode": "HDW-UTCS",
+      "driveType": "dual",
+      "driveCount": 2,
+      "cartridge": false,
+      "warrantyYears": 1,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKL": true,
+        "LANDISKT": true,
+        "LANDISKA": true
+      },
+      "variants": [
+        {
+          "sku": "HDW-UTCS2",
+          "capacityTB": 2,
+          "priceIncTax": 36630,
+          "priceExTax": 33300,
+          "jan": "4957180164724",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTCS4",
+          "capacityTB": 4,
+          "priceIncTax": 52580,
+          "priceExTax": 47800,
+          "jan": "4957180164731",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTCS8",
+          "capacityTB": 8,
+          "priceIncTax": 95920,
+          "priceExTax": 87200,
+          "jan": "4957180164748",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTCS12",
+          "capacityTB": 12,
+          "priceIncTax": 120560,
+          "priceExTax": 109600,
+          "jan": "4957180164755",
+          "status": "現行"
+        },
+        {
+          "sku": "HDW-UTCS16",
+          "capacityTB": 16,
+          "priceIncTax": 145090,
+          "priceExTax": 131900,
+          "jan": "4957180164762",
+          "status": "現行"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/index.htm",
+      "lastCheckedAt": "2026-09-30T08:11:46.900Z"
+    },
+    {
+      "id": "zhd4-utxr",
+      "modelCode": "ZHD4-UTXR",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": true,
+      "warrantyYears": 3,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKA": true,
+        "LANDISKL": null,
+        "LANDISKT": null
+      },
+      "variants": [
+        {
+          "sku": "ZHD4-UTX4R",
+          "capacityTB": 4,
+          "priceIncTax": 272800,
+          "priceExTax": 248000,
+          "jan": "4957180116082",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD4-UTX8R",
+          "capacityTB": 8,
+          "priceIncTax": 294800,
+          "priceExTax": 268000,
+          "jan": "4957180116099",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD4-UTX12R",
+          "capacityTB": 12,
+          "priceIncTax": 316800,
+          "priceExTax": 288000,
+          "jan": "4957180116105",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD4-UTX16R",
+          "capacityTB": 16,
+          "priceIncTax": 371800,
+          "priceExTax": 338000,
+          "jan": "4957180116112",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD4-UTX24R",
+          "capacityTB": 24,
+          "priceIncTax": 481800,
+          "priceExTax": 438000,
+          "jan": "4957180119830",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD4-UTX32R",
+          "capacityTB": 32,
+          "priceIncTax": 591800,
+          "priceExTax": 538000,
+          "jan": "4957180123950",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd4-utxr/",
+      "lastCheckedAt": "2026-09-30T08:11:51.383Z"
+    },
+    {
+      "id": "hdw-utb",
+      "modelCode": "HDW-UTB",
+      "driveType": "dual",
+      "driveCount": 2,
+      "cartridge": false,
+      "warrantyYears": 5,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKL": null,
+        "LANDISKT": true,
+        "LANDISKA": true
+      },
+      "variants": [
+        {
+          "sku": "HDW-UT2B",
+          "capacityTB": 2,
+          "priceIncTax": 40260,
+          "priceExTax": 36600,
+          "jan": "4957180165639",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT4B",
+          "capacityTB": 4,
+          "priceIncTax": 56320,
+          "priceExTax": 51200,
+          "jan": "4957180165646",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT6B",
+          "capacityTB": 6,
+          "priceIncTax": 79640,
+          "priceExTax": 72400,
+          "jan": "4957180165653",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT8B",
+          "capacityTB": 8,
+          "priceIncTax": 101860,
+          "priceExTax": 92600,
+          "jan": "4957180165660",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT12B",
+          "capacityTB": 12,
+          "priceIncTax": 132770,
+          "priceExTax": 120700,
+          "jan": "4957180165677",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT16B",
+          "capacityTB": 16,
+          "priceIncTax": 157410,
+          "priceExTax": 143100,
+          "jan": "4957180165684",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT24B",
+          "capacityTB": 24,
+          "priceIncTax": 292710,
+          "priceExTax": 266100,
+          "jan": "4957180165691",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT32B",
+          "capacityTB": 32,
+          "priceIncTax": 391160,
+          "priceExTax": 355600,
+          "jan": "4957180165707",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT40B",
+          "capacityTB": 40,
+          "priceIncTax": 489610,
+          "priceExTax": 445100,
+          "jan": "4957180165714",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utb/index.htm",
+      "lastCheckedAt": "2026-09-30T08:11:55.929Z"
+    },
+    {
+      "id": "hdw-utc",
+      "modelCode": "HDW-UTC",
+      "driveType": "dual",
+      "driveCount": 2,
+      "cartridge": false,
+      "warrantyYears": 1,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKL": true,
+        "LANDISKT": true,
+        "LANDISKA": true
+      },
+      "variants": [
+        {
+          "sku": "HDW-UTC2",
+          "capacityTB": 2,
+          "priceIncTax": 36630,
+          "priceExTax": 33300,
+          "jan": "4957180161501",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTC4",
+          "capacityTB": 4,
+          "priceIncTax": 48950,
+          "priceExTax": 44500,
+          "jan": "4957180161518",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTC8",
+          "capacityTB": 8,
+          "priceIncTax": 85800,
+          "priceExTax": 78000,
+          "jan": "4957180161525",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTC12",
+          "capacityTB": 12,
+          "priceIncTax": 108240,
+          "priceExTax": 98400,
+          "jan": "4957180161532",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UTC16",
+          "capacityTB": 16,
+          "priceIncTax": 132770,
+          "priceExTax": 120700,
+          "jan": "4957180161549",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utc/index.htm",
+      "lastCheckedAt": "2026-09-30T08:12:00.394Z"
+    },
+    {
+      "id": "zhd2-utx",
+      "modelCode": "ZHD2-UTX",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": true,
+      "warrantyYears": 3,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": null,
+        "LANDISKX": null,
+        "LANDISKA": null,
+        "LANDISKL": null,
+        "LANDISKT": null
+      },
+      "variants": [
+        {
+          "sku": "ZHD2-UTX2",
+          "capacityTB": 2,
+          "priceIncTax": 48180,
+          "priceExTax": 43800,
+          "jan": "4957180116242",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD2-UTX4",
+          "capacityTB": 4,
+          "priceIncTax": 59180,
+          "priceExTax": 53800,
+          "jan": "4957180116259",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD2-UTX6",
+          "capacityTB": 6,
+          "priceIncTax": 70180,
+          "priceExTax": 63800,
+          "jan": "4957180116266",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD2-UTX8",
+          "capacityTB": 8,
+          "priceIncTax": 97680,
+          "priceExTax": 88800,
+          "jan": "4957180116273",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD2-UTX12",
+          "capacityTB": 12,
+          "priceIncTax": 152680,
+          "priceExTax": 138800,
+          "jan": "4957180118277",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD2-UTX16",
+          "capacityTB": 16,
+          "priceIncTax": 207680,
+          "priceExTax": 188800,
+          "jan": "4957180123967",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd2-utx/",
+      "lastCheckedAt": "2026-09-30T08:12:04.924Z"
+    },
+    {
+      "id": "hds2-utxs",
+      "modelCode": "HDS2-UTXS",
+      "driveType": "dual",
+      "driveCount": 2,
+      "cartridge": false,
+      "warrantyYears": 1,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKL": null,
+        "LANDISKT": true,
+        "LANDISKA": true
+      },
+      "variants": [
+        {
+          "sku": "HDS2-UTXS12",
+          "capacityTB": 12,
+          "priceIncTax": 112860,
+          "priceExTax": 102600,
+          "jan": "4957180133898",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDS2-UTXS16",
+          "capacityTB": 16,
+          "priceIncTax": 133760,
+          "priceExTax": 121600,
+          "jan": "4957180133904",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hds2-utxs/",
+      "lastCheckedAt": "2026-09-30T08:12:09.419Z"
+    },
+    {
+      "id": "hdja-utrwhq",
+      "modelCode": "HDJA-UTRWHQ",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 3,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKL": null,
+        "LANDISKT": true,
+        "LANDISKA": true
+      },
+      "variants": [
+        {
+          "sku": "HDJA-UT2RWHQ",
+          "capacityTB": 2,
+          "priceIncTax": 32890,
+          "priceExTax": 29900,
+          "jan": "4957180141831",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDJA-UT3RWHQ",
+          "capacityTB": 3,
+          "priceIncTax": 37840,
+          "priceExTax": 34400,
+          "jan": "4957180141848",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utrwhq/",
+      "lastCheckedAt": "2026-09-30T08:12:22.910Z"
+    },
+    {
+      "id": "hdd-ut",
+      "modelCode": "HDD-UT",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 1,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKL": true,
+        "LANDISKT": true,
+        "LANDISKA": true,
+        "LANDISKZ": true
+      },
+      "variants": [
+        {
+          "sku": "HDD-UT1K",
+          "capacityTB": 1,
+          "priceIncTax": 11990,
+          "priceExTax": 10900,
+          "jan": "4957180151069",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDD-UT1W",
+          "capacityTB": 1,
+          "priceIncTax": 11990,
+          "priceExTax": 10900,
+          "jan": "4957180151120",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDD-UT2K",
+          "capacityTB": 2,
+          "priceIncTax": 13200,
+          "priceExTax": 12000,
+          "jan": "4957180151076",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDD-UT2W",
+          "capacityTB": 2,
+          "priceIncTax": 13200,
+          "priceExTax": 12000,
+          "jan": "4957180151137",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDD-UT3K",
+          "capacityTB": 3,
+          "priceIncTax": 15730,
+          "priceExTax": 14300,
+          "jan": "4957180151083",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDD-UT3W",
+          "capacityTB": 3,
+          "priceIncTax": 15730,
+          "priceExTax": 14300,
+          "jan": "4957180151144",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDD-UT4K",
+          "capacityTB": 4,
+          "priceIncTax": 16940,
+          "priceExTax": 15400,
+          "jan": "4957180151090",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDD-UT4W",
+          "capacityTB": 4,
+          "priceIncTax": 16940,
+          "priceExTax": 15400,
+          "jan": "4957180151151",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDD-UT6K",
+          "capacityTB": 6,
+          "priceIncTax": 24310,
+          "priceExTax": 22100,
+          "jan": "4957180151106",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDD-UT8K",
+          "capacityTB": 8,
+          "priceIncTax": 34100,
+          "priceExTax": 31000,
+          "jan": "4957180151113",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-ut/",
+      "lastCheckedAt": "2026-09-30T08:12:31.991Z"
+    },
+    {
+      "id": "hdcz-utc",
+      "modelCode": "HDCZ-UTC",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 1,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKL": null,
+        "LANDISKT": true,
+        "LANDISKA": true
+      },
+      "variants": [
+        {
+          "sku": "HDCZ-UT1WC",
+          "capacityTB": 1,
+          "priceIncTax": 11990,
+          "priceExTax": 10900,
+          "jan": "4957180137414",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT1KC",
+          "capacityTB": 1,
+          "priceIncTax": 11990,
+          "priceExTax": 10900,
+          "jan": "4957180137353",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT2WC",
+          "capacityTB": 2,
+          "priceIncTax": 13200,
+          "priceExTax": 12000,
+          "jan": "4957180137421",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT2KC",
+          "capacityTB": 2,
+          "priceIncTax": 13200,
+          "priceExTax": 12000,
+          "jan": "4957180137360",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT3WC",
+          "capacityTB": 3,
+          "priceIncTax": 15730,
+          "priceExTax": 14300,
+          "jan": "4957180137438",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT3KC",
+          "capacityTB": 3,
+          "priceIncTax": 15730,
+          "priceExTax": 14300,
+          "jan": "4957180137377",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT4WC",
+          "capacityTB": 4,
+          "priceIncTax": 16940,
+          "priceExTax": 15400,
+          "jan": "4957180137445",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT4KC",
+          "capacityTB": 4,
+          "priceIncTax": 16940,
+          "priceExTax": 15400,
+          "jan": "4957180137384",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT6KC",
+          "capacityTB": 6,
+          "priceIncTax": 25520,
+          "priceExTax": 23200,
+          "jan": "4957180137391",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT8KC",
+          "capacityTB": 8,
+          "priceIncTax": 28050,
+          "priceExTax": 25500,
+          "jan": "4957180137407",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-utc/",
+      "lastCheckedAt": "2026-09-30T08:12:36.539Z"
+    },
+    {
+      "id": "zhd-utx",
+      "modelCode": "ZHD-UTX",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": true,
+      "warrantyYears": 3,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": null,
+        "LANDISKX": null,
+        "LANDISKA": null,
+        "LANDISKL": null,
+        "LANDISKT": null
+      },
+      "variants": [
+        {
+          "sku": "ZHD-UTX1",
+          "capacityTB": 1,
+          "priceIncTax": 30800,
+          "priceExTax": 28000,
+          "jan": "4957180114491",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD-UTX2",
+          "capacityTB": 2,
+          "priceIncTax": 36300,
+          "priceExTax": 33000,
+          "jan": "4957180114507",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD-UTX3",
+          "capacityTB": 3,
+          "priceIncTax": 41800,
+          "priceExTax": 38000,
+          "jan": "4957180114514",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD-UTX4",
+          "capacityTB": 4,
+          "priceIncTax": 55550,
+          "priceExTax": 50500,
+          "jan": "4957180114521",
+          "status": "生産終了"
+        },
+        {
+          "sku": "ZHD-UTX6",
+          "capacityTB": 6,
+          "priceIncTax": 83050,
+          "priceExTax": 75500,
+          "jan": "4957180118659",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd-utx/",
+      "lastCheckedAt": "2026-09-30T08:12:40.988Z"
+    },
+    {
+      "id": "hdcz-ut",
+      "modelCode": "HDCZ-UT",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 1,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": true,
+        "LANDISKX": true,
+        "LANDISKL": null,
+        "LANDISKT": true,
+        "LANDISKA": true
+      },
+      "variants": [
+        {
+          "sku": "HDCZ-UT1WB",
+          "capacityTB": 1,
+          "priceIncTax": 13420,
+          "priceExTax": 12200,
+          "jan": "4957180133843",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT1KB",
+          "capacityTB": 1,
+          "priceIncTax": 13420,
+          "priceExTax": 12200,
+          "jan": "4957180133799",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT2WB",
+          "capacityTB": 2,
+          "priceIncTax": 15290,
+          "priceExTax": 13900,
+          "jan": "4957180133850",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT2KB",
+          "capacityTB": 2,
+          "priceIncTax": 15290,
+          "priceExTax": 13900,
+          "jan": "4957180133805",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT3WB",
+          "capacityTB": 3,
+          "priceIncTax": 17710,
+          "priceExTax": 16100,
+          "jan": "4957180133867",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT3KB",
+          "capacityTB": 3,
+          "priceIncTax": 17710,
+          "priceExTax": 16100,
+          "jan": "4957180133812",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT4WB",
+          "capacityTB": 4,
+          "priceIncTax": 23870,
+          "priceExTax": 21700,
+          "jan": "4957180133874",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT4KB",
+          "capacityTB": 4,
+          "priceIncTax": 23870,
+          "priceExTax": 21700,
+          "jan": "4957180133829",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCZ-UT6KB",
+          "capacityTB": 6,
+          "priceIncTax": 49170,
+          "priceExTax": 44700,
+          "jan": "4957180133836",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-ut/",
+      "lastCheckedAt": "2026-09-30T08:12:45.480Z"
+    },
+    {
+      "id": "hdcl-ute",
+      "modelCode": "HDCL-UTE",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 1,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": null,
+        "LANDISKX": true,
+        "LANDISKA": true,
+        "LANDISKL": null,
+        "LANDISKT": null
+      },
+      "variants": [
+        {
+          "sku": "HDCL-UTE1W",
+          "capacityTB": 1,
+          "priceIncTax": 11990,
+          "priceExTax": 10900,
+          "jan": "4957180122069",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCL-UTE1K",
+          "capacityTB": 1,
+          "priceIncTax": 11990,
+          "priceExTax": 10900,
+          "jan": "4957180122007",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCL-UTE2W",
+          "capacityTB": 2,
+          "priceIncTax": 13200,
+          "priceExTax": 12000,
+          "jan": "4957180122076",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCL-UTE2K",
+          "capacityTB": 2,
+          "priceIncTax": 13200,
+          "priceExTax": 12000,
+          "jan": "4957180122014",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCL-UTE3W",
+          "capacityTB": 3,
+          "priceIncTax": 18150,
+          "priceExTax": 16500,
+          "jan": "4957180122083",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCL-UTE3K",
+          "capacityTB": 3,
+          "priceIncTax": 18150,
+          "priceExTax": 16500,
+          "jan": "4957180122021",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCL-UTE4W",
+          "capacityTB": 4,
+          "priceIncTax": 24310,
+          "priceExTax": 22100,
+          "jan": "4957180122090",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCL-UTE4K",
+          "capacityTB": 4,
+          "priceIncTax": 24310,
+          "priceExTax": 22100,
+          "jan": "4957180122038",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCL-UTE5K",
+          "capacityTB": 5,
+          "priceIncTax": 46420,
+          "priceExTax": 42200,
+          "jan": "4957180122045",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDCL-UTE6K",
+          "capacityTB": 6,
+          "priceIncTax": 57530,
+          "priceExTax": 52300,
+          "jan": "4957180122052",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcl-ute/",
+      "lastCheckedAt": "2026-09-30T08:12:54.444Z"
+    },
+    {
+      "id": "rhd-ux",
+      "modelCode": "RHD-UX",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": true,
+      "warrantyYears": 1,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKH": null,
+        "LANDISKX": null,
+        "LANDISKA": null,
+        "LANDISKL": null,
+        "LANDISKT": null
+      },
+      "variants": [
+        {
+          "sku": "RHD-UX320",
+          "capacityTB": 0.32,
+          "priceIncTax": 20790,
+          "priceExTax": 18900,
+          "jan": "4957180069555",
+          "status": "生産終了"
+        },
+        {
+          "sku": "RHD-UX500",
+          "capacityTB": 0.5,
+          "priceIncTax": 22000,
+          "priceExTax": 20000,
+          "jan": "4957180069562",
+          "status": "生産終了"
+        },
+        {
+          "sku": "RHD-UX750",
+          "capacityTB": 0.75,
+          "priceIncTax": 26620,
+          "priceExTax": 24200,
+          "jan": "4957180069579",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/rhd-ux/",
+      "lastCheckedAt": "2026-09-30T08:12:58.906Z"
+    },
+    {
+      "id": "hdja-sutr",
+      "modelCode": "HDJA-SUTR",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "warrantyYears": 3,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKZ": null
+      },
+      "variants": [
+        {
+          "sku": "HDJA-SUT1R",
+          "capacityTB": 1,
+          "priceIncTax": 20570,
+          "priceExTax": 18700,
+          "jan": "4957180141749",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDJA-SUT2R",
+          "capacityTB": 2,
+          "priceIncTax": 25520,
+          "priceExTax": 23200,
+          "jan": "4957180141756",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDJA-SUT3R",
+          "capacityTB": 3,
+          "priceIncTax": 29260,
+          "priceExTax": 26600,
+          "jan": "4957180141763",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-sutr/index.htm",
+      "lastCheckedAt": "2026-09-30T08:13:21.305Z"
+    },
+    {
+      "id": "hdw-ut",
+      "modelCode": "HDW-UTB",
+      "driveType": "dual",
+      "driveCount": 2,
+      "cartridge": false,
+      "warrantyYears": 3,
+      "connection": "USB",
+      "compatNasSeries": {
+        "LANDISKL": null,
+        "LANDISKA": null,
+        "LANDISKT": true
+      },
+      "variants": [
+        {
+          "sku": "HDW-UT2",
+          "capacityTB": 2,
+          "priceIncTax": 40260,
+          "priceExTax": 36600,
+          "jan": "4957180145815",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT4",
+          "capacityTB": 4,
+          "priceIncTax": 56320,
+          "priceExTax": 51200,
+          "jan": "4957180145822",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT6",
+          "capacityTB": 6,
+          "priceIncTax": 79640,
+          "priceExTax": 72400,
+          "jan": "4957180145839",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT8",
+          "capacityTB": 8,
+          "priceIncTax": 101860,
+          "priceExTax": 92600,
+          "jan": "4957180145846",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT12",
+          "capacityTB": 12,
+          "priceIncTax": 132770,
+          "priceExTax": 120700,
+          "jan": "4957180145853",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT16",
+          "capacityTB": 16,
+          "priceIncTax": 157410,
+          "priceExTax": 143100,
+          "jan": "4957180145860",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT24",
+          "capacityTB": 24,
+          "priceIncTax": 292710,
+          "priceExTax": 266100,
+          "jan": "4957180162218",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT32",
+          "capacityTB": 32,
+          "priceIncTax": 391160,
+          "priceExTax": 355600,
+          "jan": "4957180162225",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDW-UT40",
+          "capacityTB": 40,
+          "priceIncTax": 489610,
+          "priceExTax": 445100,
+          "jan": "4957180162232",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-ut/index.htm",
+      "lastCheckedAt": "2026-09-30T08:13:25.850Z"
+    }
+  ]
+}
