@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T07:34:11.903Z",
+  "updatedAt": "2026-10-02T08:22:17.052Z",
   "products": [
     {
       "id": "hd1-reut",
@@ -7,6 +7,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": true,
+      "requiresSeparateEnclosure": true,
       "warrantyYears": null,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -89,7 +90,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd1-reut/index.htm",
-      "lastCheckedAt": "2026-10-02T07:30:57.839Z"
+      "lastCheckedAt": "2026-10-02T08:19:14.105Z"
     },
     {
       "id": "hd4-utnc",
@@ -97,6 +98,7 @@
       "driveType": "quad",
       "driveCount": 4,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -176,7 +178,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/index.htm",
-      "lastCheckedAt": "2026-10-02T07:31:03.329Z"
+      "lastCheckedAt": "2026-10-02T08:19:19.064Z"
     },
     {
       "id": "hd4-utn",
@@ -184,6 +186,7 @@
       "driveType": "quad",
       "driveCount": 4,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -263,7 +266,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utn/index.htm",
-      "lastCheckedAt": "2026-10-02T07:31:08.229Z"
+      "lastCheckedAt": "2026-10-02T08:19:23.894Z"
     },
     {
       "id": "hdw-utn",
@@ -271,6 +274,7 @@
       "driveType": "dual",
       "driveCount": 2,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -373,19 +377,24 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utn/",
-      "lastCheckedAt": "2026-10-02T07:31:13.593Z"
+      "lastCheckedAt": "2026-10-02T08:19:28.906Z"
     },
     {
       "id": "hdw-utnc",
       "modelCode": "HDW-UTNC",
-      "driveType": "single",
-      "driveCount": 1,
+      "driveType": "dual",
+      "driveCount": 2,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
       "supports24h": true,
-      "raidModes": [],
+      "raidModes": [
+        "RAID 1",
+        "RAID 0",
+        "マルチディスクモード"
+      ],
       "compatNasSeries": {
         "LANDISKLX": null,
         "LANDISKL": true,
@@ -487,7 +496,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/",
-      "lastCheckedAt": "2026-10-02T07:31:18.981Z"
+      "lastCheckedAt": "2026-10-02T08:19:33.622Z"
     },
     {
       "id": "hdw-utnb",
@@ -495,6 +504,7 @@
       "driveType": "dual",
       "driveCount": 2,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -605,7 +615,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/",
-      "lastCheckedAt": "2026-10-02T07:31:24.228Z"
+      "lastCheckedAt": "2026-10-02T08:19:38.587Z"
     },
     {
       "id": "hdw-utu",
@@ -613,6 +623,7 @@
       "driveType": "dual",
       "driveCount": 2,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -667,7 +678,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utu/",
-      "lastCheckedAt": "2026-10-02T07:31:29.181Z"
+      "lastCheckedAt": "2026-10-02T08:19:43.346Z"
     },
     {
       "id": "hdja-utnc",
@@ -675,6 +686,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -781,7 +793,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/",
-      "lastCheckedAt": "2026-10-02T07:31:34.375Z"
+      "lastCheckedAt": "2026-10-02T08:19:47.980Z"
     },
     {
       "id": "hdja-utnb",
@@ -789,6 +801,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -895,7 +908,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnb/",
-      "lastCheckedAt": "2026-10-02T07:31:39.418Z"
+      "lastCheckedAt": "2026-10-02T08:19:52.698Z"
     },
     {
       "id": "hdja-utu",
@@ -903,6 +916,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -953,7 +967,237 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utu/",
-      "lastCheckedAt": "2026-10-02T07:31:44.506Z"
+      "lastCheckedAt": "2026-10-02T08:19:57.576Z"
+    },
+    {
+      "id": "hdja-utnldc",
+      "modelCode": "HDJA-UTN/LDC",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "requiresSeparateEnclosure": false,
+      "warrantyYears": 3,
+      "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
+      "compatNasSeries": {
+        "LANDISKLX": null,
+        "LANDISKL": true,
+        "LANDISKH": null,
+        "LANDISKX": null,
+        "LANDISKT": null,
+        "LANDISKA": null,
+        "LANDISKZ": true
+      },
+      "imageUrl": "https://www.iodata.jp/image/hdja-utnldc_l.jpg",
+      "variants": [
+        {
+          "sku": "HDJA-UTN1/LDC",
+          "capacityTB": 1,
+          "priceIncTax": 47630,
+          "priceExTax": 43300,
+          "jan": "4957180193946",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN2/LDC",
+          "capacityTB": 2,
+          "priceIncTax": 57420,
+          "priceExTax": 52200,
+          "jan": "4957180193953",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN3/LDC",
+          "capacityTB": 3,
+          "priceIncTax": 61160,
+          "priceExTax": 55600,
+          "jan": "4957180193960",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN4/LDC",
+          "capacityTB": 4,
+          "priceIncTax": 66110,
+          "priceExTax": 60100,
+          "jan": "4957180193977",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN6/LDC",
+          "capacityTB": 6,
+          "priceIncTax": 102960,
+          "priceExTax": 93600,
+          "jan": "4957180193984",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN8/LDC",
+          "capacityTB": 8,
+          "priceIncTax": 115280,
+          "priceExTax": 104800,
+          "jan": "4957180193991",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN12/LDC",
+          "capacityTB": 12,
+          "priceIncTax": 168410,
+          "priceExTax": 153100,
+          "jan": "4957180194004",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN16/LDC",
+          "capacityTB": 16,
+          "priceIncTax": 205370,
+          "priceExTax": 186700,
+          "jan": "4957180194011",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN20/LDC",
+          "capacityTB": 20,
+          "priceIncTax": 229900,
+          "priceExTax": 209000,
+          "jan": "4957180194028",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN24/LDC",
+          "capacityTB": 24,
+          "priceIncTax": 266860,
+          "priceExTax": 242600,
+          "jan": "4957180194035",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN32/LDC",
+          "capacityTB": 32,
+          "priceIncTax": 340670,
+          "priceExTax": 309700,
+          "jan": "4957180194042",
+          "status": "現行"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/",
+      "lastCheckedAt": "2026-10-02T08:20:02.220Z"
+    },
+    {
+      "id": "hdja-utnldb",
+      "modelCode": "HDJA-UTN/LDB",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "requiresSeparateEnclosure": false,
+      "warrantyYears": 5,
+      "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
+      "compatNasSeries": {
+        "LANDISKLX": null,
+        "LANDISKL": true,
+        "LANDISKH": null,
+        "LANDISKX": null,
+        "LANDISKT": null,
+        "LANDISKA": null,
+        "LANDISKZ": true
+      },
+      "imageUrl": "https://www.iodata.jp/image/hdja-utnldb_l.jpg",
+      "variants": [
+        {
+          "sku": "HDJA-UTN1/LDB",
+          "capacityTB": 1,
+          "priceIncTax": 40260,
+          "priceExTax": 36600,
+          "jan": "4957180165813",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN2/LDB",
+          "capacityTB": 2,
+          "priceIncTax": 45100,
+          "priceExTax": 41000,
+          "jan": "4957180165820",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN3/LDB",
+          "capacityTB": 3,
+          "priceIncTax": 51260,
+          "priceExTax": 46600,
+          "jan": "4957180165837",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN4/LDB",
+          "capacityTB": 4,
+          "priceIncTax": 59950,
+          "priceExTax": 54500,
+          "jan": "4957180165844",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN6/LDB",
+          "capacityTB": 6,
+          "priceIncTax": 89430,
+          "priceExTax": 81300,
+          "jan": "4957180165851",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN8/LDB",
+          "capacityTB": 8,
+          "priceIncTax": 102960,
+          "priceExTax": 93600,
+          "jan": "4957180165868",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN12/LDB",
+          "capacityTB": 12,
+          "priceIncTax": 156090,
+          "priceExTax": 141900,
+          "jan": "4957180165875",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN16/LDB",
+          "capacityTB": 16,
+          "priceIncTax": 193050,
+          "priceExTax": 175500,
+          "jan": "4957180165882",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN20/LDB",
+          "capacityTB": 20,
+          "priceIncTax": 217580,
+          "priceExTax": 197800,
+          "jan": "4957180165899",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN24/LDB",
+          "capacityTB": 24,
+          "priceIncTax": 254540,
+          "priceExTax": 231400,
+          "jan": "4957180179216",
+          "status": "現行"
+        },
+        {
+          "sku": "HDJA-UTN32/LDB",
+          "capacityTB": 32,
+          "priceIncTax": 328350,
+          "priceExTax": 298500,
+          "jan": "4957180186078",
+          "status": "現行"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/",
+      "lastCheckedAt": "2026-10-02T08:20:06.906Z"
     },
     {
       "id": "hdja-utn",
@@ -961,6 +1205,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1002,7 +1247,49 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utn/",
-      "lastCheckedAt": "2026-10-02T07:32:01.854Z"
+      "lastCheckedAt": "2026-10-02T08:20:11.587Z"
+    },
+    {
+      "id": "hdja-utnld",
+      "modelCode": "HDJA-UTN/LD",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "requiresSeparateEnclosure": false,
+      "warrantyYears": 3,
+      "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
+      "compatNasSeries": {
+        "LANDISKLX": null,
+        "LANDISKL": true,
+        "LANDISKH": null,
+        "LANDISKX": null,
+        "LANDISKT": null,
+        "LANDISKA": null
+      },
+      "imageUrl": "https://www.iodata.jp/image/hdja-utnld_l.jpg",
+      "variants": [
+        {
+          "sku": "HDJA-UTN12/LD",
+          "capacityTB": 12,
+          "priceIncTax": 131560,
+          "priceExTax": 119600,
+          "jan": "4957180161808",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDJA-UTN16/LD",
+          "capacityTB": 16,
+          "priceIncTax": 168520,
+          "priceExTax": 153200,
+          "jan": "4957180161815",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnld/",
+      "lastCheckedAt": "2026-10-02T08:20:16.369Z"
     },
     {
       "id": "hdja-utr",
@@ -1010,6 +1297,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": null,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1023,7 +1311,7 @@
         "LANDISKA": true,
         "LANDISKZ": true
       },
-      "imageUrl": null,
+      "imageUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-ut/12dh9400001ot6oh-img/12dh9400001ot6tl.jpg",
       "variants": [
         {
           "sku": "HDJA-UT1R",
@@ -1067,7 +1355,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utr/",
-      "lastCheckedAt": "2026-10-02T07:32:11.631Z"
+      "lastCheckedAt": "2026-10-02T08:20:21.043Z"
     },
     {
       "id": "hdd-utb",
@@ -1075,6 +1363,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1147,7 +1436,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/",
-      "lastCheckedAt": "2026-10-02T07:32:16.696Z"
+      "lastCheckedAt": "2026-10-02T08:20:25.770Z"
     },
     {
       "id": "hdw-utcs",
@@ -1155,6 +1444,7 @@
       "driveType": "dual",
       "driveCount": 2,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1214,7 +1504,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/index.htm",
-      "lastCheckedAt": "2026-10-02T07:32:21.535Z"
+      "lastCheckedAt": "2026-10-02T08:20:30.452Z"
     },
     {
       "id": "zhd4-utxr",
@@ -1222,6 +1512,7 @@
       "driveType": "quad",
       "driveCount": 4,
       "cartridge": true,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1292,7 +1583,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd4-utxr/",
-      "lastCheckedAt": "2026-10-02T07:32:26.623Z"
+      "lastCheckedAt": "2026-10-02T08:20:35.194Z"
     },
     {
       "id": "hdw-utb",
@@ -1300,6 +1591,7 @@
       "driveType": "dual",
       "driveCount": 2,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1392,7 +1684,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utb/index.htm",
-      "lastCheckedAt": "2026-10-02T07:32:31.828Z"
+      "lastCheckedAt": "2026-10-02T08:20:40.209Z"
     },
     {
       "id": "hdw-utc",
@@ -1400,6 +1692,7 @@
       "driveType": "dual",
       "driveCount": 2,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1460,7 +1753,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utc/index.htm",
-      "lastCheckedAt": "2026-10-02T07:32:36.838Z"
+      "lastCheckedAt": "2026-10-02T08:20:45.005Z"
     },
     {
       "id": "zhd2-utx",
@@ -1468,6 +1761,7 @@
       "driveType": "dual",
       "driveCount": 2,
       "cartridge": true,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1535,7 +1829,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd2-utx/",
-      "lastCheckedAt": "2026-10-02T07:32:41.770Z"
+      "lastCheckedAt": "2026-10-02T08:20:50.097Z"
     },
     {
       "id": "hds2-utxs",
@@ -1543,6 +1837,7 @@
       "driveType": "dual",
       "driveCount": 2,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1558,7 +1853,7 @@
         "LANDISKT": true,
         "LANDISKA": true
       },
-      "imageUrl": null,
+      "imageUrl": "https://www.iodata.jp/image/hds2-utxs_l.jpg",
       "variants": [
         {
           "sku": "HDS2-UTXS12",
@@ -1578,7 +1873,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hds2-utxs/",
-      "lastCheckedAt": "2026-10-02T07:32:46.685Z"
+      "lastCheckedAt": "2026-10-02T08:20:54.970Z"
     },
     {
       "id": "hdja-utrwhq",
@@ -1586,6 +1881,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1618,7 +1914,80 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utrwhq/",
-      "lastCheckedAt": "2026-10-02T07:33:01.547Z"
+      "lastCheckedAt": "2026-10-02T08:21:09.198Z"
+    },
+    {
+      "id": "hdja-utwld",
+      "modelCode": "HDJA-UTW/LD",
+      "driveType": "single",
+      "driveCount": 1,
+      "cartridge": false,
+      "requiresSeparateEnclosure": false,
+      "warrantyYears": 3,
+      "connection": "USB",
+      "interfaceDetail": "USB 3.2 Gen1",
+      "supports24h": true,
+      "raidModes": [],
+      "compatNasSeries": {
+        "LANDISKH": null,
+        "LANDISKX": null,
+        "LANDISKL": null,
+        "LANDISKT": null,
+        "LANDISKA": null
+      },
+      "imageUrl": "https://www.iodata.jp/image/hdja-utwld_l.jpg",
+      "variants": [
+        {
+          "sku": "HDJA-UT1W/LD",
+          "capacityTB": 1,
+          "priceIncTax": 32890,
+          "priceExTax": 29900,
+          "jan": "4957180141893",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDJA-UT2W/LD",
+          "capacityTB": 2,
+          "priceIncTax": 39050,
+          "priceExTax": 35500,
+          "jan": "4957180141909",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDJA-UT3W/LD",
+          "capacityTB": 3,
+          "priceIncTax": 44000,
+          "priceExTax": 40000,
+          "jan": "4957180141916",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDJA-UT4W/LD",
+          "capacityTB": 4,
+          "priceIncTax": 57530,
+          "priceExTax": 52300,
+          "jan": "4957180141923",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDJA-UT6W/LD",
+          "capacityTB": 6,
+          "priceIncTax": 73480,
+          "priceExTax": 66800,
+          "jan": "4957180141930",
+          "status": "生産終了"
+        },
+        {
+          "sku": "HDJA-UT8W/LD",
+          "capacityTB": 8,
+          "priceIncTax": 89540,
+          "priceExTax": 81400,
+          "jan": "4957180141947",
+          "status": "生産終了"
+        }
+      ],
+      "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utwld/",
+      "lastCheckedAt": "2026-10-02T08:21:13.962Z"
     },
     {
       "id": "hdd-ut",
@@ -1626,6 +1995,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1723,7 +2093,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-ut/",
-      "lastCheckedAt": "2026-10-02T07:33:11.535Z"
+      "lastCheckedAt": "2026-10-02T08:21:19.001Z"
     },
     {
       "id": "hdcz-utc",
@@ -1731,6 +2101,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1827,7 +2198,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-utc/",
-      "lastCheckedAt": "2026-10-02T07:33:16.735Z"
+      "lastCheckedAt": "2026-10-02T08:21:23.974Z"
     },
     {
       "id": "zhd-utx",
@@ -1835,6 +2206,7 @@
       "driveType": "quad",
       "driveCount": 4,
       "cartridge": true,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1847,7 +2219,7 @@
         "LANDISKL": null,
         "LANDISKT": null
       },
-      "imageUrl": null,
+      "imageUrl": "https://www.iodata.jp/product/hdd/hdd/zhd-utx/12dh94000022h919-img/12dh94000022h96b.jpg",
       "variants": [
         {
           "sku": "ZHD-UTX1",
@@ -1891,7 +2263,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd-utx/",
-      "lastCheckedAt": "2026-10-02T07:33:21.676Z"
+      "lastCheckedAt": "2026-10-02T08:21:28.821Z"
     },
     {
       "id": "hdcz-ut",
@@ -1899,6 +2271,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.1 Gen1",
@@ -1987,7 +2360,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-ut/",
-      "lastCheckedAt": "2026-10-02T07:33:26.777Z"
+      "lastCheckedAt": "2026-10-02T08:21:33.715Z"
     },
     {
       "id": "hdcl-ute",
@@ -1995,6 +2368,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.1 Gen1",
@@ -2091,7 +2465,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcl-ute/",
-      "lastCheckedAt": "2026-10-02T07:33:36.922Z"
+      "lastCheckedAt": "2026-10-02T08:21:43.363Z"
     },
     {
       "id": "rhd-ux",
@@ -2099,6 +2473,7 @@
       "driveType": "quad",
       "driveCount": 8,
       "cartridge": true,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": null,
@@ -2111,7 +2486,7 @@
         "LANDISKL": null,
         "LANDISKT": null
       },
-      "imageUrl": null,
+      "imageUrl": "https://www.iodata.jp/product/hdd/hdd/rhd-ux/12dh94000000c7cr-img/12dh94000000c7da.jpg",
       "variants": [
         {
           "sku": "RHD-UX320",
@@ -2139,7 +2514,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/rhd-ux/",
-      "lastCheckedAt": "2026-10-02T07:33:41.881Z"
+      "lastCheckedAt": "2026-10-02T08:21:48.302Z"
     },
     {
       "id": "hdja-sutr",
@@ -2147,6 +2522,7 @@
       "driveType": "single",
       "driveCount": 1,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -2183,7 +2559,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-sutr/index.htm",
-      "lastCheckedAt": "2026-10-02T07:34:07.099Z"
+      "lastCheckedAt": "2026-10-02T08:22:12.181Z"
     },
     {
       "id": "hdw-ut",
@@ -2191,6 +2567,7 @@
       "driveType": "dual",
       "driveCount": 2,
       "cartridge": false,
+      "requiresSeparateEnclosure": false,
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -2281,7 +2658,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-ut/index.htm",
-      "lastCheckedAt": "2026-10-02T07:34:11.903Z"
+      "lastCheckedAt": "2026-10-02T08:22:17.052Z"
     }
   ]
 }
