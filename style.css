@@ -118,15 +118,24 @@ body {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 14px 18px;
   margin-bottom: 20px;
 }
-.nas-info__head { display: flex; align-items: center; gap: 16px; }
-.nas-info__image { width: 72px; height: 72px; object-fit: contain; border-radius: var(--radius); background: var(--paper); flex-shrink: 0; }
-.nas-info__text h2 { margin: 0; font-size: 18px; font-weight: 900; font-family: ui-monospace, monospace; }
-.nas-info__desc { margin: 4px 0 0; font-size: 12px; color: var(--text-soft); }
+.nas-info__head { display: flex; align-items: center; gap: 12px; }
+.nas-info__image { width: 48px; height: 48px; object-fit: contain; border-radius: var(--radius); background: var(--paper); flex-shrink: 0; }
+.nas-info__text h2 { margin: 0; font-size: 16px; font-weight: 900; font-family: ui-monospace, monospace; }
+.nas-info__desc { margin: 2px 0 0; font-size: 12px; color: var(--text-soft); }
 
-.nas-info__raid { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+.nas-info__body-row {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.nas-info__raid { flex: 1 1 260px; min-width: 220px; }
 .nas-info__raid-label { margin: 0 0 8px; font-size: 12px; font-weight: 700; color: var(--text-soft); }
 .raid-btn-row { display: flex; gap: 6px; flex-wrap: wrap; }
 .raid-btn {
@@ -153,7 +162,15 @@ body {
 }
 .raid-btn:not(.raid-btn--selected) .raid-btn__tag { background: var(--text-faint); }
 
-.capacity-summary { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
+.capacity-summary {
+  flex: 1 1 220px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 20px;
+  border-left: 1px solid var(--line);
+}
 .capacity-summary__row { margin: 0; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 13px; }
 .capacity-summary__note-link {
   font-size: 13px;
@@ -200,8 +217,12 @@ body {
   border-radius: var(--radius);
   padding: 14px 16px;
 }
-.das-card__model { margin: 0; font-family: ui-monospace, monospace; font-size: 14px; font-weight: 700; }
+.das-card__head { display: flex; align-items: center; gap: 10px; }
+.das-card__image { width: 44px; height: 44px; object-fit: contain; border-radius: var(--radius); background: var(--paper); flex-shrink: 0; }
+.das-card__head-text { flex: 1 1 auto; min-width: 0; }
+.das-card__model { margin: 0; font-family: ui-monospace, monospace; font-size: 14px; font-weight: 700; word-break: break-all; }
 .das-card__model a { color: inherit; }
+.das-card__series { margin: 1px 0 0; font-size: 11px; color: var(--text-faint); }
 .das-card__badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
 
 .badge {
@@ -216,6 +237,7 @@ body {
 .badge--accent { background: var(--accent-bg); color: var(--accent-deep); border-color: transparent; }
 .badge--drive { background: var(--ink); color: #fff; border-color: transparent; }
 .badge--warn { background: var(--warn-bg); color: var(--warn); border-color: transparent; }
+.badge--benefit { background: #fff; color: var(--accent-deep); border-color: var(--accent); }
 
 .das-card__bottom-area { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); position: relative; }
 .das-card__bottom { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
@@ -271,6 +293,7 @@ body {
   .brand-banner__search { max-width: none; width: 100%; flex: 0 0 auto; }
   .hint-bar { text-align: left; }
   .nas-info__head { flex-wrap: wrap; }
+  .capacity-summary { border-left: none; padding-left: 0; padding-top: 12px; border-top: 1px dashed var(--line); }
 }
 
 /* ---------- Password gate ---------- */

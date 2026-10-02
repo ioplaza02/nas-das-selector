@@ -96,6 +96,12 @@
 
   const DRIVE_TYPE_LABEL = { single: "1ドライブ", dual: "2ドライブ", quad: "4ドライブ" };
   const DRIVE_TYPE_RANK = { single: 0, dual: 1, quad: 2 };
+  // ドライブ数ごとのメリットを一言で表すタグ（並べて見たときに違いがパッと分かるように）
+  const DRIVE_TYPE_BENEFIT = {
+    single: "シンプルな単体型",
+    dual: "単体でRAID構成が可能",
+    quad: "大容量をまとめて収納"
+  };
 
   const el = (sel) => document.querySelector(sel);
   const modelInput = el("#model-input");
@@ -454,7 +460,16 @@
       matched.push({ product: p, qualifying: sorted, best: sorted[0] });
     });
 
-    matched.sort((a, b) => (a.best.priceIncTax || Infinity) - (b.best.priceIncTax || Infinity));
+    // 並び順：まず「シンプルさ」（1ドライブ→2ドライブ→4ドライブ）を優先し、
+    // 次に保証年数が長い方（5年保証を優先）、最後に価格が安い方を優先する。
+    // これにより「1ドライブで5年保証」のようなスマートな選択肢が自然と上位に来る。
+    matched.sort((a, b) => {
+      const driveDiff = (DRIVE_TYPE_RANK[a.product.driveType] ?? 9) - (DRIVE_TYPE_RANK[b.product.driveType] ?? 9);
+      if (driveDiff !== 0) return driveDiff;
+      const warrantyDiff = (b.product.warrantyYears || 0) - (a.product.warrantyYears || 0);
+      if (warrantyDiff !== 0) return warrantyDiff;
+      return (a.best.priceIncTax || Infinity) - (b.best.priceIncTax || Infinity);
+    });
 
     resultCount.textContent = `${matched.length}件のDASが対応しています（おすすめ容量 ${formatTB(required)} 以上）`;
 
@@ -478,18 +493,29 @@
     const best = m.best;
 
     const badges = [
-      `<span class="badge badge--drive">${DRIVE_TYPE_LABEL[p.driveType] || p.driveType}</span>`
+      `<span class="badge badge--drive">${DRIVE_TYPE_LABEL[p.driveType] || p.driveType}</span>`,
+      `<span class="badge badge--benefit">${escapeHtml(DRIVE_TYPE_BENEFIT[p.driveType] || "")}</span>`
     ];
     if (p.cartridge) badges.push(`<span class="badge badge--accent">カートリッジ式</span>`);
     if (p.warrantyYears) badges.push(`<span class="badge">${p.warrantyYears}年保証</span>`);
 
     const allBtn = m.qualifying.length > 1
-      ? `<button type="button" class="all-years-btn" data-role="all-variants-btn">他の容量も見る（${m.qualifying.length}件）</button>`
+      ? `<button type="button" class="all-years-btn" data-role="all-variants-btn">型番をすべて表示する（${m.qualifying.length}件）</button>`
+      : "";
+
+    const imageHtml = p.imageUrl
+      ? `<img class="das-card__image" src="${escapeAttr(p.imageUrl)}" alt="" onerror="this.remove()">`
       : "";
 
     return `
       <div class="das-card" id="${id}">
-        <p class="das-card__model"><a href="${escapeAttr(p.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.modelCode)}</a></p>
+        <div class="das-card__head">
+          ${imageHtml}
+          <div class="das-card__head-text">
+            <p class="das-card__model"><a href="${escapeAttr(p.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(best.sku)}</a></p>
+            <p class="das-card__series">${escapeHtml(p.modelCode)}シリーズ</p>
+          </div>
+        </div>
         <div class="das-card__badges">${badges.join("")}</div>
         <div class="das-card__bottom-area" data-role="bottom-area">
           <div class="das-card__bottom" data-role="bottom">
@@ -512,8 +538,8 @@
   function allVariantsInnerHtml(variants) {
     return variants.map((v) => `
       <div class="all-years-row">
-        <span class="all-years-row__years">${formatTB(v.capacityTB)}</span>
         <span class="all-years-row__code">${escapeHtml(v.sku)}</span>
+        <span class="all-years-row__years">${formatTB(v.capacityTB)}</span>
         <span class="all-years-row__price">${priceHtml(v)}</span>
       </div>`).join("");
   }
@@ -528,7 +554,7 @@
         allBtn.addEventListener("click", () => {
           const isOpen = bottomArea.classList.toggle("das-card__bottom-area--open");
           const count = cardVariantMap[id].length;
-          allBtn.textContent = isOpen ? "閉じる" : `他の容量も見る（${count}件）`;
+          allBtn.textContent = isOpen ? "閉じる" : `型番をすべて表示する（${count}件）`;
         });
       }
     });
