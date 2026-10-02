@@ -551,6 +551,7 @@
             <p class="das-card__capacity" data-role="capacity">${formatTB(best.capacityTB)}</p>
             <p class="das-card__price" data-role="price">${priceHtml(best)}</p>
           </div>
+          ${best.jan ? `<p class="das-card__jan">JAN: ${escapeHtml(best.jan)}</p>` : ""}
           ${allBtn}
           <div class="all-years-accordion" data-role="all-variants-accordion">
             <div class="all-years-accordion__inner" data-role="all-variants-inner">${allVariantsInnerHtml(m.qualifying)}</div>
@@ -644,7 +645,7 @@
         cells: items.map((it) => ({
           plain: "",
           html: it.product.imageUrl
-            ? `<img class="compare-table__image" src="${escapeAttr(it.product.imageUrl)}" alt="" onerror="this.remove()">`
+            ? `<a href="${escapeAttr(it.product.sourceUrl)}" target="_blank" rel="noopener noreferrer"><img class="compare-table__image" src="${escapeAttr(it.product.imageUrl)}" alt="" onerror="this.remove()"></a>`
             : "—"
         }))
       },
@@ -658,10 +659,6 @@
           plain: String(it.variant.priceIncTax || ""),
           html: `<span class="compare-table__price">${priceHtml(it.variant)}</span>`
         }))
-      },
-      {
-        label: "JANコード",
-        cells: items.map((it) => ({ plain: it.variant.jan || "", html: escapeHtml(it.variant.jan || "不明") }))
       },
       {
         label: "ドライブ数",
@@ -710,14 +707,14 @@
     ];
 
     const headRow = `<tr><th class="compare-table__row-label"></th>${
-      items.map((it) => `<th>${escapeHtml(it.variant.sku)}</th>`).join("")
+      items.map((it) => `<th><a href="${escapeAttr(it.product.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(it.variant.sku)}</a></th>`).join("")
     }</tr>`;
 
     const bodyRows = rows.map((r) => {
       const plainValues = r.cells.map((c) => c.plain);
       const hasDiff = !r.noDiff && items.length > 1 && plainValues.some((v) => v !== plainValues[0]);
       return `<tr${hasDiff ? ' class="compare-table__row--diff"' : ""}>
-        <th class="compare-table__row-label">${escapeHtml(r.label)}${hasDiff ? '<span class="compare-table__diff-tag">違いあり</span>' : ""}</th>
+        <th class="compare-table__row-label">${escapeHtml(r.label)}</th>
         ${r.cells.map((c) => `<td>${c.html}</td>`).join("")}
       </tr>`;
     }).join("");

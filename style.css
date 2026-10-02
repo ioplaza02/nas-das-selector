@@ -265,6 +265,7 @@ body {
 .das-card__capacity { margin: 0; font-size: 16px; font-weight: 700; }
 .das-card__price { margin: 0; font-size: 15px; font-weight: 700; text-align: right; }
 .das-card__price-sub { display: block; font-size: 11px; font-weight: 400; color: var(--text-faint); }
+.das-card__jan { margin: 4px 0 0; font-size: 10px; color: var(--text-faint); }
 
 .all-years-btn {
   margin-top: 8px;
@@ -403,13 +404,6 @@ body {
   background: var(--warn-bg);
 }
 .compare-table tr.compare-table__row--diff th { color: var(--warn); }
-.compare-table__diff-tag {
-  display: inline-block;
-  margin-left: 8px;
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--warn);
-}
 .compare-modal__note {
   margin: 14px 0 0;
   padding-top: 12px;
