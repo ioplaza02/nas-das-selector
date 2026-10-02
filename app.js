@@ -121,6 +121,12 @@
   const shareBtn = el("#share-btn");
   const shareFeedback = el("#share-feedback");
   const updatedAtEl = el("#updated-at");
+  const compareBar = el("#compare-bar");
+  const compareBarText = el("#compare-bar-text");
+  const compareBtn = el("#compare-btn");
+  const compareModal = el("#compare-modal");
+  const compareModalCloseBtn = el("#compare-modal-close-btn");
+  const compareTableEl = el("#compare-table");
 
   let nasEntries = [];      // 検索対象（variant単位でフラット化したNAS一覧）
   let dasProducts = [];
@@ -129,6 +135,9 @@
   let highlightedIndex = -1;
   let currentEntry = null;
   let currentRaidKey = null;
+  // 商品比較（チェックを付けた商品を、下部バー→ポップアップの表で見比べられるようにする）
+  let compareSelection = new Map(); // id -> { product, variant }
+  const COMPARE_MAX = 4;
 
   // ---------- データ読み込み ----------
 
@@ -434,6 +443,10 @@
     shareBtn.hidden = false;
     resultTitle.textContent = `${currentEntry.displaySku} のおすすめDAS`;
 
+    // 検索し直すたびに比較選択はリセットする
+    compareSelection.clear();
+    updateCompareBar();
+
     if (!dasLoaded) {
       resultCount.textContent = "";
       dasGroups.innerHTML = `<div class="no-match">DASデータを読み込んでいます。少しお待ちください…</div>`;
@@ -484,6 +497,7 @@
   }
 
   let cardVariantMap = {};
+  let cardDataMap = {};
   let cardCounter = 0;
 
   function renderDasCard(m) {
@@ -491,6 +505,7 @@
     cardVariantMap[id] = m.qualifying;
     const p = m.product;
     const best = m.best;
+    cardDataMap[id] = { product: p, variant: best };
 
     const badges = [
       `<span class="badge badge--drive">${DRIVE_TYPE_LABEL[p.driveType] || p.driveType}</span>`,
@@ -515,6 +530,10 @@
             <p class="das-card__model"><a href="${escapeAttr(p.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(best.sku)}</a></p>
             <p class="das-card__series">${escapeHtml(p.modelCode)}シリーズ</p>
           </div>
+          <label class="das-card__compare">
+            <input type="checkbox" data-role="compare-checkbox" data-id="${id}">
+            比較
+          </label>
         </div>
         <div class="das-card__badges">${badges.join("")}</div>
         <div class="das-card__bottom-area" data-role="bottom-area">
@@ -557,7 +576,89 @@
           allBtn.textContent = isOpen ? "閉じる" : `型番をすべて表示する（${count}件）`;
         });
       }
+      const compareCheckbox = cardEl.querySelector('[data-role="compare-checkbox"]');
+      if (compareCheckbox) {
+        compareCheckbox.addEventListener("change", () => {
+          if (compareCheckbox.checked) {
+            if (compareSelection.size >= COMPARE_MAX) {
+              compareCheckbox.checked = false;
+              window.alert(`比較は一度に${COMPARE_MAX}件までです。`);
+              return;
+            }
+            compareSelection.set(id, cardDataMap[id]);
+          } else {
+            compareSelection.delete(id);
+          }
+          updateCompareBar();
+        });
+      }
     });
+  }
+
+  // ---------- 商品比較（下部バー・ポップアップ） ----------
+
+  function updateCompareBar() {
+    const count = compareSelection.size;
+    if (count === 0) {
+      compareBar.hidden = true;
+      return;
+    }
+    compareBar.hidden = false;
+    compareBarText.textContent = `商品比較（${count}件選択中）`;
+    compareBtn.disabled = count < 2;
+  }
+
+  compareBtn.addEventListener("click", () => {
+    if (compareSelection.size < 2) return;
+    renderCompareTable();
+    compareModal.hidden = false;
+  });
+
+  compareModalCloseBtn.addEventListener("click", () => { compareModal.hidden = true; });
+  compareModal.querySelector('[data-role="compare-modal-close"]').addEventListener("click", () => {
+    compareModal.hidden = true;
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !compareModal.hidden) compareModal.hidden = true;
+  });
+
+  function renderCompareTable() {
+    const items = [...compareSelection.values()];
+
+    const rows = [
+      {
+        label: "画像",
+        cells: items.map((it) => it.product.imageUrl
+          ? `<img class="compare-table__image" src="${escapeAttr(it.product.imageUrl)}" alt="" onerror="this.remove()">`
+          : "—")
+      },
+      {
+        label: "型番",
+        cells: items.map((it) => `<a href="${escapeAttr(it.product.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(it.variant.sku)}</a>`)
+      },
+      { label: "容量", cells: items.map((it) => formatTB(it.variant.capacityTB)) },
+      {
+        label: "価格",
+        cells: items.map((it) => `<span class="compare-table__price">${priceHtml(it.variant)}</span>`)
+      },
+      { label: "ドライブ数", cells: items.map((it) => DRIVE_TYPE_LABEL[it.product.driveType] || it.product.driveType) },
+      { label: "特徴", cells: items.map((it) => escapeHtml(DRIVE_TYPE_BENEFIT[it.product.driveType] || "")) },
+      { label: "カートリッジ式", cells: items.map((it) => it.product.cartridge ? "○" : "—") },
+      { label: "保証年数", cells: items.map((it) => it.product.warrantyYears ? `${it.product.warrantyYears}年` : "不明") },
+      { label: "接続方式", cells: items.map((it) => escapeHtml(it.product.connection || "—")) },
+      { label: "シリーズ", cells: items.map((it) => escapeHtml(it.product.modelCode)) }
+    ];
+
+    const headRow = `<tr><th class="compare-table__row-label"></th>${
+      items.map((it) => `<th>${escapeHtml(it.variant.sku)}</th>`).join("")
+    }</tr>`;
+
+    const bodyRows = rows.map((r) => `<tr>
+      <th class="compare-table__row-label">${escapeHtml(r.label)}</th>
+      ${r.cells.map((c) => `<td>${c}</td>`).join("")}
+    </tr>`).join("");
+
+    compareTableEl.innerHTML = `<thead>${headRow}</thead><tbody>${bodyRows}</tbody>`;
   }
 
   function escapeHtml(str) {

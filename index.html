@@ -78,6 +78,25 @@
   </section>
 </main>
 
+<div class="compare-bar" id="compare-bar" hidden>
+  <div class="compare-bar__inner">
+    <p class="compare-bar__text" id="compare-bar-text">商品比較（0件選択中）</p>
+    <p class="compare-bar__hint">比較したい商品を選んでください</p>
+    <button type="button" class="compare-bar__btn" id="compare-btn" disabled>比較する</button>
+  </div>
+</div>
+
+<div class="compare-modal" id="compare-modal" hidden>
+  <div class="compare-modal__overlay" data-role="compare-modal-close"></div>
+  <div class="compare-modal__box">
+    <button type="button" class="compare-modal__close" id="compare-modal-close-btn" aria-label="閉じる">×</button>
+    <h3 class="compare-modal__title">商品比較</h3>
+    <div class="compare-modal__scroll">
+      <table class="compare-table" id="compare-table"></table>
+    </div>
+  </div>
+</div>
+
 <footer class="info-footer">
   <div class="info-footer__inner">
     <p class="info-footer__title">このツールについて</p>

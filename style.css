@@ -218,6 +218,17 @@ body {
   padding: 14px 16px;
 }
 .das-card__head { display: flex; align-items: center; gap: 10px; }
+.das-card__compare {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--text-soft);
+  cursor: pointer;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+.das-card__compare input { margin: 0; accent-color: var(--accent); cursor: pointer; }
 .das-card__image { width: 44px; height: 44px; object-fit: contain; border-radius: var(--radius); background: var(--paper); flex-shrink: 0; }
 .das-card__head-text { flex: 1 1 auto; min-width: 0; }
 .das-card__model { margin: 0; font-family: ui-monospace, monospace; font-size: 14px; font-weight: 700; word-break: break-all; }
@@ -276,6 +287,106 @@ body {
   font-size: 13px;
 }
 .no-match a { color: var(--accent-deep); }
+
+/* ---------- 商品比較バー・ポップアップ ---------- */
+
+.compare-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 50;
+  background: var(--ink-2);
+  color: #fff;
+  border-top: 1px solid #3a4149;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
+}
+.compare-bar__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.compare-bar__text { margin: 0; font-size: 13px; font-weight: 700; }
+.compare-bar__hint { margin: 0; font-size: 11px; color: #9ba0a3; flex: 1 1 auto; }
+.compare-bar__btn {
+  padding: 8px 20px;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+.compare-bar__btn:disabled { background: #4a5059; color: #8f9497; cursor: not-allowed; }
+.compare-bar__btn:not(:disabled):hover { background: var(--accent-deep); }
+
+.compare-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.compare-modal[hidden] { display: none; }
+.compare-modal__overlay { position: absolute; inset: 0; background: rgba(28,33,38,0.6); }
+.compare-modal__box {
+  position: relative;
+  background: var(--card);
+  border-radius: var(--radius);
+  max-width: 900px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  box-shadow: 0 20px 48px rgba(0,0,0,0.3);
+}
+.compare-modal__title { margin: 0 0 14px; font-size: 16px; font-weight: 900; }
+.compare-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.compare-modal__close:hover { background: var(--line); }
+.compare-modal__scroll { overflow: auto; }
+
+.compare-table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.compare-table th, .compare-table td {
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.compare-table th.compare-table__row-label {
+  background: var(--paper);
+  color: var(--text-soft);
+  font-weight: 700;
+  position: sticky;
+  left: 0;
+}
+.compare-table td.compare-table__col-head {
+  font-family: ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 13px;
+}
+.compare-table__image { width: 48px; height: 48px; object-fit: contain; background: var(--paper); border-radius: var(--radius); }
+.compare-table__price { font-weight: 700; }
 
 /* ---------- Footer ---------- */
 
