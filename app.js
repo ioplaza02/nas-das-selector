@@ -59,6 +59,25 @@
     "LAN DISK for SOHO": "LANDISKT"
   };
 
+  // NASセレクター側で series が空（未分類）のまま残っている型番向けの保険。
+  // 「LAN DISK LX」シリーズ（HDL4-LX／HDL4-LXU／HDL2-LXなど）は、NASセレクターの
+  // カタログ分類ロジックが対応しておらず series:null になっているが、
+  // hdd.htm側の脚注で「LAN DISK LXシリーズ：HDL4-LX, HDL4-LXU, HDL2-LX」と
+  // 明記されているのを確認済みのため、型番の先頭一致で直接救済する。
+  // （根本対応としては、NASセレクター側のscrape.mjsでこのシリーズにも
+  // 正しくseriesを振るよう直す方が望ましい）
+  const SERIES_CODE_FALLBACK_BY_PREFIX = [
+    [/^HDL4-LXU/i, "LANDISKLX"],
+    [/^HDL4-LX\d/i, "LANDISKLX"],
+    [/^HDL2-LX\d/i, "LANDISKLX"]
+  ];
+
+  function resolveSeriesCode(entry) {
+    if (entry.series && SERIES_MAP[entry.series]) return SERIES_MAP[entry.series];
+    const hit = SERIES_CODE_FALLBACK_BY_PREFIX.find(([re]) => re.test(entry.sku));
+    return hit ? hit[1] : null;
+  }
+
   // NASセレクター側の raidSupport（表示用ラベル）→ 実効容量テーブルのキー
   const RAID_LABEL_TO_KEY = {
     "RAIDeX": "raidex",
@@ -321,10 +340,12 @@
 
     if (availableKeys.length > 0) {
       raidWrap.hidden = false;
-      let defaultKey = availableKeys.find((k) => k === (initialRaidParam || "")) || null;
-      if (!defaultKey) defaultKey = RAID_PRIORITY.find((k) => availableKeys.includes(k)) || availableKeys[0];
-      currentRaidKey = defaultKey;
-      renderRaidButtons(availableKeys, defaultKey);
+      // 「おすすめ」ラベルを付ける対象は、優先順位（RAIDeX>RAID5>RAID6>RAID1>RAID0）で
+      // 決まる値に固定する。初期選択だけURLパラメータで上書きできるようにしておく。
+      const recommendedKey = RAID_PRIORITY.find((k) => availableKeys.includes(k)) || availableKeys[0];
+      let initialKey = availableKeys.find((k) => k === (initialRaidParam || "")) || recommendedKey;
+      currentRaidKey = initialKey;
+      renderRaidButtons(availableKeys, initialKey, recommendedKey);
     } else {
       raidWrap.hidden = true;
       currentRaidKey = null;
@@ -333,13 +354,14 @@
     renderCapacitySummaryAndResults();
   }
 
-  function renderRaidButtons(keys, selectedKey) {
+  function renderRaidButtons(keys, selectedKey, recommendedKey) {
     raidBtnRow.innerHTML = "";
     keys.forEach((key) => {
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "raid-btn" + (key === selectedKey ? " raid-btn--selected" : "");
-      btn.textContent = RAID_KEY_TO_LABEL[key] || key;
+      btn.innerHTML = escapeHtml(RAID_KEY_TO_LABEL[key] || key) +
+        (key === recommendedKey ? '<span class="raid-btn__tag">おすすめ</span>' : "");
       btn.addEventListener("click", () => {
         currentRaidKey = key;
         raidBtnRow.querySelectorAll(".raid-btn").forEach((b) => b.classList.remove("raid-btn--selected"));
@@ -365,7 +387,7 @@
     const required = value * 2;
 
     let html = `<p class="capacity-summary__row"><span class="capacity-summary__label">実効容量</span><span class="capacity-summary__value">${formatTB(value)}</span>${estimated ? '<span class="badge badge--warn">実効容量データ未取得（搭載HDD容量を参考値として使用）</span>' : ""}</p>`;
-    html += `<p class="capacity-summary__row"><span class="capacity-summary__label">目安（×2）</span><span class="capacity-summary__value capacity-summary__value--accent">${formatTB(required)} 以上</span></p>`;
+    html += `<p class="capacity-summary__row"><span class="capacity-summary__label">おすすめのDAS容量</span><span class="capacity-summary__value capacity-summary__value--accent">${formatTB(required)} 以上</span><a href="#about-x2" class="capacity-summary__note-link">※</a></p>`;
     capacitySummary.innerHTML = html;
 
     renderResults();
@@ -411,7 +433,7 @@
       return;
     }
 
-    const seriesCode = SERIES_MAP[currentEntry.series];
+    const seriesCode = resolveSeriesCode(currentEntry);
     if (!seriesCode) {
       resultCount.textContent = "";
       dasGroups.innerHTML = `<div class="no-match">このNASのシリーズを自動判定できなかったため、対応確認ができませんでした。` +
@@ -433,7 +455,7 @@
 
     matched.sort((a, b) => (a.best.priceIncTax || Infinity) - (b.best.priceIncTax || Infinity));
 
-    resultCount.textContent = `${matched.length}件のDASが対応しています（目安容量 ${formatTB(required)} 以上）`;
+    resultCount.textContent = `${matched.length}件のDASが対応しています（おすすめ容量 ${formatTB(required)} 以上）`;
 
     if (matched.length === 0) {
       dasGroups.innerHTML = `<div class="no-match">条件に合うDASが見つかりませんでした。必要容量が大きすぎる可能性があります。複数台・大容量モデルについては` +
