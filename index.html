@@ -70,6 +70,10 @@
       <div class="result-head">
         <h3 id="result-title"></h3>
         <p class="result-count" id="result-count"></p>
+        <label class="result-toggle">
+          <input type="checkbox" id="include-discontinued-toggle">
+          生産終了品を含める
+        </label>
         <button type="button" class="share-btn" id="share-btn" hidden>このページのURLをコピー</button>
         <span class="share-feedback" id="share-feedback" hidden></span>
       </div>
@@ -94,6 +98,7 @@
     <div class="compare-modal__scroll">
       <table class="compare-table" id="compare-table"></table>
     </div>
+    <p class="compare-modal__note" id="compare-modal-note"></p>
   </div>
 </div>
 

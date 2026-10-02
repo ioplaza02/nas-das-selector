@@ -127,6 +127,8 @@
   const compareModal = el("#compare-modal");
   const compareModalCloseBtn = el("#compare-modal-close-btn");
   const compareTableEl = el("#compare-table");
+  const compareModalNote = el("#compare-modal-note");
+  const includeDiscontinuedToggle = el("#include-discontinued-toggle");
 
   let nasEntries = [];      // 検索対象（variant単位でフラット化したNAS一覧）
   let dasProducts = [];
@@ -424,6 +426,10 @@
     return `${location.origin}${location.pathname}?${params.toString()}`;
   }
 
+  includeDiscontinuedToggle.addEventListener("change", () => {
+    if (currentEntry) renderResults();
+  });
+
   shareBtn.addEventListener("click", async () => {
     const url = buildShareUrl();
     try {
@@ -464,10 +470,13 @@
     const { value } = getEffectiveCapacityInfo(currentEntry);
     const required = value * 2;
 
+    const includeDiscontinued = includeDiscontinuedToggle.checked;
     const matched = [];
     dasProducts.forEach((p) => {
       if (p.compatNasSeries[seriesCode] !== true) return;
-      const qualifying = (p.variants || []).filter((v) => v.capacityTB >= required);
+      const qualifying = (p.variants || []).filter((v) =>
+        v.capacityTB >= required && (includeDiscontinued || v.status !== "生産終了")
+      );
       if (qualifying.length === 0) return;
       const sorted = [...qualifying].sort((a, b) => a.capacityTB - b.capacityTB);
       matched.push({ product: p, qualifying: sorted, best: sorted[0] });
@@ -513,6 +522,7 @@
     ];
     if (p.cartridge) badges.push(`<span class="badge badge--accent">カートリッジ式</span>`);
     if (p.warrantyYears) badges.push(`<span class="badge">${p.warrantyYears}年保証</span>`);
+    if (best.status === "生産終了") badges.push(`<span class="badge badge--warn">生産終了品</span>`);
 
     const allBtn = m.qualifying.length > 1
       ? `<button type="button" class="all-years-btn" data-role="all-variants-btn">型番をすべて表示する（${m.qualifying.length}件）</button>`
@@ -622,43 +632,103 @@
     if (e.key === "Escape" && !compareModal.hidden) compareModal.hidden = true;
   });
 
+  // 行ごとに「比較に使う値（plain）」と「表示用HTML（html）」を分けて持つ。
+  // plain側が全列で同じかどうかを見て、違いがある行だけハイライトする。
   function renderCompareTable() {
     const items = [...compareSelection.values()];
 
     const rows = [
       {
         label: "画像",
-        cells: items.map((it) => it.product.imageUrl
-          ? `<img class="compare-table__image" src="${escapeAttr(it.product.imageUrl)}" alt="" onerror="this.remove()">`
-          : "—")
+        noDiff: true,
+        cells: items.map((it) => ({
+          plain: "",
+          html: it.product.imageUrl
+            ? `<img class="compare-table__image" src="${escapeAttr(it.product.imageUrl)}" alt="" onerror="this.remove()">`
+            : "—"
+        }))
       },
       {
-        label: "型番",
-        cells: items.map((it) => `<a href="${escapeAttr(it.product.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(it.variant.sku)}</a>`)
+        label: "容量",
+        cells: items.map((it) => ({ plain: String(it.variant.capacityTB), html: formatTB(it.variant.capacityTB) }))
       },
-      { label: "容量", cells: items.map((it) => formatTB(it.variant.capacityTB)) },
       {
         label: "価格",
-        cells: items.map((it) => `<span class="compare-table__price">${priceHtml(it.variant)}</span>`)
+        cells: items.map((it) => ({
+          plain: String(it.variant.priceIncTax || ""),
+          html: `<span class="compare-table__price">${priceHtml(it.variant)}</span>`
+        }))
       },
-      { label: "ドライブ数", cells: items.map((it) => DRIVE_TYPE_LABEL[it.product.driveType] || it.product.driveType) },
-      { label: "特徴", cells: items.map((it) => escapeHtml(DRIVE_TYPE_BENEFIT[it.product.driveType] || "")) },
-      { label: "カートリッジ式", cells: items.map((it) => it.product.cartridge ? "○" : "—") },
-      { label: "保証年数", cells: items.map((it) => it.product.warrantyYears ? `${it.product.warrantyYears}年` : "不明") },
-      { label: "接続方式", cells: items.map((it) => escapeHtml(it.product.connection || "—")) },
-      { label: "シリーズ", cells: items.map((it) => escapeHtml(it.product.modelCode)) }
+      {
+        label: "JANコード",
+        cells: items.map((it) => ({ plain: it.variant.jan || "", html: escapeHtml(it.variant.jan || "不明") }))
+      },
+      {
+        label: "ドライブ数",
+        cells: items.map((it) => {
+          const t = DRIVE_TYPE_LABEL[it.product.driveType] || it.product.driveType;
+          return { plain: t, html: escapeHtml(t) };
+        })
+      },
+      {
+        label: "特徴",
+        cells: items.map((it) => {
+          const t = DRIVE_TYPE_BENEFIT[it.product.driveType] || "";
+          return { plain: t, html: escapeHtml(t) };
+        })
+      },
+      {
+        label: "RAID対応",
+        cells: items.map((it) => {
+          const modes = it.product.raidModes || [];
+          const t = modes.length ? modes.join(" / ") : (it.product.driveCount > 1 ? "情報なし" : "非対応（1ドライブ）");
+          return { plain: t, html: escapeHtml(t) };
+        })
+      },
+      {
+        label: "カートリッジ式",
+        cells: items.map((it) => ({ plain: it.product.cartridge ? "○" : "—", html: it.product.cartridge ? "○" : "—" }))
+      },
+      {
+        label: "保証年数",
+        cells: items.map((it) => {
+          const t = it.product.warrantyYears ? `${it.product.warrantyYears}年` : "不明";
+          return { plain: t, html: escapeHtml(t) };
+        })
+      },
+      {
+        label: "接続方式",
+        cells: items.map((it) => {
+          const t = it.product.interfaceDetail || it.product.connection || "USB";
+          return { plain: t, html: escapeHtml(t) };
+        })
+      },
+      {
+        label: "24時間稼働対応",
+        cells: items.map((it) => ({ plain: it.product.supports24h ? "○" : "—", html: it.product.supports24h ? "○" : "—" }))
+      }
     ];
 
     const headRow = `<tr><th class="compare-table__row-label"></th>${
       items.map((it) => `<th>${escapeHtml(it.variant.sku)}</th>`).join("")
     }</tr>`;
 
-    const bodyRows = rows.map((r) => `<tr>
-      <th class="compare-table__row-label">${escapeHtml(r.label)}</th>
-      ${r.cells.map((c) => `<td>${c}</td>`).join("")}
-    </tr>`).join("");
+    const bodyRows = rows.map((r) => {
+      const plainValues = r.cells.map((c) => c.plain);
+      const hasDiff = !r.noDiff && items.length > 1 && plainValues.some((v) => v !== plainValues[0]);
+      return `<tr${hasDiff ? ' class="compare-table__row--diff"' : ""}>
+        <th class="compare-table__row-label">${escapeHtml(r.label)}${hasDiff ? '<span class="compare-table__diff-tag">違いあり</span>' : ""}</th>
+        ${r.cells.map((c) => `<td>${c.html}</td>`).join("")}
+      </tr>`;
+    }).join("");
 
     compareTableEl.innerHTML = `<thead>${headRow}</thead><tbody>${bodyRows}</tbody>`;
+
+    compareModalNote.innerHTML =
+      `※ 保証期間内の修理は「センドバック」方式（本体を工場へ送付して修理する方式。出張修理ではありません）が基本です。` +
+      `引き取り・当日訪問などより手厚い保守をご希望の場合は、` +
+      `<a href="https://ioplaza02.github.io/nas-iss-selector/" target="_blank" rel="noopener noreferrer">ISSセレクター</a>で保守プランをご確認ください。` +
+      `RAID対応・インターフェース規格・24時間稼働対応は公式ページの記載から自動取得しているため、不明や情報なしと出る場合は公式ページで直接ご確認ください。`;
   }
 
   function escapeHtml(str) {
