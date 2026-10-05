@@ -790,7 +790,7 @@
     compareModalNote.innerHTML =
       `※ 保証期間内の修理は「センドバック」方式（本体を工場へ送付して修理する方式。出張修理ではありません）が基本です。` +
       `引き取り・当日訪問などより手厚い保守をご希望の場合は、` +
-      `<a href="https://ioplaza02.github.io/nas-iss-selector/" target="_blank" rel="noopener noreferrer">ISSセレクター</a>で保守プランをご確認ください。` +
+      `<a href="https://www.iodata.jp/support/service/iss/maintenance/hdd/index.htm" target="_blank" rel="noopener noreferrer">外付けHDD向けの訪問安心保守（ISS）のページ</a>でご確認ください。` +
       `RAID対応・インターフェース規格・24時間稼働対応は公式ページの記載から自動取得しているため、不明や情報なしと出る場合は公式ページで直接ご確認ください。`;
   }
 
