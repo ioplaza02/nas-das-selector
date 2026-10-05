@@ -316,7 +316,14 @@ function extractDriveWarrantyCartridge(combinedText) {
   if (driveMatch) driveCount = Number(driveMatch[1]);
 
   let warrantyYears = null;
-  const warrantyMatch = combinedText.match(/(\d)\s*年保証/) || combinedText.match(/(\d)\s*年間/);
+  // 優先1：spec.htmの仕様表「保証期間 | 1年」（表のセルなのでタグ除去後は
+  // 「保証期間 1年」のように空白区切りになる）。訴求文に年数が無い商品
+  // （例：HDJA-UTR、HD1-REUT、HDLH-OPA）はこの表にしか書かれていない。
+  // 優先2：「5年保証」等の訴求文。優先3：「3年間」等。
+  const warrantyMatch =
+    combinedText.match(/保証期間\s*[:：]?\s*(\d+)\s*年/) ||
+    combinedText.match(/(\d)\s*年保証/) ||
+    combinedText.match(/(\d)\s*年間/);
   if (warrantyMatch) warrantyYears = Number(warrantyMatch[1]);
 
   const cartridge = /カートリッジ/.test(combinedText);
@@ -489,6 +496,7 @@ async function main() {
     // カートリッジ側の画像に差し替える（表示上の主役はカートリッジそのものにしたいため）。
     let imageUrl = detail.imageUrl;
     let requiresSeparateEnclosure = false;
+    let warrantyYears = detail.warrantyYears;
     let enclosureInfo = null;
     let displaySeriesLabel = entry.modelCode;
     let displaySourceUrl = entry.sourceUrl;
@@ -522,6 +530,11 @@ async function main() {
             priceExTax: enclosurePrice ? enclosurePrice.priceExTax : null,
             url: entry.sourceUrl
           };
+        }
+        // 保証もカートリッジ(HDD本体)側のものを使う（本体ケースは1年、カートリッジは3年など
+        // 異なるため）。カートリッジ側に記載があれば差し替える。
+        if (requiresSeparateEnclosure && cartridgeDetail.warrantyYears) {
+          warrantyYears = cartridgeDetail.warrantyYears;
         }
         // カートリッジ側の画像があればそちらを優先し、無ければ本体(アダプター)側の画像を使う。
         if (cartridgeDetail.imageUrl) {
@@ -561,7 +574,7 @@ async function main() {
       enclosureInfo,
       displaySeriesLabel,
       displaySourceUrl,
-      warrantyYears: detail.warrantyYears,
+      warrantyYears,
       connection: entry.connection,
       interfaceDetail: detail.interfaceDetail,
       supports24h: detail.supports24h,
