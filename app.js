@@ -67,10 +67,41 @@
   // 明記されているのを確認済みのため、型番の先頭一致で直接救済する。
   // （根本対応としては、NASセレクター側のscrape.mjsでこのシリーズにも
   // 正しくseriesを振るよう直す方が望ましい）
+  //
+  // 2026-10-02追記：HDL4-LVUB（例：HDL4-LV04UB）等、同じくNASセレクター側で
+  // series:null のまま残っている型番ファミリーが他にも12種類見つかったため、
+  // 同じ方式でまとめて救済する。それぞれhdd.htm（公式対応表）で実際に列見出しを
+  // 確認済み（2026-10-02確認、調査内容はAreasメモ参照）：
+  //   ・HDL4-LVB/HDL2-LVB/HDL4-LVUB → 既存のHDL4-LV/HDL2-LV/HDL4-LVUと同じ
+  //     「LAN DISK L」列（ハイエンドモデル①の表）に実際に型番リンクとして掲載あり
+  //   ・HDL2-LENB/HDL1-LENB → 既存のHDL2-LEN/HDL1-LENと同じ「LAN DISK L」列
+  //     （ただし別表＝エントリーモデル①の表。見出し文字列は同じ「LAN DISK L」なので
+  //     スクレイパー側のOR-merge処理により同じ対応結果にまとまる）
+  //   ・HDL4-Z25SI3BB/HDL4-Z25WI3BB/HDL2-Z25SI3BB/HDL2-Z25WI3BB/
+  //     HDL4-Z25SI3BUB/HDL4-Z25WI3BUB → 2025年モデル表の「LAN DISK Z」列に
+  //     （暗号化対応のB/UB付き型番も含めて）型番リンクとして掲載あり。
+  //     SI3系・WI3系で別セルだが見出しはどちらも「LAN DISK Z」で同じため、
+  //     対応可否に差は無い（B/UB無しの型番と同一グループ）
+  //   ・BCSP-LVREUT(04/08/16) → NAS本体とバックアップ用HDD(HD1-REUT＋
+  //     HDLH-OPAカートリッジ)がセットになった製品。hdd.htm上に型番自体の掲載は
+  //     無いが、NAS部分がHDL2-LVシリーズそのものなので、同じ「LAN DISK L」列
+  //     として扱う
   const SERIES_CODE_FALLBACK_BY_PREFIX = [
     [/^HDL4-LXU/i, "LANDISKLX"],
     [/^HDL4-LX\d/i, "LANDISKLX"],
-    [/^HDL2-LX\d/i, "LANDISKLX"]
+    [/^HDL2-LX\d/i, "LANDISKLX"],
+    [/^HDL4-LV\d+UB$/i, "LANDISKL"],
+    [/^HDL4-LV\d+B$/i, "LANDISKL"],
+    [/^HDL2-LV\d+B$/i, "LANDISKL"],
+    [/^HDL2-LE\d+NB$/i, "LANDISKL"],
+    [/^HDL1-LE\d+NB$/i, "LANDISKL"],
+    [/^HDL4-Z25SI3B\d+UB$/i, "LANDISKZ"],
+    [/^HDL4-Z25SI3B\d+B$/i, "LANDISKZ"],
+    [/^HDL4-Z25WI3B\d+UB$/i, "LANDISKZ"],
+    [/^HDL4-Z25WI3B\d+B$/i, "LANDISKZ"],
+    [/^HDL2-Z25SI3B\d+B$/i, "LANDISKZ"],
+    [/^HDL2-Z25WI3B\d+B$/i, "LANDISKZ"],
+    [/^BCSP-LVREUT\d+$/i, "LANDISKL"]
   ];
 
   function resolveSeriesCode(entry) {
@@ -520,13 +551,24 @@
       `<span class="badge badge--drive">${DRIVE_TYPE_LABEL[p.driveType] || p.driveType}</span>`,
       `<span class="badge badge--benefit">${escapeHtml(DRIVE_TYPE_BENEFIT[p.driveType] || "")}</span>`
     ];
-    if (p.cartridge) badges.push(`<span class="badge badge--accent">カートリッジ式</span>`);
+    if (p.cartridge) {
+      badges.push(`<span class="badge badge--accent">${p.requiresSeparateEnclosure ? "カートリッジ式 + HDD" : "カートリッジ式"}</span>`);
+    }
     if (p.warrantyYears) badges.push(`<span class="badge">${p.warrantyYears}年保証</span>`);
     if (best.status === "生産終了") badges.push(`<span class="badge badge--warn">生産終了品</span>`);
 
-    const enclosureNote = p.requiresSeparateEnclosure
-      ? `<p class="das-card__enclosure-note">⚠ これは交換用カートリッジの価格です。本体ケース「${escapeHtml(p.modelCode)}」は別売りです。本体ケースをお持ちでない場合は、カートリッジだけ購入しても使用できません。</p>`
-      : "";
+    let enclosureNote = "";
+    if (p.requiresSeparateEnclosure) {
+      const enc = p.enclosureInfo;
+      const encName = enc ? escapeHtml(enc.modelCode) : escapeHtml(p.modelCode);
+      const encPriceText = enc && enc.priceIncTax
+        ? `（¥${enc.priceIncTax.toLocaleString()}${enc.priceExTax ? `・税抜¥${enc.priceExTax.toLocaleString()}` : ""}）`
+        : "";
+      const encLink = enc && enc.url
+        ? `<a href="${escapeAttr(enc.url)}" target="_blank" rel="noopener noreferrer">${encName}シリーズ${encPriceText}</a>`
+        : `${encName}シリーズ${encPriceText}`;
+      enclosureNote = `<p class="das-card__enclosure-note">⚠ これは交換用カートリッジ（HDD本体）の価格です。本体ケース「${encLink}」が別売りのため、お持ちでない場合は本体ケースも合わせてお求めください。</p>`;
+    }
 
     const allBtn = m.qualifying.length > 1
       ? `<button type="button" class="all-years-btn" data-role="all-variants-btn">型番をすべて表示する（${m.qualifying.length}件）</button>`
@@ -541,8 +583,8 @@
         <div class="das-card__head">
           ${imageHtml}
           <div class="das-card__head-text">
-            <p class="das-card__model"><a href="${escapeAttr(p.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(best.sku)}</a></p>
-            <p class="das-card__series">${escapeHtml(p.modelCode)}シリーズ</p>
+            <p class="das-card__model"><a href="${escapeAttr(p.displaySourceUrl || p.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(best.sku)}</a></p>
+            <p class="das-card__series">${escapeHtml(p.displaySeriesLabel || p.modelCode)}シリーズ</p>
           </div>
           <label class="das-card__compare">
             <input type="checkbox" data-role="compare-checkbox" data-id="${id}">
@@ -650,7 +692,7 @@
         cells: items.map((it) => ({
           plain: "",
           html: it.product.imageUrl
-            ? `<a href="${escapeAttr(it.product.sourceUrl)}" target="_blank" rel="noopener noreferrer"><img class="compare-table__image" src="${escapeAttr(it.product.imageUrl)}" alt="" onerror="this.remove()"></a>`
+            ? `<a href="${escapeAttr(it.product.displaySourceUrl || it.product.sourceUrl)}" target="_blank" rel="noopener noreferrer"><img class="compare-table__image" src="${escapeAttr(it.product.imageUrl)}" alt="" onerror="this.remove()"></a>`
             : "—"
         }))
       },
@@ -693,12 +735,18 @@
       },
       {
         label: "本体ケース",
-        cells: items.map((it) => ({
-          plain: it.product.requiresSeparateEnclosure ? "別売り" : "付属",
-          html: it.product.requiresSeparateEnclosure
-            ? `<span class="compare-table__warn">⚠ 別売り（カートリッジのみ。本体ケース「${escapeHtml(it.product.modelCode)}」が別途必要）</span>`
-            : "付属"
-        }))
+        cells: items.map((it) => {
+          if (!it.product.requiresSeparateEnclosure) {
+            return { plain: "付属", html: "付属" };
+          }
+          const enc = it.product.enclosureInfo;
+          const encName = enc ? escapeHtml(enc.modelCode) : escapeHtml(it.product.modelCode);
+          const encPriceText = enc && enc.priceIncTax ? `（¥${enc.priceIncTax.toLocaleString()}）` : "";
+          return {
+            plain: "別売り",
+            html: `<span class="compare-table__warn">⚠ 別売り。本体ケース「${encName}シリーズ」${encPriceText}が別途必要（合わせてお求めください）</span>`
+          };
+        })
       },
       {
         label: "保証年数",
@@ -721,7 +769,7 @@
     ];
 
     const headRow = `<tr><th class="compare-table__row-label"></th>${
-      items.map((it) => `<th><a href="${escapeAttr(it.product.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(it.variant.sku)}</a></th>`).join("")
+      items.map((it) => `<th><a href="${escapeAttr(it.product.displaySourceUrl || it.product.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(it.variant.sku)}</a></th>`).join("")
     }</tr>`;
 
     const bodyRows = rows.map((r) => {

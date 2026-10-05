@@ -30,7 +30,11 @@ const HDD_COMPAT_ANCHORS = [
 // このカートリッジ側のページから別途補う（事前調査で確認済みのURL）。
 const CARTRIDGE_SUPPLEMENTS = {
   "https://www.iodata.jp/product/nas/option/hdlh-opa": {
-    forAdapterUrl: "https://www.iodata.jp/product/hdd/bizhdd/hd1-reut"
+    forAdapterUrl: "https://www.iodata.jp/product/hdd/bizhdd/hd1-reut",
+    // カード側の表示用。この場合、表示・リンク先ともに「カートリッジ(HDLH-OPA)
+    // 本体」を主役にしたいので、hdd.htm由来のシリーズ名(HD1-REUT)ではなく
+    // こちらを使う。
+    cartridgeSeriesLabel: "HDLH-OPA"
   }
 };
 
@@ -260,6 +264,46 @@ function extractOwnVariants(html) {
   return [...bySku.values()].sort((a, b) => a.capacityTB - b.capacityTB);
 }
 
+// 容量バリエーションを持たない単体商品（例：HD1-REUTのような、容量表記の無い
+// カートリッジ式アダプター本体）向けの価格抽出。extractOwnVariants()は「TB/GB表記が
+// 行内にあること」を必須にしているため、容量を持たない単体商品の価格行は拾えない。
+// こちらは代わりに「期待する型番がセルに含まれていること」を手がかりにする。
+function extractSingleItemPrice(html, expectedModelCode) {
+  if (!html || !expectedModelCode) return null;
+  const tableRe = /<table[^>]*>[\s\S]*?<\/table>/gi;
+  let tableMatch;
+  while ((tableMatch = tableRe.exec(html)) !== null) {
+    const tableHtml = tableMatch[0];
+    const stripped = tableHtml.replace(/<[^>]+>/g, "");
+    if (!/型番/.test(stripped) || !/￥/.test(stripped)) continue;
+
+    const rowRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+    let rowMatch;
+    while ((rowMatch = rowRe.exec(tableHtml)) !== null) {
+      const rowHtml = rowMatch[1];
+      const cellRe = /<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi;
+      const cells = [];
+      let cellMatch;
+      while ((cellMatch = cellRe.exec(rowHtml)) !== null) {
+        cells.push(cellMatch[1].replace(/<[^>]+>/g, "").replace(/\s+/g, "").trim());
+      }
+      if (cells.length < 2) continue;
+      if (!cells.some((c) => c.toUpperCase().includes(expectedModelCode.toUpperCase()))) continue;
+
+      const rowText = cells.join(" ");
+      const priceMatch = rowText.match(/￥([\d,]+)(?:[^\d]*税抜￥([\d,]+))?/);
+      if (!priceMatch) continue;
+      const janMatch = rowText.match(/\b(\d{13})\b/);
+      return {
+        priceIncTax: Number(priceMatch[1].replace(/,/g, "")),
+        priceExTax: priceMatch[2] ? Number(priceMatch[2].replace(/,/g, "")) : null,
+        jan: janMatch ? janMatch[1] : ""
+      };
+    }
+  }
+  return null;
+}
+
 // 商品ページのテキストから、ドライブ数・保証年数・カートリッジ式かどうかを読み取る。
 //
 // ドライブ数の表記は商品によってバラバラ（例："2ドライブ搭載"、"2ドライブ 外付け
@@ -422,7 +466,7 @@ async function fetchDasProductDetail(sourceUrl) {
   const supports24h = extract24hSupport(combined);
   const raidModes = extractRaidModes(combined, driveCount);
 
-  return { variants, driveCount, warrantyYears, cartridge, imageUrl, interfaceDetail, supports24h, raidModes };
+  return { variants, driveCount, warrantyYears, cartridge, imageUrl, interfaceDetail, supports24h, raidModes, indexHtml };
 }
 
 async function main() {
@@ -441,9 +485,13 @@ async function main() {
     const detail = await fetchDasProductDetail(entry.sourceUrl);
     let variants = detail.variants;
     let cartridge = detail.cartridge;
-    // 本体(アダプター)側のページ画像を優先する。無ければ後段でカートリッジ側を使う。
+    // 本体(アダプター)側のページ画像。カートリッジ式アダプターの場合は後段で
+    // カートリッジ側の画像に差し替える（表示上の主役はカートリッジそのものにしたいため）。
     let imageUrl = detail.imageUrl;
     let requiresSeparateEnclosure = false;
+    let enclosureInfo = null;
+    let displaySeriesLabel = entry.modelCode;
+    let displaySourceUrl = entry.sourceUrl;
 
     // HD1-REUT（カートリッジ式アダプター本体）は、それ自体には容量バリエーションが無く、
     // 別売りの交換用カートリッジ(HDLH-OPAシリーズ)の容量がそのまま選択肢になる。
@@ -454,12 +502,31 @@ async function main() {
         if (cartridgeDetail.variants.length > 0) {
           variants = cartridgeDetail.variants;
           cartridge = true;
-          // この場合の価格は「交換用カートリッジ単体」の価格であり、本体ケース
-          // （entry.modelCode、例："HD1-REUT"）は別売り。カートリッジだけ買っても
-          // 本体ケースが無いと使えないため、その旨をサイト側で案内するためのフラグ。
+          // この場合の価格は「交換用カートリッジ（HDD本体）」単体の価格であり、
+          // 本体ケース（entry.modelCode、例："HD1-REUT"）は別売り。カートリッジだけ
+          // 買っても本体ケースが無いと使えないため、その旨をサイト側で案内するための
+          // フラグと、案内文に使う本体ケース側の商品名・価格をまとめておく。
           requiresSeparateEnclosure = true;
+          // 表示上は「カートリッジ(HDLH-OPA)」を主役にする：シリーズ名・リンク先とも
+          // hdd.htm由来のHD1-REUTではなくカートリッジ側に差し替える。
+          displaySeriesLabel = info.cartridgeSeriesLabel || entry.modelCode;
+          displaySourceUrl = cartridgeUrl;
+
+          // 本体ケース(HD1-REUT)自体の価格は、容量表記が無いため通常の
+          // extractOwnVariants()では拾えない。専用の抽出関数で別途拾う
+          // （detail.indexHtmlは冒頭でHD1-REUTの商品ページから既に取得済みのものを再利用）。
+          const enclosurePrice = extractSingleItemPrice(detail.indexHtml, entry.modelCode);
+          enclosureInfo = {
+            modelCode: entry.modelCode,
+            priceIncTax: enclosurePrice ? enclosurePrice.priceIncTax : null,
+            priceExTax: enclosurePrice ? enclosurePrice.priceExTax : null,
+            url: entry.sourceUrl
+          };
         }
-        if (!imageUrl) imageUrl = cartridgeDetail.imageUrl;
+        // カートリッジ側の画像があればそちらを優先し、無ければ本体(アダプター)側の画像を使う。
+        if (cartridgeDetail.imageUrl) {
+          imageUrl = cartridgeDetail.imageUrl;
+        }
         await sleep(REQUEST_INTERVAL_MS);
       }
     }
@@ -491,6 +558,9 @@ async function main() {
       driveCount: detail.driveCount,
       cartridge,
       requiresSeparateEnclosure,
+      enclosureInfo,
+      displaySeriesLabel,
+      displaySourceUrl,
       warrantyYears: detail.warrantyYears,
       connection: entry.connection,
       interfaceDetail: detail.interfaceDetail,
