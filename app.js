@@ -559,23 +559,28 @@
 
     let enclosureNote = "";
     if (p.requiresSeparateEnclosure) {
+      // 公式ページの表現：外側＝「USB接続アダプター」、中身＝「専用のHDDカートリッジ」
       const enc = p.enclosureInfo;
-      const encName = enc ? escapeHtml(enc.modelCode) : escapeHtml(p.modelCode);
+      const encName = escapeHtml(enc ? enc.modelCode : p.modelCode);
+      const encUrl = enc && enc.url ? enc.url : p.sourceUrl;
       const encPriceText = enc && enc.priceIncTax
         ? `（¥${enc.priceIncTax.toLocaleString()}${enc.priceExTax ? `・税抜¥${enc.priceExTax.toLocaleString()}` : ""}）`
         : "";
-      const encLink = enc && enc.url
-        ? `<a href="${escapeAttr(enc.url)}" target="_blank" rel="noopener noreferrer">${encName}シリーズ${encPriceText}</a>`
-        : `${encName}シリーズ${encPriceText}`;
-      enclosureNote = `<p class="das-card__enclosure-note">⚠ これは交換用カートリッジ（HDD本体）の価格です。本体ケース「${encLink}」が別売りのため、お持ちでない場合は本体ケースも合わせてお求めください。</p>`;
+      const encLink = `<a href="${escapeAttr(encUrl)}" target="_blank" rel="noopener noreferrer">${encName}シリーズ${encPriceText}</a>`;
+      enclosureNote = `<p class="das-card__enclosure-note">⚠ これは専用の「HDDカートリッジ」（中身）の価格です。外側の「USB接続アダプター」（本体ケース）として「${encLink}」が別売りのため、お持ちでない場合は合わせてお求めください。</p>`;
     }
 
     const allBtn = m.qualifying.length > 1
       ? `<button type="button" class="all-years-btn" data-role="all-variants-btn">型番をすべて表示する（${m.qualifying.length}件）</button>`
       : "";
 
-    const imageHtml = p.imageUrl
-      ? `<img class="das-card__image" src="${escapeAttr(p.imageUrl)}" alt="" onerror="this.remove()">`
+    // 再生成前の古いデータでは本体ケース(HD1-REUT)の画像が入っているため、
+    // カートリッジ(HDLH-OPA)の画像に差し替える（再生成後は p.imageUrl がそのまま正しい）
+    const cardImageUrl = (p.requiresSeparateEnclosure && !p.displaySourceUrl)
+      ? "https://www.iodata.jp/image/hdlh-opa_l.jpg"
+      : p.imageUrl;
+    const imageHtml = cardImageUrl
+      ? `<img class="das-card__image" src="${escapeAttr(cardImageUrl)}" alt="" onerror="this.remove()">`
       : "";
 
     return `
@@ -583,8 +588,8 @@
         <div class="das-card__head">
           ${imageHtml}
           <div class="das-card__head-text">
-            <p class="das-card__model"><a href="${escapeAttr(p.displaySourceUrl || p.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(best.sku)}</a></p>
-            <p class="das-card__series">${escapeHtml(p.displaySeriesLabel || p.modelCode)}シリーズ</p>
+            <p class="das-card__model"><a href="${escapeAttr(p.displaySourceUrl || (p.requiresSeparateEnclosure ? "https://www.iodata.jp/product/nas/option/hdlh-opa/" : p.sourceUrl))}" target="_blank" rel="noopener noreferrer">${escapeHtml(best.sku)}</a></p>
+            <p class="das-card__series">${escapeHtml(p.displaySeriesLabel || (p.requiresSeparateEnclosure ? best.sku.replace(/\d+$/, "") : p.modelCode))}シリーズ</p>
           </div>
           <label class="das-card__compare">
             <input type="checkbox" data-role="compare-checkbox" data-id="${id}">
@@ -730,21 +735,20 @@
         })
       },
       {
+        // 「カートリッジ式」と「本体ケース」は同じ話なので1行にまとめる。
+        // カートリッジ式でない商品は「—」（対象外）、カートリッジ単体販売の商品には
+        // 外側のUSB接続アダプターが別売りである旨を同じセルに添える。
         label: "カートリッジ式",
-        cells: items.map((it) => ({ plain: it.product.cartridge ? "○" : "—", html: it.product.cartridge ? "○" : "—" }))
-      },
-      {
-        label: "本体ケース",
         cells: items.map((it) => {
-          if (!it.product.requiresSeparateEnclosure) {
-            return { plain: "付属", html: "付属" };
-          }
-          const enc = it.product.enclosureInfo;
-          const encName = enc ? escapeHtml(enc.modelCode) : escapeHtml(it.product.modelCode);
+          const p = it.product;
+          if (!p.cartridge) return { plain: "—", html: "—" };
+          if (!p.requiresSeparateEnclosure) return { plain: "○", html: "○" };
+          const enc = p.enclosureInfo;
+          const encName = escapeHtml(enc ? enc.modelCode : p.modelCode);
           const encPriceText = enc && enc.priceIncTax ? `（¥${enc.priceIncTax.toLocaleString()}）` : "";
           return {
-            plain: "別売り",
-            html: `<span class="compare-table__warn">⚠ 別売り。本体ケース「${encName}シリーズ」${encPriceText}が別途必要（合わせてお求めください）</span>`
+            plain: "○（HDDカートリッジのみ）",
+            html: `○ HDDカートリッジのみ<span class="compare-table__warn">⚠ 外側の「USB接続アダプター」${encName}シリーズ${encPriceText}が別売り。合わせてお求めください</span>`
           };
         })
       },

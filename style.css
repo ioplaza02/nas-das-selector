@@ -409,7 +409,7 @@ body {
 }
 .compare-table__image { width: 48px; height: 48px; object-fit: contain; background: var(--paper); border-radius: var(--radius); }
 .compare-table__price { font-weight: 700; }
-.compare-table__warn { color: var(--warn); font-size: 12px; line-height: 1.5; display: inline-block; }
+.compare-table__warn { display: block; margin-top: 4px; max-width: 220px; color: var(--warn); font-size: 12px; line-height: 1.5; white-space: normal; }
 .compare-table tr.compare-table__row--diff th,
 .compare-table tr.compare-table__row--diff td {
   background: var(--warn-bg);
