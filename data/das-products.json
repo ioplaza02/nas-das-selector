@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04T21:09:38.700Z",
+  "updatedAt": "2026-10-05T04:26:20.445Z",
   "products": [
     {
       "id": "hd1-reut",
@@ -8,7 +8,15 @@
       "driveCount": 1,
       "cartridge": true,
       "requiresSeparateEnclosure": true,
-      "warrantyYears": null,
+      "enclosureInfo": {
+        "modelCode": "HD1-REUT",
+        "priceIncTax": 16500,
+        "priceExTax": 15000,
+        "url": "https://www.iodata.jp/product/hdd/bizhdd/hd1-reut/index.htm"
+      },
+      "displaySeriesLabel": "HDLH-OPA",
+      "displaySourceUrl": "https://www.iodata.jp/product/nas/option/hdlh-opa",
+      "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
       "supports24h": false,
@@ -22,7 +30,7 @@
         "LANDISKA": true,
         "LANDISKZ": true
       },
-      "imageUrl": "https://www.iodata.jp/image/hd1-reut_l.jpg",
+      "imageUrl": "https://www.iodata.jp/image/hdlh-opa_l.jpg",
       "variants": [
         {
           "sku": "HDLH-OPA1",
@@ -90,7 +98,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd1-reut/index.htm",
-      "lastCheckedAt": "2026-10-04T21:06:30.053Z"
+      "lastCheckedAt": "2026-10-05T04:23:12.164Z"
     },
     {
       "id": "hd4-utnc",
@@ -99,6 +107,9 @@
       "driveCount": 4,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HD4-UTNC",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/index.htm",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -178,7 +189,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/index.htm",
-      "lastCheckedAt": "2026-10-04T21:06:35.873Z"
+      "lastCheckedAt": "2026-10-05T04:23:17.966Z"
     },
     {
       "id": "hd4-utn",
@@ -187,6 +198,9 @@
       "driveCount": 4,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HD4-UTN",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utn/index.htm",
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -266,7 +280,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utn/index.htm",
-      "lastCheckedAt": "2026-10-04T21:06:40.786Z"
+      "lastCheckedAt": "2026-10-05T04:23:22.933Z"
     },
     {
       "id": "hdw-utn",
@@ -275,6 +289,9 @@
       "driveCount": 2,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDW-UTN",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utn/",
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -377,7 +394,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utn/",
-      "lastCheckedAt": "2026-10-04T21:06:45.818Z"
+      "lastCheckedAt": "2026-10-05T04:23:27.803Z"
     },
     {
       "id": "hdw-utnc",
@@ -386,6 +403,9 @@
       "driveCount": 2,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDW-UTNC",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -496,7 +516,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/",
-      "lastCheckedAt": "2026-10-04T21:06:50.908Z"
+      "lastCheckedAt": "2026-10-05T04:23:32.878Z"
     },
     {
       "id": "hdw-utnb",
@@ -505,6 +525,9 @@
       "driveCount": 2,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDW-UTNB",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/",
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -615,7 +638,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/",
-      "lastCheckedAt": "2026-10-04T21:06:55.954Z"
+      "lastCheckedAt": "2026-10-05T04:23:37.647Z"
     },
     {
       "id": "hdw-utu",
@@ -624,6 +647,9 @@
       "driveCount": 2,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDW-UTU",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utu/",
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -678,7 +704,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utu/",
-      "lastCheckedAt": "2026-10-04T21:07:00.875Z"
+      "lastCheckedAt": "2026-10-05T04:23:42.646Z"
     },
     {
       "id": "hdja-utnc",
@@ -687,6 +713,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDJA-UTNC",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -793,7 +822,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/",
-      "lastCheckedAt": "2026-10-04T21:07:06.014Z"
+      "lastCheckedAt": "2026-10-05T04:23:47.756Z"
     },
     {
       "id": "hdja-utnb",
@@ -802,6 +831,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDJA-UTNB",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnb/",
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -908,7 +940,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnb/",
-      "lastCheckedAt": "2026-10-04T21:07:11.020Z"
+      "lastCheckedAt": "2026-10-05T04:23:52.678Z"
     },
     {
       "id": "hdja-utu",
@@ -917,6 +949,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDJA-UTU",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utu/",
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -967,7 +1002,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utu/",
-      "lastCheckedAt": "2026-10-04T21:07:15.961Z"
+      "lastCheckedAt": "2026-10-05T04:23:57.638Z"
     },
     {
       "id": "hdja-utnldc",
@@ -976,6 +1011,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDJA-UTN/LDC",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1082,7 +1120,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/",
-      "lastCheckedAt": "2026-10-04T21:07:21.073Z"
+      "lastCheckedAt": "2026-10-05T04:24:02.679Z"
     },
     {
       "id": "hdja-utnldb",
@@ -1091,6 +1129,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDJA-UTN/LDB",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/",
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1197,7 +1238,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/",
-      "lastCheckedAt": "2026-10-04T21:07:26.067Z"
+      "lastCheckedAt": "2026-10-05T04:24:07.544Z"
     },
     {
       "id": "hdja-utn",
@@ -1206,6 +1247,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDJA-UTN",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utn/",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1247,7 +1291,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utn/",
-      "lastCheckedAt": "2026-10-04T21:07:30.945Z"
+      "lastCheckedAt": "2026-10-05T04:24:12.461Z"
     },
     {
       "id": "hdja-utnld",
@@ -1256,6 +1300,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDJA-UTN/LD",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnld/",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1289,7 +1336,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnld/",
-      "lastCheckedAt": "2026-10-04T21:07:35.795Z"
+      "lastCheckedAt": "2026-10-05T04:24:17.308Z"
     },
     {
       "id": "hdja-utr",
@@ -1298,7 +1345,10 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
-      "warrantyYears": null,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDJA-UTR",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utr/",
+      "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
       "supports24h": true,
@@ -1355,7 +1405,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utr/",
-      "lastCheckedAt": "2026-10-04T21:07:40.661Z"
+      "lastCheckedAt": "2026-10-05T04:24:22.080Z"
     },
     {
       "id": "hdd-utb",
@@ -1364,6 +1414,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDD-UTB",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/",
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1436,7 +1489,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/",
-      "lastCheckedAt": "2026-10-04T21:07:45.603Z"
+      "lastCheckedAt": "2026-10-05T04:24:26.917Z"
     },
     {
       "id": "hdw-utcs",
@@ -1445,6 +1498,9 @@
       "driveCount": 2,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDW-UTCS",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/index.htm",
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1504,7 +1560,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/index.htm",
-      "lastCheckedAt": "2026-10-04T21:07:50.338Z"
+      "lastCheckedAt": "2026-10-05T04:24:31.691Z"
     },
     {
       "id": "zhd4-utxr",
@@ -1513,6 +1569,9 @@
       "driveCount": 4,
       "cartridge": true,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "ZHD4-UTXR",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd4-utxr/",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1583,7 +1642,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd4-utxr/",
-      "lastCheckedAt": "2026-10-04T21:07:55.084Z"
+      "lastCheckedAt": "2026-10-05T04:24:36.449Z"
     },
     {
       "id": "hdw-utb",
@@ -1592,6 +1651,9 @@
       "driveCount": 2,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDW-UTB",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utb/index.htm",
       "warrantyYears": 5,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1684,7 +1746,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utb/index.htm",
-      "lastCheckedAt": "2026-10-04T21:08:00.112Z"
+      "lastCheckedAt": "2026-10-05T04:24:41.568Z"
     },
     {
       "id": "hdw-utc",
@@ -1693,6 +1755,9 @@
       "driveCount": 2,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDW-UTC",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utc/index.htm",
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1753,7 +1818,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utc/index.htm",
-      "lastCheckedAt": "2026-10-04T21:08:05.009Z"
+      "lastCheckedAt": "2026-10-05T04:24:46.522Z"
     },
     {
       "id": "zhd2-utx",
@@ -1762,6 +1827,9 @@
       "driveCount": 2,
       "cartridge": true,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "ZHD2-UTX",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd2-utx/",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1829,7 +1897,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd2-utx/",
-      "lastCheckedAt": "2026-10-04T21:08:09.923Z"
+      "lastCheckedAt": "2026-10-05T04:24:51.424Z"
     },
     {
       "id": "hds2-utxs",
@@ -1838,6 +1906,9 @@
       "driveCount": 2,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDS2-UTXS",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/hds2-utxs/",
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1873,7 +1944,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hds2-utxs/",
-      "lastCheckedAt": "2026-10-04T21:08:14.722Z"
+      "lastCheckedAt": "2026-10-05T04:24:56.271Z"
     },
     {
       "id": "hdja-utrwhq",
@@ -1882,6 +1953,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDJA-UTRWHQ",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utrwhq/",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1914,7 +1988,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utrwhq/",
-      "lastCheckedAt": "2026-10-04T21:08:29.059Z"
+      "lastCheckedAt": "2026-10-05T04:25:11.069Z"
     },
     {
       "id": "hdja-utwld",
@@ -1923,6 +1997,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDJA-UTW/LD",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utwld/",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -1987,7 +2064,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utwld/",
-      "lastCheckedAt": "2026-10-04T21:08:33.988Z"
+      "lastCheckedAt": "2026-10-05T04:25:16.006Z"
     },
     {
       "id": "hdd-ut",
@@ -1996,6 +2073,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDD-UT",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-ut/",
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -2093,7 +2173,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-ut/",
-      "lastCheckedAt": "2026-10-04T21:08:39.023Z"
+      "lastCheckedAt": "2026-10-05T04:25:20.812Z"
     },
     {
       "id": "hdcz-utc",
@@ -2102,6 +2182,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDCZ-UTC",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-utc/",
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -2198,7 +2281,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-utc/",
-      "lastCheckedAt": "2026-10-04T21:08:44.040Z"
+      "lastCheckedAt": "2026-10-05T04:25:25.638Z"
     },
     {
       "id": "zhd-utx",
@@ -2207,6 +2290,9 @@
       "driveCount": 4,
       "cartridge": true,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "ZHD-UTX",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd-utx/",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -2263,7 +2349,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd-utx/",
-      "lastCheckedAt": "2026-10-04T21:08:48.899Z"
+      "lastCheckedAt": "2026-10-05T04:25:30.580Z"
     },
     {
       "id": "hdcz-ut",
@@ -2272,6 +2358,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDCZ-UT",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-ut/",
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.1 Gen1",
@@ -2360,7 +2449,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-ut/",
-      "lastCheckedAt": "2026-10-04T21:08:53.920Z"
+      "lastCheckedAt": "2026-10-05T04:25:35.754Z"
     },
     {
       "id": "hdcl-ute",
@@ -2369,6 +2458,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDCL-UTE",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcl-ute/",
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": "USB 3.1 Gen1",
@@ -2465,7 +2557,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcl-ute/",
-      "lastCheckedAt": "2026-10-04T21:09:03.901Z"
+      "lastCheckedAt": "2026-10-05T04:25:45.805Z"
     },
     {
       "id": "rhd-ux",
@@ -2474,6 +2566,9 @@
       "driveCount": 8,
       "cartridge": true,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "RHD-UX",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/rhd-ux/",
       "warrantyYears": 1,
       "connection": "USB",
       "interfaceDetail": null,
@@ -2514,7 +2609,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/rhd-ux/",
-      "lastCheckedAt": "2026-10-04T21:09:08.800Z"
+      "lastCheckedAt": "2026-10-05T04:25:50.729Z"
     },
     {
       "id": "hdja-sutr",
@@ -2523,6 +2618,9 @@
       "driveCount": 1,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDJA-SUTR",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-sutr/index.htm",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -2559,7 +2657,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-sutr/index.htm",
-      "lastCheckedAt": "2026-10-04T21:09:33.676Z"
+      "lastCheckedAt": "2026-10-05T04:26:15.395Z"
     },
     {
       "id": "hdw-ut",
@@ -2568,6 +2666,9 @@
       "driveCount": 2,
       "cartridge": false,
       "requiresSeparateEnclosure": false,
+      "enclosureInfo": null,
+      "displaySeriesLabel": "HDW-UTB",
+      "displaySourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-ut/index.htm",
       "warrantyYears": 3,
       "connection": "USB",
       "interfaceDetail": "USB 3.2 Gen1",
@@ -2658,7 +2759,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-ut/index.htm",
-      "lastCheckedAt": "2026-10-04T21:09:38.700Z"
+      "lastCheckedAt": "2026-10-05T04:26:20.445Z"
     }
   ]
 }
