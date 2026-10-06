@@ -813,7 +813,45 @@
             <div class="all-years-accordion__inner" data-role="all-variants-inner">${allVariantsInnerHtml(m.qualifying)}</div>
           </div>
         </div>
+        ${factoryRaidNote(p, best)}
       </div>`;
+  }
+
+  // ---------- 2ドライブ・4ドライブのDASの「工場出荷時のRAID」注釈 ----------
+  //
+  // カードの容量は、公式の表記どおり搭載HDDの合計（RAID 0のとき）で表示している。
+  // 工場出荷時のRAID設定のままだと実際に使える容量（実効容量）は少なくなるため、
+  // そのことと、出荷時のままでもDAS側で冗長化されている（＝安心）ことを注釈で伝える。
+  // 出荷時設定は、各シリーズの公式商品ページ・仕様ページの「出荷時設定」の記載で確認したもの（2026年10月確認）。
+  const FACTORY_RAID = {
+    "hd4-utn":   { mode: "RAID 5", ratio: 0.75, redundant: true,  why: "4台のうち1台のHDDが故障してもデータが失われない構成" },
+    "hd4-utnc":  { mode: "RAID 5", ratio: 0.75, redundant: true,  why: "4台のうち1台のHDDが故障してもデータが失われない構成" },
+    "zhd4-utxr": { mode: "RAID 6", ratio: 0.5,  redundant: true,  why: "4台のうち2台のHDDが故障してもデータが失われない構成" },
+    "hdw-utn":   { mode: "RAID 1（ミラーリング）", ratio: 0.5, redundant: true, why: "2台のHDDに同じデータを書き込み、1台が故障してもデータが失われない構成" },
+    "hdw-utnc":  { mode: "RAID 1（ミラーリング）", ratio: 0.5, redundant: true, why: "2台のHDDに同じデータを書き込み、1台が故障してもデータが失われない構成" },
+    "hdw-utnb":  { mode: "RAID 1（ミラーリング）", ratio: 0.5, redundant: true, why: "2台のHDDに同じデータを書き込み、1台が故障してもデータが失われない構成" },
+    "hdw-utu":   { mode: "RAID 1（ミラーリング）", ratio: 0.5, redundant: true, why: "2台のHDDに同じデータを書き込み、1台が故障してもデータが失われない構成" },
+    "hdw-utc":   { mode: "RAID 1（ミラーリング）", ratio: 0.5, redundant: true, why: "2台のHDDに同じデータを書き込み、1台が故障してもデータが失われない構成" },
+    "zhd2-utx":  { mode: "RAID 1（ミラーリング）", ratio: 0.5, redundant: true, why: "2台のHDDに同じデータを書き込み、1台が故障してもデータが失われない構成" },
+    "hds2-utxs": { mode: "RAID 1（ミラーリング）", ratio: 0.5, redundant: true, why: "2台のHDDに同じデータを書き込み、1台が故障してもデータが失われない構成" },
+    "hdw-ut":    { mode: "RAID 1（ミラーリング）", ratio: 0.5, redundant: true, why: "2台のHDDに同じデータを書き込み、1台が故障してもデータが失われない構成" },
+    // 出荷時は冗長化されていない機種。「安心」とは書かず、切り替えれば冗長化できることを案内する
+    "hdw-utcs":  { mode: "RAID 0（ストライピング）", ratio: 1, redundant: false,
+                   switchTo: "ミラーリング（RAID 1）やRAIDeXに切り替えると、実効容量は半分になりますが冗長化できます" },
+    "hdw-utb":   { mode: "マルチディスク（2台を別々のドライブとして使用）", ratio: 1, redundant: false,
+                   switchTo: "ミラーリング（RAID 1）に切り替えると、実効容量は半分になりますが冗長化できます" }
+  };
+
+  function factoryRaidNote(p, best) {
+    const info = FACTORY_RAID[p.id];
+    if (!info || !best || !best.capacityTB || (p.driveCount || 1) < 2) return "";
+    const usable = formatTB(Math.round(best.capacityTB * info.ratio * 100) / 100);
+    if (info.redundant) {
+      return `<p class="das-card__raid-note">工場出荷時のRAIDは<strong>${escapeHtml(info.mode)}</strong>で、実効容量は${escapeHtml(usable)}です。`
+        + `${escapeHtml(info.why)}なので、バックアップ先のこのDASにおいても冗長化が図れます。</p>`;
+    }
+    return `<p class="das-card__raid-note das-card__raid-note--plain">工場出荷時は<strong>${escapeHtml(info.mode)}</strong>で、実効容量は${escapeHtml(usable)}（冗長化なし）です。`
+      + `${escapeHtml(info.switchTo)}。</p>`;
   }
 
   function priceHtml(v) {
