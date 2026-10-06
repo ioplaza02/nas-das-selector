@@ -506,3 +506,201 @@ body {
 }
 .password-gate__submit:hover { background: var(--accent-deep); }
 .password-gate__error { margin: 10px 0 0; font-size: 12px; color: #e08a6b; }
+
+/* ヘッダー下の説明文の上余白が黒い帯の外にはみ出して、明るい隙間ができないようにする */
+.hint-bar { display: flow-root; }
+
+/* ---------- 一覧から機種を選ぶ（蛇腹パネル） ---------- */
+
+/* 検索窓（左）と「一覧から機種を選ぶ」ボタン（右）を横一列に並べる。
+   ヘッダーの黒い帯の厚みを増やさないよう、ボタンの高さは検索窓に合わせる */
+.brand-banner__search { max-width: 600px; }
+.search-row {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+.search-row .search { flex: 1 1 auto; min-width: 0; }
+.search-row .browse-toggle {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 0 16px;
+}
+
+.browse-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: #9bd8bf;
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: color .15s, background .15s;
+}
+.browse-toggle:hover { background: rgba(47, 122, 96, 0.25); color: #fff; }
+.browse-toggle--open, .browse-toggle--open:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.browse-toggle__icon { font-size: 15px; line-height: 1; }
+.browse-toggle__arrow { transition: transform .2s; display: inline-block; }
+.browse-toggle--open .browse-toggle__arrow { transform: rotate(180deg); }
+
+.browse-panel {
+  background: var(--ink-2);
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .3s ease;
+  border-bottom: 3px solid transparent;
+}
+.browse-panel--open {
+  grid-template-rows: 1fr;
+  border-bottom-color: var(--accent);
+}
+.browse-panel__inner {
+  overflow: hidden;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.browse-panel--open .browse-panel__inner { padding: 18px 24px 22px; }
+
+.browse-panel__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.browse-panel__title {
+  margin: 0;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
+}
+.browse-panel__sub {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #a9aeb1;
+}
+.browse-panel__close {
+  font-family: inherit;
+  font-size: 12px;
+  color: #cfd3d5;
+  background: none;
+  border: 1px solid #4a525b;
+  border-radius: 999px;
+  padding: 4px 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.browse-panel__close:hover { border-color: var(--accent); color: #fff; }
+
+.browse-filters { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+.browse-filter-row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.browse-filter-row__label {
+  width: 72px;
+  font-size: 12px;
+  color: #a9aeb1;
+  flex-shrink: 0;
+}
+.browse-pill {
+  font-family: inherit;
+  font-size: 12px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  border: 1px solid #4a525b;
+  background: transparent;
+  color: #e3e6e7;
+  cursor: pointer;
+}
+.browse-pill:hover { border-color: var(--accent); }
+.browse-pill--on { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+
+.browse-count { margin: 0 0 8px; font-size: 12px; color: #a9aeb1; }
+.browse-loading { margin: 8px 0; font-size: 13px; color: #cfd3d5; }
+
+.browse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+  max-height: 62vh;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.browse-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.browse-card__image {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  background: #f6f7f5;
+  border-radius: 4px;
+}
+.browse-card__image img { max-width: 100%; max-height: 58px; object-fit: contain; }
+.browse-card__name { margin: 0; font-size: 14px; font-weight: 700; line-height: 1.4; }
+.browse-card__meta { margin: 0; font-size: 11px; color: var(--text-faint); }
+.browse-card__cap-label { margin: 6px 0 2px; font-size: 11px; color: var(--text-soft); }
+/* 容量ボタンは常に2列で並べる。型番が長いシリーズ（例：HDL1-LA01SOHO）でも
+   1列に縦並びにならず、カードの高さがそろうようにする */
+.browse-card__caps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+.browse-card__caps .cap-btn { width: 100%; min-width: 0; padding: 4px 4px; }
+.browse-card__caps .cap-btn__sku { max-width: 100%; overflow-wrap: anywhere; text-align: center; letter-spacing: -0.02em; }
+.cap-btn {
+  font-family: inherit;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  transition: border-color .12s, background .12s;
+}
+.cap-btn:hover { border-color: var(--accent); background: var(--accent-bg); }
+.cap-btn__tb { font-size: 13px; font-weight: 700; color: var(--text); }
+.cap-btn__sku { font-size: 9px; color: var(--text-faint); }
+
+.link-btn {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent-deep);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.empty-state__body + .empty-state__body { margin-top: 8px; }
+
+@media (max-width: 720px) {
+  .browse-panel__inner, .browse-panel--open .browse-panel__inner { padding-left: 16px; padding-right: 16px; }
+  .browse-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); max-height: 70vh; }
+  .browse-filter-row__label { width: 100%; }
+}
+
+
+/* 価格の注意書き（DAS候補一覧のすぐ上に表示。ISSセレクターと同じ形） */
+.price-notice {
+  margin: 0 0 14px;
+  padding: 8px 14px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--accent-deep);
+  background: var(--accent-bg);
+  border-radius: var(--radius);
+}

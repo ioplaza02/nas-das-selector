@@ -29,9 +29,17 @@
     <img src="landisk-logo.png" alt="LAN DISK" class="brand-banner__logo">
   </div>
   <div class="brand-banner__search">
-    <div class="search">
-      <input type="text" id="model-input" class="search__input" placeholder="NASの型番を入力してください" autocomplete="off">
-      <div class="search__suggest" id="model-suggest" hidden></div>
+    <!-- 型番を入れようとして「分からない」と思ったその場で目に入るよう、検索窓のすぐ右隣に並べる（ISSセレクターと同じ） -->
+    <div class="search-row">
+      <div class="search">
+        <input type="text" id="model-input" class="search__input" placeholder="NASの型番を入力してください" autocomplete="off">
+        <div class="search__suggest" id="model-suggest" hidden></div>
+      </div>
+      <button type="button" class="browse-toggle" id="browse-toggle" aria-expanded="false" aria-controls="browse-panel">
+        <span class="browse-toggle__icon" aria-hidden="true">☰</span>
+        一覧から機種を選ぶ
+        <span class="browse-toggle__arrow" aria-hidden="true">▾</span>
+      </button>
     </div>
   </div>
 </header>
@@ -40,11 +48,24 @@
   <p class="hero__hint">容量まで含めた完全な型番でなくてもOK。例えば「HB06」だけでも「HDL6-HB06」が候補に出ます。</p>
 </div>
 
+<section class="browse-panel" id="browse-panel" aria-label="一覧から機種を選ぶ">
+  <div class="browse-panel__inner">
+    <div class="browse-panel__head">
+      <p class="browse-panel__title">NASの機種を選ぶ<span class="browse-panel__sub">シリーズ名を確認して、お使いの（またはご購入予定の）容量のボタンを押すと、そのNASに合うバックアップ用HDD（DAS）が表示されます</span></p>
+      <button type="button" class="browse-panel__close" id="browse-close">閉じる ▴</button>
+    </div>
+    <div class="browse-filters" id="browse-filters"></div>
+    <p class="browse-count" id="browse-count"></p>
+    <div class="browse-grid" id="browse-grid"></div>
+  </div>
+</section>
+
 <main class="layout">
   <section class="result-area">
     <div class="empty-state" id="empty-state">
       <p class="empty-state__title">NASの型番を入力してください</p>
       <p class="empty-state__body">上の検索欄にNASの型番（一部でも可）を入れると、そのNASの実効容量に合わせたバックアップ用HDD（DAS）の候補が表示されます。NASセレクターの比較画面から「おすすめのDASを見る」で来た場合は、自動的に選択された状態になります。</p>
+      <p class="empty-state__body">型番を入力しなくても、<button type="button" class="link-btn" id="browse-open-inline">一覧から機種を選ぶ</button>こともできます。</p>
     </div>
 
     <div id="nas-info" hidden class="nas-info">
@@ -77,6 +98,11 @@
         <button type="button" class="share-btn" id="share-btn" hidden>このページのURLをコピー</button>
         <span class="share-feedback" id="share-feedback" hidden></span>
       </div>
+      <!-- 価格の注意書き（NAS・ISS・スイッチセレクターと同じ文） -->
+      <p class="price-notice">
+        表示価格は、I-O DATA公式サイトに掲載のメーカー希望小売価格（税込）です。
+        価格・在庫状況は変動する場合があります。最新情報は、各商品の型番のリンク先のI-O DATA公式ページでご確認ください。
+      </p>
       <div id="das-groups"></div>
     </div>
   </section>

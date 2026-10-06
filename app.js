@@ -162,6 +162,7 @@
   const includeDiscontinuedToggle = el("#include-discontinued-toggle");
 
   let nasEntries = [];      // 検索対象（variant単位でフラット化したNAS一覧）
+  let nasSeriesList = null; // 「一覧から機種を選ぶ」パネル用（NASセレクターのシリーズ一覧そのまま）
   let dasProducts = [];
   let nasLoaded = false;
   let dasLoaded = false;
@@ -178,6 +179,7 @@
     .then((res) => res.json())
     .then((data) => {
       const products = data.products || [];
+      nasSeriesList = products; // 「一覧から機種を選ぶ」パネル用に、シリーズ単位の一覧も残しておく
       const flat = [];
       products.forEach((p) => {
         const variants = p.variants || [];
@@ -198,11 +200,14 @@
       });
       nasEntries = flat;
       nasLoaded = true;
+      if (browseIsOpen()) renderBrowse();
       if (modelInput.value.trim()) modelInput.dispatchEvent(new Event("input"));
       applyStateFromUrl();
     })
     .catch(() => {
       updatedAtEl.textContent = "NASセレクターのデータ取得に失敗しました。時間をおいて再度お試しください。";
+      nasSeriesList = [];
+      if (browseIsOpen()) renderBrowse();
     });
 
   fetch(DAS_DATA_URL)
@@ -242,6 +247,205 @@
     } else if (model) {
       modelInput.value = model;
     }
+  }
+
+  // ---------- 一覧から機種を選ぶ（キーボードを使わずにマウスだけで選べるパネル。ISSセレクターと同じ） ----------
+  //
+  // NASセレクターのシリーズ一覧（画像・シリーズ名・容量別の型番）をそのまま使う。
+  // 型番を入力したときの候補と同じく、生産終了のシリーズ・型番は出さない。
+  // 容量ボタンを押すと、型番を入力して選んだときと同じ selectEntry() を呼ぶ。
+
+  const browseToggle = el("#browse-toggle");
+  const browsePanel = el("#browse-panel");
+  const browseClose = el("#browse-close");
+  const browseFilters = el("#browse-filters");
+  const browseGrid = el("#browse-grid");
+  const browseCount = el("#browse-count");
+  const browseOpenInline = el("#browse-open-inline");
+
+  const browseFilterState = { os: "all", install: "all", bay: "all" };
+  const BROWSE_FILTER_DEFS = [
+    { key: "os", label: "OS", options: [
+      { value: "all", label: "すべて" },
+      { value: "Linux OS", label: "Linux" },
+      { value: "Windows OS", label: "Windows" }
+    ] },
+    { key: "install", label: "置き方", options: [
+      { value: "all", label: "すべて" },
+      { value: "BOXタイプ", label: "BOX（据え置き）" },
+      { value: "ラックマウントタイプ", label: "ラックマウント" }
+    ] },
+    { key: "bay", label: "ドライブ数", options: null } // 実データから自動で作る
+  ];
+
+  function browseIsOpen() {
+    return browsePanel.classList.contains("browse-panel--open");
+  }
+
+  function setBrowseOpen(open) {
+    browsePanel.classList.toggle("browse-panel--open", open);
+    browseToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    browseToggle.classList.toggle("browse-toggle--open", open);
+    if (open) renderBrowse();
+  }
+
+  browseToggle.addEventListener("click", () => setBrowseOpen(!browseIsOpen()));
+  browseClose.addEventListener("click", () => setBrowseOpen(false));
+  if (browseOpenInline) {
+    browseOpenInline.addEventListener("click", () => {
+      setBrowseOpen(true);
+      browsePanel.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
+  // 「LAN DISK（HDL4-LXシリーズ）」→「HDL4-LXシリーズ」
+  function seriesLabel(p) {
+    const m = String(p.name || "").match(/（([^）]+)）/);
+    return m ? m[1] : (p.name || p.series || "");
+  }
+
+  function browseableSeries() {
+    if (!nasSeriesList || !nasLoaded) return null;
+    const entryBySku = new Map(nasEntries.map((e) => [e.sku, e]));
+    return nasSeriesList
+      .filter((p) => p.status !== "生産終了")
+      .map((p) => {
+        const variants = (p.variants || [])
+          .filter((v) => v.sku && v.status !== "生産終了")
+          .map((v) => ({ ...v, entry: entryBySku.get(String(v.sku).toUpperCase()) }))
+          .filter((v) => v.entry);
+        return { p, variants };
+      })
+      .filter((s) => s.variants.length > 0);
+  }
+
+  function bayNumber(bay) {
+    const m = String(bay || "").match(/(\d+)/);
+    return m ? Number(m[1]) : 0;
+  }
+
+  function renderBrowseFilters(all) {
+    const bays = [...new Set(all.map((s) => s.p.bay).filter(Boolean))].sort((a, b) => bayNumber(a) - bayNumber(b));
+    browseFilters.innerHTML = "";
+    BROWSE_FILTER_DEFS.forEach((def) => {
+      const options = def.options || [{ value: "all", label: "すべて" }, ...bays.map((b) => ({ value: b, label: b }))];
+      const row = document.createElement("div");
+      row.className = "browse-filter-row";
+      const label = document.createElement("span");
+      label.className = "browse-filter-row__label";
+      label.textContent = def.label;
+      row.appendChild(label);
+      options.forEach((opt) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "browse-pill" + (browseFilterState[def.key] === opt.value ? " browse-pill--on" : "");
+        btn.textContent = opt.label;
+        btn.addEventListener("click", () => {
+          browseFilterState[def.key] = opt.value;
+          renderBrowse();
+        });
+        row.appendChild(btn);
+      });
+      browseFilters.appendChild(row);
+    });
+  }
+
+  function renderBrowse() {
+    const all = browseableSeries();
+    if (!all) {
+      browseFilters.innerHTML = "";
+      browseCount.textContent = "";
+      browseGrid.innerHTML = `<p class="browse-loading">機種の一覧を読み込んでいます…</p>`;
+      return;
+    }
+    if (all.length === 0) {
+      browseFilters.innerHTML = "";
+      browseCount.textContent = "";
+      browseGrid.innerHTML = `<p class="browse-loading">機種の一覧を読み込めませんでした。お手数ですが、上の検索欄に型番を入力してください。</p>`;
+      return;
+    }
+    renderBrowseFilters(all);
+
+    const list = all
+      .filter((s) => browseFilterState.os === "all" || s.p.os === browseFilterState.os)
+      .filter((s) => browseFilterState.install === "all" || s.p.install === browseFilterState.install)
+      .filter((s) => browseFilterState.bay === "all" || s.p.bay === browseFilterState.bay)
+      .sort((a, b) =>
+        String(a.p.os).localeCompare(String(b.p.os)) ||
+        bayNumber(a.p.bay) - bayNumber(b.p.bay) ||
+        seriesLabel(a.p).localeCompare(seriesLabel(b.p)));
+
+    browseCount.textContent = `${list.length}シリーズ`;
+    browseGrid.innerHTML = "";
+    if (list.length === 0) {
+      browseGrid.innerHTML = `<p class="browse-loading">この組み合わせの機種はありません。条件を「すべて」に戻してみてください。</p>`;
+      return;
+    }
+
+    list.forEach(({ p, variants }) => {
+      const card = document.createElement("div");
+      card.className = "browse-card";
+
+      const imgWrap = document.createElement("div");
+      imgWrap.className = "browse-card__image";
+      if (p.imageUrl) {
+        const img = document.createElement("img");
+        img.src = p.imageUrl;
+        img.alt = "";
+        img.loading = "lazy";
+        // 画像が読み込めなかった場合は、壊れた画像アイコンを出さずに空欄にする
+        img.addEventListener("error", () => img.remove());
+        imgWrap.appendChild(img);
+      }
+      card.appendChild(imgWrap);
+
+      const name = document.createElement("p");
+      name.className = "browse-card__name";
+      name.textContent = seriesLabel(p);
+      card.appendChild(name);
+
+      const meta = document.createElement("p");
+      meta.className = "browse-card__meta";
+      meta.textContent = [p.os && p.os.replace(" OS", ""), p.install && p.install.replace("タイプ", ""), p.bay].filter(Boolean).join("・");
+      card.appendChild(meta);
+
+      const capLabel = document.createElement("p");
+      capLabel.className = "browse-card__cap-label";
+      capLabel.textContent = "容量を選ぶ";
+      card.appendChild(capLabel);
+
+      const pills = document.createElement("div");
+      pills.className = "browse-card__caps";
+      variants.forEach((v) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "cap-btn";
+        btn.title = v.sku;
+        btn.innerHTML = `<span class="cap-btn__tb">${v.capacityTB != null ? escapeBrowse(v.capacityTB + "TB") : escapeBrowse(v.sku)}</span>`
+          + `<span class="cap-btn__sku">${escapeBrowse(v.sku)}</span>`;
+        btn.addEventListener("click", () => chooseFromBrowse(v.entry));
+        pills.appendChild(btn);
+      });
+      card.appendChild(pills);
+      browseGrid.appendChild(card);
+    });
+  }
+
+  function escapeBrowse(str) {
+    return String(str ?? "").replace(/[&<>"']/g, (c) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[c]));
+  }
+
+  function chooseFromBrowse(entry) {
+    modelInput.value = entry.displaySku;
+    suggestBox.hidden = true;
+    selectEntry(entry);
+    setBrowseOpen(false);
+    // パネルが閉じるアニメーション（0.3秒）でページの高さが変わるため、閉じ終わってから結果の位置へスクロールする
+    setTimeout(() => {
+      el("#nas-info").scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 350);
   }
 
   // ---------- 型番検索・オートコンプリート ----------
