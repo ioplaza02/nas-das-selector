@@ -465,6 +465,28 @@
     return { value: entry.capacityTB, estimated: true };
   }
 
+  // 容量バー：RAIDモードを切り替えると、バーが伸び縮みして数字もカウントアップ／ダウンする
+  let capShownEntry = null;
+  const capShown = { total: 0, eff: 0, req: 0 };
+  const capAnim = {};
+
+  function animateCapNumber(key, node, to, suffix) {
+    cancelAnimationFrame(capAnim[key]);
+    const from = capShown[key];
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || from === to) { node.textContent = formatTB(to) + suffix; capShown[key] = to; return; }
+    const start = performance.now();
+    const dur = 750;
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / dur);
+      const e = 1 - Math.pow(1 - t, 3);
+      node.textContent = formatTB(from + (to - from) * e) + suffix;
+      if (t < 1) capAnim[key] = requestAnimationFrame(tick);
+      else capShown[key] = to;
+    };
+    capAnim[key] = requestAnimationFrame(tick);
+  }
+
   function renderCapacitySummaryAndResults() {
     const entry = currentEntry;
     const { value, estimated } = getEffectiveCapacityInfo(entry);
@@ -472,12 +494,28 @@
 
     const total = entry.capacityTB || value;
     const maxV = Math.max(total, value, required) || 1;
-    const bar = (v) => `${Math.max(8, Math.round((v / maxV) * 100))}%`;
-    let html = `<div class="cap-row"><span class="cap-row__label">総容量</span><div class="cap-row__track"><div class="cap-row__bar" style="width:${bar(total)}">${formatTB(total)}</div></div></div>`;
-    html += `<div class="cap-row cap-row--eff"><span class="cap-row__label">実効容量${currentRaidKey ? `（${escapeHtml(RAID_KEY_TO_LABEL[currentRaidKey] || "")}）` : ""}</span><div class="cap-row__track"><div class="cap-row__bar" style="width:${bar(value)}">${formatTB(value)}</div></div></div>`;
-    html += `<div class="cap-row cap-row--accent"><span class="cap-row__label">おすすめのDAS容量<a href="#about-x2">※</a></span><div class="cap-row__track"><div class="cap-row__bar" style="width:${bar(required)}">${formatTB(required)} 以上</div></div></div>`;
-    if (estimated) html += `<p class="capacity-summary__est">実効容量データ未取得のため、搭載HDD容量を参考値として使用しています</p>`;
-    capacitySummary.innerHTML = html;
+    const pct = (v) => `${Math.max(8, Math.round((v / maxV) * 100))}%`;
+    const effLabel = `実効容量${currentRaidKey ? `（${escapeHtml(RAID_KEY_TO_LABEL[currentRaidKey] || "")}）` : ""}`;
+
+    if (capShownEntry !== entry || !capacitySummary.querySelector(".cap-row")) {
+      // 初回（NAS選択直後）はゼロから伸ばす
+      capShown.total = capShown.eff = capShown.req = 0;
+      capacitySummary.innerHTML =
+        `<div class="cap-row"><span class="cap-row__label">総容量</span><div class="cap-row__track"><div class="cap-row__bar" data-k="total" style="width:0%"></div></div></div>` +
+        `<div class="cap-row cap-row--eff"><span class="cap-row__label" data-role="eff-label"></span><div class="cap-row__track"><div class="cap-row__bar" data-k="eff" style="width:0%"></div></div></div>` +
+        `<div class="cap-row cap-row--accent"><span class="cap-row__label">おすすめのDAS容量<a href="#about-x2">※</a></span><div class="cap-row__track"><div class="cap-row__bar" data-k="req" style="width:0%"></div></div></div>` +
+        `<p class="capacity-summary__est" data-role="est" hidden>実効容量データ未取得のため、搭載HDD容量を参考値として使用しています</p>`;
+      capShownEntry = entry;
+      void capacitySummary.offsetWidth; // 0%の状態を一度描画させてから伸ばす
+    }
+    capacitySummary.querySelector('[data-role="eff-label"]').innerHTML = effLabel;
+    capacitySummary.querySelector('[data-role="est"]').hidden = !estimated;
+    const targets = { total, eff: value, req: required };
+    Object.keys(targets).forEach((k) => {
+      const bar = capacitySummary.querySelector(`[data-k="${k}"]`);
+      bar.style.width = pct(targets[k]);
+      animateCapNumber(k, bar, targets[k], k === "req" ? " 以上" : "");
+    });
 
     renderResults();
   }
@@ -582,7 +620,7 @@
       return;
     }
 
-    dasGroups.innerHTML = `<div class="das-grid">${filtered.map(renderDasCard).join("")}</div>`;
+    dasGroups.innerHTML = `<div class="das-grid">${filtered.map((m, i) => renderDasCard(m, i)).join("")}</div>`;
     bindCardEvents();
     restorePendingCompare();
   }
@@ -653,7 +691,7 @@
   let cardDataMap = {};
   let cardCounter = 0;
 
-  function renderDasCard(m) {
+  function renderDasCard(m, index) {
     const id = `das-card-${cardCounter++}`;
     cardVariantMap[id] = m.qualifying;
     const p = m.product;
@@ -695,7 +733,7 @@
       : "";
 
     return `
-      <div class="das-card" id="${id}">
+      <div class="das-card" id="${id}" style="--i:${Math.min(index || 0, 12)}">
         <div class="das-card__head">
           ${imageHtml}
           <div class="das-card__head-text">
@@ -965,7 +1003,7 @@
     const now = new Date();
     const dateText = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日`;
     const dateShort = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, "0")}/${String(now.getDate()).padStart(2, "0")}`;
-    const fileName = `DAS_${entry.displaySku}_比較`;
+    const fileName = `DAS_${entry.displaySku}_比較_${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(now.getDate()).padStart(2, "0")}`;
     const stripLinks = (h) => h.replace(/<\/?a\b[^>]*>/g, "").replace(/ onerror="[^"]*"/g, "");
 
     const head = `<tr><th></th>${items.map((it) => `<th>${escapeHtml(it.variant.sku)}</th>`).join("")}</tr>`;
