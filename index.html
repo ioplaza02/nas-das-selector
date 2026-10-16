@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DASセレクター（試作）</title>
+<title>LAN DISK用 DASセレクター（試作）</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="password-gate" id="password-gate">
   <form class="password-gate__box" id="password-form">
-    <p class="password-gate__title">DASセレクター（試作）</p>
+    <p class="password-gate__title">LAN DISK用 DASセレクター（試作）</p>
     <p class="password-gate__note">関係者限定の試作版です。パスワードを入力してください。</p>
     <div class="password-gate__field">
       <input type="password" id="password-input" class="password-gate__input" autocomplete="off">
@@ -23,86 +23,99 @@
 
 <div id="app-root" hidden>
 
-<header class="brand-banner">
-  <div class="brand-banner__left">
-    <p class="brand-banner__badge">DASセレクター</p>
-    <img src="landisk-logo.png" alt="LAN DISK" class="brand-banner__logo">
-  </div>
-  <div class="brand-banner__search">
-    <!-- 型番を入れようとして「分からない」と思ったその場で目に入るよう、検索窓のすぐ右隣に並べる（ISSセレクターと同じ） -->
-    <div class="search-row">
+<header class="site-header">
+  <div class="site-header__inner">
+    <span class="site-header__logo">LAN DISK</span>
+    <span class="site-header__badge">DASセレクター</span>
+    <div class="site-header__tools">
       <div class="search">
         <input type="text" id="model-input" class="search__input" placeholder="NASの型番を入力してください" autocomplete="off">
         <div class="search__suggest" id="model-suggest" hidden></div>
       </div>
-      <button type="button" class="browse-toggle" id="browse-toggle" aria-expanded="false" aria-controls="browse-panel">
-        <span class="browse-toggle__icon" aria-hidden="true">☰</span>
-        一覧から機種を選ぶ
-        <span class="browse-toggle__arrow" aria-hidden="true">▾</span>
-      </button>
+      <button type="button" class="site-header__list-btn" id="list-btn">&#9776; 一覧から機種を選ぶ</button>
     </div>
+    <p class="site-header__hint">容量まで含めた完全な型番でなくてもOK。例えば「HB06」だけでも「HDL6-HB06」が候補に出ます。</p>
   </div>
 </header>
 
-<div class="hint-bar">
-  <p class="hero__hint">容量まで含めた完全な型番でなくてもOK。例えば「HB06」だけでも「HDL6-HB06」が候補に出ます。</p>
+<div class="page-title">
+  <h1 class="page-title__h">バックアップ用HDD選定ツール</h1>
+  <p class="page-title__sub">NASの型番から、バックアップ先に使えるLAN DISK対応の外付けHDD（DAS）と価格を確認できます</p>
 </div>
 
-<section class="browse-panel" id="browse-panel" aria-label="一覧から機種を選ぶ">
-  <div class="browse-panel__inner">
-    <div class="browse-panel__head">
-      <p class="browse-panel__title">NASの機種を選ぶ<span class="browse-panel__sub">シリーズ名を確認して、お使いの（またはご購入予定の）容量のボタンを押すと、そのNASに合うバックアップ用HDD（DAS）が表示されます</span></p>
-      <button type="button" class="browse-panel__close" id="browse-close">閉じる ▴</button>
-    </div>
-    <div class="browse-filters" id="browse-filters"></div>
-    <p class="browse-count" id="browse-count"></p>
-    <div class="browse-grid" id="browse-grid"></div>
-  </div>
-</section>
-
 <main class="layout">
+  <aside class="filter-panel" id="filter-panel">
+    <p class="filter-panel__title">ドライブ数</p>
+    <label class="filter-opt"><input type="checkbox" name="f-drive" value="single" checked>1ドライブ</label>
+    <label class="filter-opt"><input type="checkbox" name="f-drive" value="dual" checked>2ドライブ</label>
+    <label class="filter-opt"><input type="checkbox" name="f-drive" value="quad" checked>4ドライブ</label>
+
+    <p class="filter-panel__title">保証年数</p>
+    <label class="filter-opt"><input type="radio" name="f-warranty" value="0" checked>指定なし</label>
+    <label class="filter-opt"><input type="radio" name="f-warranty" value="3">3年以上</label>
+    <label class="filter-opt"><input type="radio" name="f-warranty" value="5">5年</label>
+
+    <p class="filter-panel__title">特徴</p>
+    <label class="filter-opt"><input type="checkbox" id="f-cartridge">カートリッジ式</label>
+    <label class="filter-opt"><input type="checkbox" id="f-24h">24時間稼働対応</label>
+  </aside>
+
   <section class="result-area">
     <div class="empty-state" id="empty-state">
-      <p class="empty-state__title">NASの型番を入力してください</p>
-      <p class="empty-state__body">上の検索欄にNASの型番（一部でも可）を入れると、そのNASの実効容量に合わせたバックアップ用HDD（DAS）の候補が表示されます。NASセレクターの比較画面から「おすすめのDASを見る」で来た場合は、自動的に選択された状態になります。</p>
-      <p class="empty-state__body">型番を入力しなくても、<button type="button" class="link-btn" id="browse-open-inline">一覧から機種を選ぶ</button>こともできます。</p>
+      <h2 class="empty-state__title">型番を入力してください</h2>
+      <p class="empty-state__body">上の検索欄にNASの型番（一部でも可）を入れると、バックアップ先に使えるDASの候補が表示されます。</p>
+      <p class="empty-state__body">型番を入力しなくても、<button type="button" class="link-btn" id="list-btn-2">一覧から機種を選ぶ</button>こともできます。</p>
+      <p class="empty-state__lead">NASのバックアップ、なぜ必要？</p>
+      <div class="why-list">
+        <div class="why-card why-card--blue">
+          <p class="why-card__title">RAIDがあっても、バックアップは別に必要</p>
+          <p class="why-card__body">RAIDは「HDDの故障」への備えです。誤削除・ウイルス感染・災害・盗難は防げません。別の場所に保存したバックアップがあれば、元の状態に戻せます。</p>
+        </div>
+        <div class="why-card why-card--green">
+          <p class="why-card__title">ランサムウェア対策に「オフラインバックアップ」</p>
+          <p class="why-card__body">NASと一緒に暗号化されないよう、バックアップ用HDDは使うときだけ接続し、普段は電源やケーブルを外して保管する運用が有効です。</p>
+        </div>
+        <div class="why-card why-card--gray">
+          <p class="why-card__title">容量は「実効容量の2倍」が目安</p>
+          <p class="why-card__body">RAID適用後に実際に保存できる容量（実効容量）の約2倍あれば、世代を分けて残したり、データの増加にも対応できます。このツールはその目安で候補を出します。</p>
+        </div>
+      </div>
     </div>
 
     <div id="nas-info" hidden class="nas-info">
-      <div class="nas-info__head">
-        <img class="nas-info__image" id="nas-image" src="" alt="" hidden>
-        <div class="nas-info__text">
-          <h2 id="nas-model"></h2>
-          <p class="nas-info__desc" id="nas-desc" hidden></p>
+      <div class="nas-info__left">
+        <div class="nas-info__head">
+          <img class="nas-info__image" id="nas-image" src="" alt="" hidden>
+          <div class="nas-info__text">
+            <h2 id="nas-model"></h2>
+            <p class="nas-info__desc" id="nas-desc" hidden></p>
+          </div>
         </div>
-      </div>
-
-      <div class="nas-info__body-row">
         <div class="nas-info__raid" id="nas-raid-wrap" hidden>
-          <p class="nas-info__raid-label">RAIDモードを選択（実効容量が変わります）</p>
+          <span class="nas-info__raid-label">RAID</span>
           <div class="raid-btn-row" id="raid-btn-row"></div>
         </div>
-
-        <div class="capacity-summary" id="capacity-summary"></div>
       </div>
+      <div class="capacity-summary" id="capacity-summary"></div>
     </div>
 
     <div id="result-wrap" hidden>
       <div class="result-head">
-        <h3 id="result-title"></h3>
-        <p class="result-count" id="result-count"></p>
+        <div class="result-head__text">
+          <h3 id="result-title"></h3>
+          <p class="result-count" id="result-count"></p>
+        </div>
         <label class="result-toggle">
-          <input type="checkbox" id="include-discontinued-toggle">
-          生産終了品を含める
+          <span class="result-toggle__text">生産終了品を含める</span>
+          <span class="switch">
+            <input type="checkbox" id="include-discontinued-toggle">
+            <span class="switch__track"><span class="switch__thumb"></span></span>
+          </span>
         </label>
         <button type="button" class="share-btn" id="share-btn" hidden>このページのURLをコピー</button>
+        <button type="button" class="pdf-btn" id="pdf-btn" hidden>PDFで保存</button>
         <span class="share-feedback" id="share-feedback" hidden></span>
       </div>
-      <!-- 価格の注意書き（NAS・ISS・スイッチセレクターと同じ文） -->
-      <p class="price-notice">
-        表示価格は、I-O DATA公式サイトに掲載のメーカー希望小売価格（税込）です。
-        価格・在庫状況は変動する場合があります。最新情報は、各商品の型番のリンク先のI-O DATA公式ページでご確認ください。
-      </p>
       <div id="das-groups"></div>
     </div>
   </section>
@@ -141,6 +154,8 @@
 </footer>
 
 </div>
+
+<div class="print-sheet" id="print-sheet" aria-hidden="true"></div>
 
 <script src="app.js"></script>
 </body>
