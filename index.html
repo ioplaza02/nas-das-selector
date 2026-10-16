@@ -113,7 +113,6 @@
           </span>
         </label>
         <button type="button" class="share-btn" id="share-btn" hidden>このページのURLをコピー</button>
-        <button type="button" class="pdf-btn" id="pdf-btn" hidden>PDFで保存</button>
         <span class="share-feedback" id="share-feedback" hidden></span>
       </div>
       <div id="das-groups"></div>
@@ -133,7 +132,13 @@
   <div class="compare-modal__overlay" data-role="compare-modal-close"></div>
   <div class="compare-modal__box">
     <button type="button" class="compare-modal__close" id="compare-modal-close-btn" aria-label="閉じる">×</button>
-    <h3 class="compare-modal__title">商品比較</h3>
+    <div class="compare-modal__head">
+      <h3 class="compare-modal__title">商品比較</h3>
+      <div class="compare-modal__actions">
+        <button type="button" class="modal-btn" id="compare-share-btn">この比較結果のURLをコピー</button>
+        <button type="button" class="modal-btn modal-btn--primary" id="compare-pdf-btn">PDFで保存</button>
+      </div>
+    </div>
     <div class="compare-modal__scroll">
       <table class="compare-table" id="compare-table"></table>
     </div>

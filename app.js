@@ -160,7 +160,9 @@
   const compareTableEl = el("#compare-table");
   const compareModalNote = el("#compare-modal-note");
   const includeDiscontinuedToggle = el("#include-discontinued-toggle");
-  const pdfBtn = el("#pdf-btn");
+  const pdfBtn = el("#compare-pdf-btn");
+  const compareShareBtn = el("#compare-share-btn");
+  let pendingCmp = null;   // URLから復元する比較対象のSKU一覧
   const printSheet = el("#print-sheet");
   const listBtn = el("#list-btn");
   const listBtn2 = el("#list-btn-2");
@@ -238,6 +240,8 @@
   function applyStateFromUrl() {
     const params = new URLSearchParams(location.search);
     const model = params.get("model");
+    const cmp = (params.get("cmp") || "").split(",").map((x) => x.trim().toUpperCase()).filter(Boolean);
+    pendingCmp = cmp.length >= 2 ? cmp : null;
     if (model && nasLoaded) {
       modelInput.value = model;
       const exact = nasEntries.find((e) => e.sku === model.toUpperCase());
@@ -371,7 +375,6 @@
     nasInfo.hidden = true;
     resultWrap.hidden = false;
     shareBtn.hidden = true;
-    pdfBtn.hidden = true;
     resultTitle.textContent = query;
     resultCount.textContent = "";
     dasGroups.innerHTML = `<div class="no-match">データを読み込んでいます。少しお待ちください…</div>`;
@@ -383,7 +386,6 @@
     nasInfo.hidden = true;
     resultWrap.hidden = false;
     shareBtn.hidden = true;
-    pdfBtn.hidden = true;
     resultTitle.textContent = query;
     resultCount.textContent = "";
     dasGroups.innerHTML = `<div class="no-match">「${escapeHtml(query)}」に一致する型番が見つかりませんでした。型番の一部だけでも検索できます（例：HB06 → HDL6-HB06）。</div>`;
@@ -517,7 +519,6 @@
     resultWrap.hidden = false;
     shareBtn.hidden = false;
     resultTitle.textContent = `${currentEntry.displaySku} のおすすめDAS`;
-    pdfBtn.hidden = false;
 
     // 検索し直すたびに比較選択はリセットする
     compareSelection.clear();
@@ -583,6 +584,7 @@
 
     dasGroups.innerHTML = `<div class="das-grid">${filtered.map(renderDasCard).join("")}</div>`;
     bindCardEvents();
+    restorePendingCompare();
   }
 
   function getFilterState() {
@@ -616,6 +618,35 @@
     if (f.cartridge) parts.push("カートリッジ式");
     if (f.h24) parts.push("24時間稼働対応");
     return parts.join(" ／ ");
+  }
+
+  // 共有URL（cmp=型番,型番…）で来た場合、該当カードを比較対象にして比較ポップアップを開く
+  function restorePendingCompare() {
+    if (!pendingCmp) return;
+    const wanted = pendingCmp;
+    pendingCmp = null;
+    document.querySelectorAll(".das-card").forEach((cardEl) => {
+      const data = cardDataMap[cardEl.id];
+      if (!data || !wanted.includes(String(data.variant.sku).toUpperCase())) return;
+      if (compareSelection.size >= COMPARE_MAX) return;
+      compareSelection.set(cardEl.id, data);
+      const cb = cardEl.querySelector('[data-role="compare-checkbox"]');
+      if (cb) cb.checked = true;
+      cardEl.classList.add("das-card--picked");
+    });
+    updateCompareBar();
+    if (compareSelection.size >= 2) {
+      renderCompareTable();
+      compareModal.hidden = false;
+    }
+  }
+
+  function buildCompareUrl() {
+    const params = new URLSearchParams();
+    if (currentEntry) params.set("model", currentEntry.displaySku);
+    if (currentRaidKey) params.set("raid", currentRaidKey);
+    params.set("cmp", [...compareSelection.values()].map((it) => it.variant.sku).join(","));
+    return `${location.origin}${location.pathname}?${params.toString()}`;
   }
 
   let cardVariantMap = {};
@@ -789,6 +820,8 @@
     compareBar.hidden = false;
     compareBarText.textContent = `商品比較（${count}件選択中）`;
     compareBtn.disabled = count < 2;
+    const hint = compareBar.querySelector(".compare-bar__hint");
+    if (hint) hint.hidden = count >= 2;
   }
 
   compareBtn.addEventListener("click", () => {
@@ -807,17 +840,15 @@
 
   // 行ごとに「比較に使う値（plain）」と「表示用HTML（html）」を分けて持つ。
   // plain側が全列で同じかどうかを見て、違いがある行だけハイライトする。
-  function renderCompareTable() {
-    const items = [...compareSelection.values()];
-
-    const rows = [
+  function buildCompareRows(items) {
+    return [
       {
         label: "画像",
         noDiff: true,
         cells: items.map((it) => ({
           plain: "",
-          html: it.product.imageUrl
-            ? `<a href="${escapeAttr(it.product.displaySourceUrl || it.product.sourceUrl)}" target="_blank" rel="noopener noreferrer"><img class="compare-table__image" src="${escapeAttr(it.product.imageUrl)}" alt="" onerror="this.remove()"></a>`
+          html: cardImageFor(it.product)
+            ? `<a href="${escapeAttr(productPageUrl(it.product))}" target="_blank" rel="noopener noreferrer"><img class="compare-table__image" src="${escapeAttr(cardImageFor(it.product))}" alt="" onerror="this.remove()"></a>`
             : "—"
         }))
       },
@@ -891,6 +922,14 @@
         cells: items.map((it) => ({ plain: it.product.supports24h ? "○" : "—", html: it.product.supports24h ? "○" : "—" }))
       }
     ];
+  }
+
+  const COMPARE_NOTE_TEXT =
+    "※ 保証期間内の修理は「センドバック」方式（本体を工場へ送付して修理する方式。出張修理ではありません）が基本です。引き取り・当日訪問などより手厚い保守をご希望の場合は、外付けHDD向けの訪問安心保守（ISS）のページでご確認ください。RAID対応・インターフェース規格・24時間稼働対応は公式ページの記載から自動取得しているため、不明や情報なしと出る場合は公式ページで直接ご確認ください。";
+
+  function renderCompareTable() {
+    const items = [...compareSelection.values()];
+    const rows = buildCompareRows(items);
 
     const headRow = `<tr><th class="compare-table__row-label"></th>${
       items.map((it) => `<th><a href="${escapeAttr(it.product.displaySourceUrl || it.product.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(it.variant.sku)}</a></th>`).join("")
@@ -914,57 +953,34 @@
       `RAID対応・インターフェース規格・24時間稼働対応は公式ページの記載から自動取得しているため、不明や情報なしと出る場合は公式ページで直接ご確認ください。`;
   }
 
-  // ---------- PDF出力（ブラウザの印刷機能で「PDFとして保存」） ----------
+  // ---------- 比較結果のURLコピー・PDF出力（ブラウザの印刷機能で「PDFとして保存」） ----------
+
+  compareShareBtn.addEventListener("click", () => copyText(buildCompareUrl(), compareShareBtn));
 
   function buildPrintSheet() {
     const entry = currentEntry;
+    const items = [...compareSelection.values()];
+    const rows = buildCompareRows(items);
     const { value } = getEffectiveCapacityInfo(entry);
     const now = new Date();
     const dateText = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日`;
     const dateShort = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, "0")}/${String(now.getDate()).padStart(2, "0")}`;
-    const fileName = `DAS_${entry.displaySku}`;
-    const conds = [];
-    if (currentRaidKey) conds.push(`RAIDモード：${RAID_KEY_TO_LABEL[currentRaidKey] || currentRaidKey}`);
-    conds.push(`生産終了品：${includeDiscontinuedToggle.checked ? "含む" : "含まない"}`);
-    const fs = filterSummaryText();
-    if (fs) conds.push(`絞り込み：${fs}`);
+    const fileName = `DAS_${entry.displaySku}_比較`;
+    const stripLinks = (h) => h.replace(/<\/?a\b[^>]*>/g, "").replace(/ onerror="[^"]*"/g, "");
 
-    const rows = lastMatched.map((m) => {
-      const p = m.product;
-      const best = m.best;
-      const img = cardImageFor(p);
-      const tags = [
-        `<span class="ps-tag ps-tag--dark">${escapeHtml(DRIVE_TYPE_LABEL[p.driveType] || p.driveType)}</span>`,
-        `<span class="ps-tag ps-tag--line">${escapeHtml(DRIVE_TYPE_BENEFIT[p.driveType] || "")}</span>`
-      ];
-      if (p.cartridge) tags.push(`<span class="ps-tag">${p.requiresSeparateEnclosure ? "カートリッジ式 + HDD" : "カートリッジ式"}</span>`);
-      if (p.warrantyYears) tags.push(`<span class="ps-tag">保証 ${p.warrantyYears}年</span>`);
-      if (best.status === "生産終了") tags.push(`<span class="ps-tag">生産終了品</span>`);
-      let note = "";
-      if (p.requiresSeparateEnclosure) {
-        const enc = p.enclosureInfo;
-        const encName = escapeHtml(enc ? enc.modelCode : p.modelCode);
-        const encPrice = enc && enc.priceIncTax ? `（¥${enc.priceIncTax.toLocaleString()}${enc.priceExTax ? `・税抜¥${enc.priceExTax.toLocaleString()}` : ""}）` : "";
-        note = `<div class="ps-note">これは専用の「HDDカートリッジ」（中身）の価格です。外側の「USB接続アダプター」として ${encName}シリーズ${encPrice} が別売りです。</div>`;
-      }
-      const series = p.displaySeriesLabel || (p.requiresSeparateEnclosure ? best.sku.replace(/\d+$/, "") : p.modelCode);
-      const price = best.priceIncTax
-        ? `<div class="ps-row__yen">¥${best.priceIncTax.toLocaleString()}</div><div class="ps-row__ex">税抜 ¥${(best.priceExTax || 0).toLocaleString()}</div>`
-        : `<div class="ps-row__ex">価格は公式サイトで<br>ご確認ください</div>`;
-      return `<div class="ps-row">
-        ${img ? `<img class="ps-row__img" src="${escapeAttr(img)}" alt="">` : `<div class="ps-row__noimg"></div>`}
-        <div class="ps-row__main">
-          <div class="ps-row__sku">${escapeHtml(best.sku)}</div>
-          <div class="ps-row__meta">${escapeHtml(series)}シリーズ${best.jan ? `　JAN ${escapeHtml(best.jan)}` : ""}</div>
-          <div class="ps-row__tags">${tags.join("")}</div>
-          ${note}
-        </div>
-        <div class="ps-row__price"><div class="ps-row__cap">${formatTB(best.capacityTB)}</div>${price}</div>
-      </div>`;
+    const head = `<tr><th></th>${items.map((it) => `<th>${escapeHtml(it.variant.sku)}</th>`).join("")}</tr>`;
+    const body = rows.map((r) => {
+      const plain = r.cells.map((c) => c.plain);
+      const diff = !r.noDiff && items.length > 1 && plain.some((v) => v !== plain[0]);
+      return `<tr${diff ? ' class="ps-diff"' : ""}><th>${escapeHtml(r.label)}</th>${r.cells.map((c) => `<td>${stripLinks(c.html)}</td>`).join("")}</tr>`;
     }).join("");
 
+    const conds = [];
+    if (currentRaidKey) conds.push(`RAIDモード：${RAID_KEY_TO_LABEL[currentRaidKey] || currentRaidKey}`);
+    const fs = filterSummaryText();
+
     printSheet.innerHTML = `
-      <div class="ps-top"><b>LAN DISK用 DASセレクター</b><span>出力日：${dateText}　／　${conds.map(escapeHtml).join("　／　")}</span></div>
+      <div class="ps-top"><b>LAN DISK用 DASセレクター　商品比較</b><span>出力日：${dateText}</span></div>
       <p class="ps-label">選択したNAS</p>
       <div class="ps-nas">
         ${entry.imageUrl ? `<img class="ps-nas__img" src="${escapeAttr(entry.imageUrl)}" alt="">` : ""}
@@ -975,21 +991,18 @@
         <div class="ps-nas__caps">
           <div><p>総容量</p><p>${formatTB(entry.capacityTB)}</p></div>
           <div><p>実効容量${currentRaidKey ? `（${escapeHtml(RAID_KEY_TO_LABEL[currentRaidKey] || "")}）` : ""}</p><p>${formatTB(value)}</p></div>
-          <div class="ps-accent"><p>おすすめDAS容量</p><p>${formatTB(lastRequired)} 以上</p></div>
+          <div class="ps-accent"><p>おすすめDAS容量</p><p>${formatTB(value * 2)} 以上</p></div>
         </div>
       </div>
-      <p class="ps-label">このNASのバックアップ先として使えるDAS　${lastMatched.length}件</p>
-      <div class="ps-list">${rows}</div>
-      <p class="ps-foot-note">表示価格はI-O DATA公式サイト掲載のメーカー希望小売価格（税込）で、変動する場合があります。おすすめのDAS容量は「実効容量の2倍」を目安にしています。対応関係はI-O DATA公式のバックアップ用HDD対応表に基づくシリーズ単位の情報です。購入前に公式ページでもご確認ください。</p>
-      <style>@page { @bottom-left { content: "${dateShort}　${fileName.replace(/[^A-Za-z0-9._-]/g, "")}.pdf"; font-size: 8pt; color: #8a9692; } }</style>`;
+      <p class="ps-label">比較したDAS　${items.length}件　<span class="ps-legend"><i></i>黄色の行 = 商品によって違う項目</span></p>
+      <table class="ps-table"><thead>${head}</thead><tbody>${body}</tbody></table>
+      <p class="ps-foot-note">${escapeHtml(COMPARE_NOTE_TEXT)}　表示価格はI-O DATA公式サイト掲載のメーカー希望小売価格（税込）で、変動する場合があります。おすすめのDAS容量は「実効容量の2倍」を目安にしています。対応関係はI-O DATA公式のバックアップ用HDD対応表に基づくシリーズ単位の情報です。</p>
+      <style>@page { size: A4 landscape; @bottom-left { content: "${dateShort}　${fileName.replace(/[^A-Za-z0-9._\u3040-\u30ff\u4e00-\u9fff-]/g, "")}.pdf"; font-size: 8pt; color: #8a9692; } }</style>`;
     return fileName;
   }
 
   pdfBtn.addEventListener("click", () => {
-    if (!currentEntry || lastMatched.length === 0) {
-      window.alert("PDFに出力できる候補がありません。");
-      return;
-    }
+    if (!currentEntry || compareSelection.size < 2) return;
     const fileName = buildPrintSheet();
     const oldTitle = document.title;
     document.title = fileName; // 「PDFとして保存」の初期ファイル名になる
