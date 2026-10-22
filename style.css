@@ -727,10 +727,10 @@ body {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-.site-header__strip { flex: 1 1 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.site-header__internal { font-size: 17px; font-weight: 900; color: #f2c14e; letter-spacing: .04em; }
+.site-header__internal { font-size: 20px; font-weight: 900; color: #f2c14e; letter-spacing: .04em; white-space: nowrap; }
 .site-header__contact {
-  padding: 5px 16px;
+  margin-left: auto;
+  padding: 6px 18px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.35);
   background: rgba(255,255,255,.08);
@@ -738,3 +738,4 @@ body {
   font-weight: 700;
   white-space: nowrap;
 }
+.site-header__tools { flex: 1 1 100% !important; }
