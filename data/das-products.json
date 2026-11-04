@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T22:43:17.489Z",
+  "updatedAt": "2026-11-04T23:01:58.922Z",
   "products": [
     {
       "id": "hd1-reut",
@@ -35,70 +35,78 @@
         {
           "sku": "HDLH-OPA1",
           "capacityTB": 1,
-          "priceIncTax": 56100,
-          "priceExTax": 51000,
+          "priceIncTax": 71500,
+          "priceExTax": 65000,
           "jan": "4957180175355",
           "status": "現行"
         },
         {
           "sku": "HDLH-OPA2",
           "capacityTB": 2,
-          "priceIncTax": 56100,
-          "priceExTax": 51000,
+          "priceIncTax": 71500,
+          "priceExTax": 65000,
           "jan": "4957180170022",
           "status": "現行"
         },
         {
           "sku": "HDLH-OPA3",
           "capacityTB": 3,
-          "priceIncTax": 56100,
-          "priceExTax": 51000,
+          "priceIncTax": 71500,
+          "priceExTax": 65000,
           "jan": "4957180175362",
           "status": "現行"
         },
         {
           "sku": "HDLH-OPA4",
           "capacityTB": 4,
-          "priceIncTax": 56100,
-          "priceExTax": 51000,
+          "priceIncTax": 71500,
+          "priceExTax": 65000,
           "jan": "4957180170039",
           "status": "現行"
         },
         {
           "sku": "HDLH-OPA6",
           "capacityTB": 6,
-          "priceIncTax": 82500,
-          "priceExTax": 75000,
+          "priceIncTax": 104500,
+          "priceExTax": 95000,
           "jan": "4957180170060",
           "status": "現行"
         },
         {
           "sku": "HDLH-OPA8",
           "capacityTB": 8,
-          "priceIncTax": 109780,
-          "priceExTax": 99800,
+          "priceIncTax": 137500,
+          "priceExTax": 125000,
           "jan": "4957180170077",
+          "status": "現行"
+        },
+        {
+          "sku": "HDLH-OPA16",
+          "capacityTB": 16,
+          "priceIncTax": 264000,
+          "priceExTax": 240000,
+          "jan": "4957180162072",
           "status": "現行"
         },
         {
           "sku": "HDLH-OPA20",
           "capacityTB": 20,
-          "priceIncTax": 242000,
-          "priceExTax": 220000,
+          "priceIncTax": 330000,
+          "priceExTax": 300000,
           "jan": "4957180176970",
           "status": "現行"
         },
         {
           "sku": "HDLH-OPA24",
           "capacityTB": 24,
-          "priceIncTax": 266200,
-          "priceExTax": 242000,
+          "priceIncTax": 363000,
+          "priceExTax": 330000,
           "jan": "4957180180083",
           "status": "現行"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd1-reut/index.htm",
-      "lastCheckedAt": "2026-11-03T22:40:06.121Z"
+      "lastCheckedAt": "2026-11-04T22:58:51.724Z"
     },
     {
       "id": "hd4-utnc",
@@ -189,7 +197,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/index.htm",
-      "lastCheckedAt": "2026-11-03T22:40:12.282Z"
+      "lastCheckedAt": "2026-11-04T22:58:57.443Z"
     },
     {
       "id": "hd4-utn",
@@ -280,7 +288,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utn/index.htm",
-      "lastCheckedAt": "2026-11-03T22:40:17.256Z"
+      "lastCheckedAt": "2026-11-04T22:59:02.489Z"
     },
     {
       "id": "hdw-utn",
@@ -394,7 +402,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utn/",
-      "lastCheckedAt": "2026-11-03T22:40:22.531Z"
+      "lastCheckedAt": "2026-11-04T22:59:07.600Z"
     },
     {
       "id": "hdw-utnc",
@@ -516,7 +524,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/",
-      "lastCheckedAt": "2026-11-03T22:40:27.728Z"
+      "lastCheckedAt": "2026-11-04T22:59:12.375Z"
     },
     {
       "id": "hdw-utnb",
@@ -638,7 +646,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/",
-      "lastCheckedAt": "2026-11-03T22:40:32.968Z"
+      "lastCheckedAt": "2026-11-04T22:59:17.189Z"
     },
     {
       "id": "hdw-utu",
@@ -704,7 +712,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utu/",
-      "lastCheckedAt": "2026-11-03T22:40:37.879Z"
+      "lastCheckedAt": "2026-11-04T22:59:22.040Z"
     },
     {
       "id": "hdja-utnc",
@@ -822,7 +830,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/",
-      "lastCheckedAt": "2026-11-03T22:40:42.941Z"
+      "lastCheckedAt": "2026-11-04T22:59:26.811Z"
     },
     {
       "id": "hdja-utnb",
@@ -940,7 +948,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnb/",
-      "lastCheckedAt": "2026-11-03T22:40:47.700Z"
+      "lastCheckedAt": "2026-11-04T22:59:31.611Z"
     },
     {
       "id": "hdja-utu",
@@ -979,30 +987,30 @@
         {
           "sku": "HDJA-UTU16",
           "capacityTB": 16,
-          "priceIncTax": 194370,
-          "priceExTax": 176700,
+          "priceIncTax": 206580,
+          "priceExTax": 187800,
           "jan": "4957180187006",
           "status": "現行"
         },
         {
           "sku": "HDJA-UTU20",
           "capacityTB": 20,
-          "priceIncTax": 218900,
-          "priceExTax": 199000,
+          "priceIncTax": 231220,
+          "priceExTax": 210200,
           "jan": "4957180187013",
           "status": "現行"
         },
         {
           "sku": "HDJA-UTU24",
           "capacityTB": 24,
-          "priceIncTax": 255860,
-          "priceExTax": 232600,
+          "priceIncTax": 268180,
+          "priceExTax": 243800,
           "jan": "4957180187020",
           "status": "現行"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utu/",
-      "lastCheckedAt": "2026-11-03T22:40:52.798Z"
+      "lastCheckedAt": "2026-11-04T22:59:36.454Z"
     },
     {
       "id": "hdja-utnldc",
@@ -1120,7 +1128,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/",
-      "lastCheckedAt": "2026-11-03T22:40:58.008Z"
+      "lastCheckedAt": "2026-11-04T22:59:41.488Z"
     },
     {
       "id": "hdja-utnldb",
@@ -1238,7 +1246,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/",
-      "lastCheckedAt": "2026-11-03T22:41:03.468Z"
+      "lastCheckedAt": "2026-11-04T22:59:46.578Z"
     },
     {
       "id": "hdja-utn",
@@ -1291,7 +1299,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utn/",
-      "lastCheckedAt": "2026-11-03T22:41:08.405Z"
+      "lastCheckedAt": "2026-11-04T22:59:51.298Z"
     },
     {
       "id": "hdja-utnld",
@@ -1336,7 +1344,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnld/",
-      "lastCheckedAt": "2026-11-03T22:41:13.286Z"
+      "lastCheckedAt": "2026-11-04T22:59:56.036Z"
     },
     {
       "id": "hdja-utr",
@@ -1405,7 +1413,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utr/",
-      "lastCheckedAt": "2026-11-03T22:41:18.165Z"
+      "lastCheckedAt": "2026-11-04T23:00:00.963Z"
     },
     {
       "id": "hdd-utb",
@@ -1489,7 +1497,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/",
-      "lastCheckedAt": "2026-11-03T22:41:22.965Z"
+      "lastCheckedAt": "2026-11-04T23:00:05.764Z"
     },
     {
       "id": "hdw-utcs",
@@ -1560,7 +1568,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/index.htm",
-      "lastCheckedAt": "2026-11-03T22:41:27.926Z"
+      "lastCheckedAt": "2026-11-04T23:00:10.751Z"
     },
     {
       "id": "zhd4-utxr",
@@ -1642,7 +1650,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd4-utxr/",
-      "lastCheckedAt": "2026-11-03T22:41:32.820Z"
+      "lastCheckedAt": "2026-11-04T23:00:15.681Z"
     },
     {
       "id": "hdw-utb",
@@ -1746,7 +1754,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utb/index.htm",
-      "lastCheckedAt": "2026-11-03T22:41:37.819Z"
+      "lastCheckedAt": "2026-11-04T23:00:20.492Z"
     },
     {
       "id": "hdw-utc",
@@ -1818,7 +1826,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utc/index.htm",
-      "lastCheckedAt": "2026-11-03T22:41:42.731Z"
+      "lastCheckedAt": "2026-11-04T23:00:25.305Z"
     },
     {
       "id": "zhd2-utx",
@@ -1897,7 +1905,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd2-utx/",
-      "lastCheckedAt": "2026-11-03T22:41:47.642Z"
+      "lastCheckedAt": "2026-11-04T23:00:30.269Z"
     },
     {
       "id": "hds2-utxs",
@@ -1944,7 +1952,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hds2-utxs/",
-      "lastCheckedAt": "2026-11-03T22:41:52.411Z"
+      "lastCheckedAt": "2026-11-04T23:00:35.122Z"
     },
     {
       "id": "hdja-utrwhq",
@@ -1988,7 +1996,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utrwhq/",
-      "lastCheckedAt": "2026-11-03T22:42:07.288Z"
+      "lastCheckedAt": "2026-11-04T23:00:49.750Z"
     },
     {
       "id": "hdja-utwld",
@@ -2064,7 +2072,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utwld/",
-      "lastCheckedAt": "2026-11-03T22:42:12.218Z"
+      "lastCheckedAt": "2026-11-04T23:00:54.683Z"
     },
     {
       "id": "hdd-ut",
@@ -2173,7 +2181,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-ut/",
-      "lastCheckedAt": "2026-11-03T22:42:17.327Z"
+      "lastCheckedAt": "2026-11-04T23:00:59.722Z"
     },
     {
       "id": "hdcz-utc",
@@ -2281,7 +2289,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-utc/",
-      "lastCheckedAt": "2026-11-03T22:42:22.400Z"
+      "lastCheckedAt": "2026-11-04T23:01:04.809Z"
     },
     {
       "id": "zhd-utx",
@@ -2349,7 +2357,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd-utx/",
-      "lastCheckedAt": "2026-11-03T22:42:27.460Z"
+      "lastCheckedAt": "2026-11-04T23:01:09.696Z"
     },
     {
       "id": "hdcz-ut",
@@ -2449,7 +2457,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-ut/",
-      "lastCheckedAt": "2026-11-03T22:42:32.549Z"
+      "lastCheckedAt": "2026-11-04T23:01:14.506Z"
     },
     {
       "id": "hdcl-ute",
@@ -2557,7 +2565,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcl-ute/",
-      "lastCheckedAt": "2026-11-03T22:42:42.675Z"
+      "lastCheckedAt": "2026-11-04T23:01:24.428Z"
     },
     {
       "id": "rhd-ux",
@@ -2609,7 +2617,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/rhd-ux/",
-      "lastCheckedAt": "2026-11-03T22:42:47.835Z"
+      "lastCheckedAt": "2026-11-04T23:01:29.186Z"
     },
     {
       "id": "hdja-sutr",
@@ -2657,7 +2665,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-sutr/index.htm",
-      "lastCheckedAt": "2026-11-03T22:43:12.519Z"
+      "lastCheckedAt": "2026-11-04T23:01:53.830Z"
     },
     {
       "id": "hdw-ut",
@@ -2759,7 +2767,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-ut/index.htm",
-      "lastCheckedAt": "2026-11-03T22:43:17.489Z"
+      "lastCheckedAt": "2026-11-04T23:01:58.922Z"
     }
   ]
 }
