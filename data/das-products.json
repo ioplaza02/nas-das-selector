@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T01:47:15.105Z",
+  "updatedAt": "2026-11-25T08:06:37.773Z",
   "products": [
     {
       "id": "hd1-reut",
@@ -107,7 +107,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd1-reut/index.htm",
-      "lastCheckedAt": "2026-11-25T01:44:01.190Z"
+      "lastCheckedAt": "2026-11-25T08:03:25.180Z"
     },
     {
       "id": "hd4-utnc",
@@ -171,7 +171,8 @@
           "priceIncTax": 627330,
           "priceExTax": 570300,
           "jan": "4957180193908",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         },
         {
           "sku": "HD4-UTN80C",
@@ -179,7 +180,8 @@
           "priceIncTax": 996490,
           "priceExTax": 905900,
           "jan": "4957180193915",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         },
         {
           "sku": "HD4-UTN96C",
@@ -187,7 +189,8 @@
           "priceIncTax": 1180960,
           "priceExTax": 1073600,
           "jan": "4957180193922",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         },
         {
           "sku": "HD4-UTN128C",
@@ -195,11 +198,12 @@
           "priceIncTax": 1488520,
           "priceExTax": 1353200,
           "jan": "4957180193939",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/index.htm",
-      "lastCheckedAt": "2026-11-25T01:44:06.840Z"
+      "lastCheckedAt": "2026-11-25T08:03:31.107Z"
     },
     {
       "id": "hd4-utn",
@@ -239,7 +243,10 @@
           "priceIncTax": 169730,
           "priceExTax": 154300,
           "jan": "4957180162096",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HD4-UTN8C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/"
         },
         {
           "sku": "HD4-UTN16",
@@ -247,7 +254,10 @@
           "priceIncTax": 231220,
           "priceExTax": 210200,
           "jan": "4957180162102",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HD4-UTN16C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/"
         },
         {
           "sku": "HD4-UTN32",
@@ -255,7 +265,10 @@
           "priceIncTax": 428120,
           "priceExTax": 389200,
           "jan": "4957180162126",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HD4-UTN32C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/"
         },
         {
           "sku": "HD4-UTN48",
@@ -263,7 +276,11 @@
           "priceIncTax": 615120,
           "priceExTax": 559200,
           "jan": "4957180162133",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "madeToOrder": true,
+          "successorSku": "HD4-UTN48C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/"
         },
         {
           "sku": "HD4-UTN80",
@@ -271,7 +288,11 @@
           "priceIncTax": 984170,
           "priceExTax": 894700,
           "jan": "4957180162157",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "madeToOrder": true,
+          "successorSku": "HD4-UTN80C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/"
         },
         {
           "sku": "HD4-UTN96",
@@ -279,7 +300,11 @@
           "priceIncTax": 1168750,
           "priceExTax": 1062500,
           "jan": "4957180179346",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "madeToOrder": true,
+          "successorSku": "HD4-UTN96C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/"
         },
         {
           "sku": "HD4-UTN128",
@@ -287,11 +312,15 @@
           "priceIncTax": 1476310,
           "priceExTax": 1342100,
           "jan": "4957180186085",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "madeToOrder": true,
+          "successorSku": "HD4-UTN128C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utn/index.htm",
-      "lastCheckedAt": "2026-11-25T01:44:11.960Z"
+      "lastCheckedAt": "2026-11-25T08:03:36.241Z"
     },
     {
       "id": "hdw-utn",
@@ -330,7 +359,9 @@
           "priceIncTax": 44220,
           "priceExTax": 40200,
           "jan": "4957180174815",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB2",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UTN4",
@@ -338,7 +369,9 @@
           "priceIncTax": 61490,
           "priceExTax": 55900,
           "jan": "4957180174822",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB4",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UTN6",
@@ -346,7 +379,9 @@
           "priceIncTax": 86020,
           "priceExTax": 78200,
           "jan": "4957180174839",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB6",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UTN8",
@@ -354,7 +389,9 @@
           "priceIncTax": 110660,
           "priceExTax": 100600,
           "jan": "4957180174846",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB8",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UTN12",
@@ -362,7 +399,9 @@
           "priceIncTax": 147620,
           "priceExTax": 134200,
           "jan": "4957180174853",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB12",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UTN16",
@@ -370,7 +409,9 @@
           "priceIncTax": 172150,
           "priceExTax": 156500,
           "jan": "4957180174860",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB16",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UTN24",
@@ -378,7 +419,9 @@
           "priceIncTax": 307560,
           "priceExTax": 279600,
           "jan": "4957180174877",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB24",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UTN32",
@@ -386,7 +429,9 @@
           "priceIncTax": 405900,
           "priceExTax": 369000,
           "jan": "4957180174884",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB32",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UTN40",
@@ -394,7 +439,9 @@
           "priceIncTax": 489610,
           "priceExTax": 445100,
           "jan": "4957180174891",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB40",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UTN48",
@@ -402,11 +449,13 @@
           "priceIncTax": 588060,
           "priceExTax": 534600,
           "jan": "4957180179377",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB48",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utn/",
-      "lastCheckedAt": "2026-11-25T01:44:17.233Z"
+      "lastCheckedAt": "2026-11-25T08:03:41.355Z"
     },
     {
       "id": "hdw-utnc",
@@ -509,7 +558,8 @@
           "priceIncTax": 504350,
           "priceExTax": 458500,
           "jan": "4957180193847",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         },
         {
           "sku": "HDW-UTN48C",
@@ -517,7 +567,8 @@
           "priceIncTax": 602800,
           "priceExTax": 548000,
           "jan": "4957180193854",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         },
         {
           "sku": "HDW-UTN64C",
@@ -525,11 +576,12 @@
           "priceIncTax": 794750,
           "priceExTax": 722500,
           "jan": "4957180193861",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/",
-      "lastCheckedAt": "2026-11-25T01:44:22.107Z"
+      "lastCheckedAt": "2026-11-25T08:03:46.135Z"
     },
     {
       "id": "hdw-utnb",
@@ -568,7 +620,10 @@
           "priceIncTax": 55110,
           "priceExTax": 50100,
           "jan": "4957180181080",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDW-UTN2C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/"
         },
         {
           "sku": "HDW-UTNB4",
@@ -576,7 +631,10 @@
           "priceIncTax": 68640,
           "priceExTax": 62400,
           "jan": "4957180181097",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDW-UTN4C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/"
         },
         {
           "sku": "HDW-UTNB6",
@@ -584,7 +642,10 @@
           "priceIncTax": 90970,
           "priceExTax": 82700,
           "jan": "4957180181103",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDW-UTN6C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/"
         },
         {
           "sku": "HDW-UTNB8",
@@ -592,7 +653,10 @@
           "priceIncTax": 110660,
           "priceExTax": 100600,
           "jan": "4957180181110",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDW-UTN8C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/"
         },
         {
           "sku": "HDW-UTNB12",
@@ -600,7 +664,10 @@
           "priceIncTax": 147620,
           "priceExTax": 134200,
           "jan": "4957180181127",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDW-UTN12C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/"
         },
         {
           "sku": "HDW-UTNB16",
@@ -608,7 +675,10 @@
           "priceIncTax": 172150,
           "priceExTax": 156500,
           "jan": "4957180181134",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDW-UTN16C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/"
         },
         {
           "sku": "HDW-UTNB24",
@@ -616,7 +686,10 @@
           "priceIncTax": 307560,
           "priceExTax": 279600,
           "jan": "4957180181141",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDW-UTN24C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/"
         },
         {
           "sku": "HDW-UTNB32",
@@ -624,7 +697,10 @@
           "priceIncTax": 405900,
           "priceExTax": 369000,
           "jan": "4957180181158",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDW-UTN32C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/"
         },
         {
           "sku": "HDW-UTNB40",
@@ -632,7 +708,11 @@
           "priceIncTax": 489610,
           "priceExTax": 445100,
           "jan": "4957180181165",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "madeToOrder": true,
+          "successorSku": "HDW-UTN40C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/"
         },
         {
           "sku": "HDW-UTNB48",
@@ -640,7 +720,11 @@
           "priceIncTax": 588060,
           "priceExTax": 534600,
           "jan": "4957180181172",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "madeToOrder": true,
+          "successorSku": "HDW-UTN48C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/"
         },
         {
           "sku": "HDW-UTNB64",
@@ -648,11 +732,15 @@
           "priceIncTax": 782100,
           "priceExTax": 711000,
           "jan": "4957180186955",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "madeToOrder": true,
+          "successorSku": "HDW-UTN64C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/",
-      "lastCheckedAt": "2026-11-25T01:44:27.307Z"
+      "lastCheckedAt": "2026-11-25T08:03:50.991Z"
     },
     {
       "id": "hdw-utu",
@@ -699,7 +787,8 @@
           "priceIncTax": 454300,
           "priceExTax": 413000,
           "jan": "4957180187044",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         },
         {
           "sku": "HDW-UTU40",
@@ -707,7 +796,8 @@
           "priceIncTax": 538010,
           "priceExTax": 489100,
           "jan": "4957180187051",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         },
         {
           "sku": "HDW-UTU48",
@@ -715,11 +805,12 @@
           "priceIncTax": 636460,
           "priceExTax": 578600,
           "jan": "4957180187068",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utu/",
-      "lastCheckedAt": "2026-11-25T01:44:32.204Z"
+      "lastCheckedAt": "2026-11-25T08:03:55.726Z"
     },
     {
       "id": "hdja-utnc",
@@ -838,7 +929,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/",
-      "lastCheckedAt": "2026-11-25T01:44:37.123Z"
+      "lastCheckedAt": "2026-11-25T08:04:00.909Z"
     },
     {
       "id": "hdja-utnb",
@@ -873,7 +964,10 @@
           "priceIncTax": 29260,
           "priceExTax": 26600,
           "jan": "4957180165721",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN1C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/"
         },
         {
           "sku": "HDJA-UTN2B",
@@ -881,7 +975,10 @@
           "priceIncTax": 34100,
           "priceExTax": 31000,
           "jan": "4957180165738",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN2C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/"
         },
         {
           "sku": "HDJA-UTN3B",
@@ -889,7 +986,10 @@
           "priceIncTax": 40260,
           "priceExTax": 36600,
           "jan": "4957180165745",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN3C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/"
         },
         {
           "sku": "HDJA-UTN4B",
@@ -897,7 +997,10 @@
           "priceIncTax": 48950,
           "priceExTax": 44500,
           "jan": "4957180165752",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN4C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/"
         },
         {
           "sku": "HDJA-UTN6B",
@@ -905,7 +1008,10 @@
           "priceIncTax": 78430,
           "priceExTax": 71300,
           "jan": "4957180165769",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN6C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/"
         },
         {
           "sku": "HDJA-UTN8B",
@@ -913,7 +1019,10 @@
           "priceIncTax": 91960,
           "priceExTax": 83600,
           "jan": "4957180165776",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN8C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/"
         },
         {
           "sku": "HDJA-UTN12B",
@@ -921,7 +1030,10 @@
           "priceIncTax": 145090,
           "priceExTax": 131900,
           "jan": "4957180165783",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN12C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/"
         },
         {
           "sku": "HDJA-UTN16B",
@@ -929,7 +1041,10 @@
           "priceIncTax": 182050,
           "priceExTax": 165500,
           "jan": "4957180165790",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN16C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/"
         },
         {
           "sku": "HDJA-UTN20B",
@@ -937,7 +1052,10 @@
           "priceIncTax": 206580,
           "priceExTax": 187800,
           "jan": "4957180165806",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN20C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/"
         },
         {
           "sku": "HDJA-UTN24B",
@@ -945,7 +1063,10 @@
           "priceIncTax": 243540,
           "priceExTax": 221400,
           "jan": "4957180177397",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN24C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/"
         },
         {
           "sku": "HDJA-UTN32B",
@@ -953,11 +1074,14 @@
           "priceIncTax": 317350,
           "priceExTax": 288500,
           "jan": "4957180186061",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN32C",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnb/",
-      "lastCheckedAt": "2026-11-25T01:44:42.357Z"
+      "lastCheckedAt": "2026-11-25T08:04:05.682Z"
     },
     {
       "id": "hdja-utu",
@@ -1020,7 +1144,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utu/",
-      "lastCheckedAt": "2026-11-25T01:44:47.286Z"
+      "lastCheckedAt": "2026-11-25T08:04:10.628Z"
     },
     {
       "id": "hdja-utnldc",
@@ -1111,7 +1235,8 @@
           "priceIncTax": 205370,
           "priceExTax": 186700,
           "jan": "4957180194011",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         },
         {
           "sku": "HDJA-UTN20/LDC",
@@ -1119,7 +1244,8 @@
           "priceIncTax": 229900,
           "priceExTax": 209000,
           "jan": "4957180194028",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         },
         {
           "sku": "HDJA-UTN24/LDC",
@@ -1127,7 +1253,8 @@
           "priceIncTax": 266860,
           "priceExTax": 242600,
           "jan": "4957180194035",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         },
         {
           "sku": "HDJA-UTN32/LDC",
@@ -1135,11 +1262,12 @@
           "priceIncTax": 340670,
           "priceExTax": 309700,
           "jan": "4957180194042",
-          "status": "現行"
+          "status": "現行",
+          "madeToOrder": true
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/",
-      "lastCheckedAt": "2026-11-25T01:44:52.859Z"
+      "lastCheckedAt": "2026-11-25T08:04:15.837Z"
     },
     {
       "id": "hdja-utnldb",
@@ -1174,7 +1302,10 @@
           "priceIncTax": 40260,
           "priceExTax": 36600,
           "jan": "4957180165813",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN1/LDC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/"
         },
         {
           "sku": "HDJA-UTN2/LDB",
@@ -1182,7 +1313,10 @@
           "priceIncTax": 45100,
           "priceExTax": 41000,
           "jan": "4957180165820",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN2/LDC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/"
         },
         {
           "sku": "HDJA-UTN3/LDB",
@@ -1190,7 +1324,10 @@
           "priceIncTax": 51260,
           "priceExTax": 46600,
           "jan": "4957180165837",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN3/LDC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/"
         },
         {
           "sku": "HDJA-UTN4/LDB",
@@ -1198,7 +1335,10 @@
           "priceIncTax": 59950,
           "priceExTax": 54500,
           "jan": "4957180165844",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN4/LDC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/"
         },
         {
           "sku": "HDJA-UTN6/LDB",
@@ -1206,7 +1346,10 @@
           "priceIncTax": 89430,
           "priceExTax": 81300,
           "jan": "4957180165851",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN6/LDC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/"
         },
         {
           "sku": "HDJA-UTN8/LDB",
@@ -1214,7 +1357,10 @@
           "priceIncTax": 102960,
           "priceExTax": 93600,
           "jan": "4957180165868",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN8/LDC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/"
         },
         {
           "sku": "HDJA-UTN12/LDB",
@@ -1222,7 +1368,10 @@
           "priceIncTax": 156090,
           "priceExTax": 141900,
           "jan": "4957180165875",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UTN12/LDC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/"
         },
         {
           "sku": "HDJA-UTN16/LDB",
@@ -1230,7 +1379,11 @@
           "priceIncTax": 193050,
           "priceExTax": 175500,
           "jan": "4957180165882",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "madeToOrder": true,
+          "successorSku": "HDJA-UTN16/LDC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/"
         },
         {
           "sku": "HDJA-UTN20/LDB",
@@ -1238,7 +1391,11 @@
           "priceIncTax": 217580,
           "priceExTax": 197800,
           "jan": "4957180165899",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "madeToOrder": true,
+          "successorSku": "HDJA-UTN20/LDC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/"
         },
         {
           "sku": "HDJA-UTN24/LDB",
@@ -1246,7 +1403,11 @@
           "priceIncTax": 254540,
           "priceExTax": 231400,
           "jan": "4957180179216",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "madeToOrder": true,
+          "successorSku": "HDJA-UTN24/LDC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/"
         },
         {
           "sku": "HDJA-UTN32/LDB",
@@ -1254,11 +1415,15 @@
           "priceIncTax": 328350,
           "priceExTax": 298500,
           "jan": "4957180186078",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "madeToOrder": true,
+          "successorSku": "HDJA-UTN32/LDC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/",
-      "lastCheckedAt": "2026-11-25T01:44:58.108Z"
+      "lastCheckedAt": "2026-11-25T08:04:21.010Z"
     },
     {
       "id": "hdja-utn",
@@ -1292,7 +1457,9 @@
           "priceIncTax": 120560,
           "priceExTax": 109600,
           "jan": "4957180161716",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN12B",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnb/"
         },
         {
           "sku": "HDJA-UTN16",
@@ -1300,7 +1467,9 @@
           "priceIncTax": 157410,
           "priceExTax": 143100,
           "jan": "4957180161723",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN16B",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnb/"
         },
         {
           "sku": "HDJA-UTN20",
@@ -1308,11 +1477,13 @@
           "priceIncTax": 194370,
           "priceExTax": 176700,
           "jan": "4957180161730",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN20B",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utn/",
-      "lastCheckedAt": "2026-11-25T01:45:03.016Z"
+      "lastCheckedAt": "2026-11-25T08:04:26.068Z"
     },
     {
       "id": "hdja-utnld",
@@ -1346,7 +1517,10 @@
           "priceIncTax": 131560,
           "priceExTax": 119600,
           "jan": "4957180161808",
-          "status": "生産終了"
+          "status": "生産終了",
+          "madeToOrder": true,
+          "successorSku": "HDJA-UTN12/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         },
         {
           "sku": "HDJA-UTN16/LD",
@@ -1354,11 +1528,14 @@
           "priceIncTax": 168520,
           "priceExTax": 153200,
           "jan": "4957180161815",
-          "status": "生産終了"
+          "status": "生産終了",
+          "madeToOrder": true,
+          "successorSku": "HDJA-UTN16/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnld/",
-      "lastCheckedAt": "2026-11-25T01:45:08.066Z"
+      "lastCheckedAt": "2026-11-25T08:04:30.915Z"
     },
     {
       "id": "hdja-utr",
@@ -1391,7 +1568,10 @@
           "priceIncTax": 26730,
           "priceExTax": 24300,
           "jan": "4957180141695",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UT1B",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utb/"
         },
         {
           "sku": "HDJA-UT2R",
@@ -1399,7 +1579,10 @@
           "priceIncTax": 30470,
           "priceExTax": 27700,
           "jan": "4957180141701",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UT2B",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utb/"
         },
         {
           "sku": "HDJA-UT3R",
@@ -1407,7 +1590,9 @@
           "priceIncTax": 34100,
           "priceExTax": 31000,
           "jan": "4957180141718",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UT4R",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utr/"
         },
         {
           "sku": "HDJA-UT4R",
@@ -1415,7 +1600,10 @@
           "priceIncTax": 40260,
           "priceExTax": 36600,
           "jan": "4957180141725",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UT4B",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utb/"
         },
         {
           "sku": "HDJA-UT8R",
@@ -1423,11 +1611,14 @@
           "priceIncTax": 59950,
           "priceExTax": 54500,
           "jan": "4957180182476",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDJA-UT8B",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utr/",
-      "lastCheckedAt": "2026-11-25T01:45:13.033Z"
+      "lastCheckedAt": "2026-11-25T08:04:35.930Z"
     },
     {
       "id": "hdd-utb",
@@ -1459,7 +1650,10 @@
           "priceIncTax": 23100,
           "priceExTax": 21000,
           "jan": "4957180171982",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDD-UT1KC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utc/"
         },
         {
           "sku": "HDD-UT2KB",
@@ -1467,7 +1661,10 @@
           "priceIncTax": 25520,
           "priceExTax": 23200,
           "jan": "4957180172002",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDD-UT2KC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utc/"
         },
         {
           "sku": "HDD-UT2WB",
@@ -1475,7 +1672,10 @@
           "priceIncTax": 25520,
           "priceExTax": 23200,
           "jan": "4957180172019",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDD-UT2WC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utc/"
         },
         {
           "sku": "HDD-UT4KB",
@@ -1483,7 +1683,10 @@
           "priceIncTax": 32890,
           "priceExTax": 29900,
           "jan": "4957180172026",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDD-UT4KC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utc/"
         },
         {
           "sku": "HDD-UT4WB",
@@ -1491,7 +1694,10 @@
           "priceIncTax": 32890,
           "priceExTax": 29900,
           "jan": "4957180172033",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDD-UT4WC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utc/"
         },
         {
           "sku": "HDD-UT6KB",
@@ -1499,7 +1705,10 @@
           "priceIncTax": 42790,
           "priceExTax": 38900,
           "jan": "4957180172040",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDD-UT6KC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utc/"
         },
         {
           "sku": "HDD-UT8KB",
@@ -1507,11 +1716,14 @@
           "priceIncTax": 55110,
           "priceExTax": 50100,
           "jan": "4957180172057",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDD-UT8KC",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utc/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/",
-      "lastCheckedAt": "2026-11-25T01:45:17.896Z"
+      "lastCheckedAt": "2026-11-25T08:04:41.267Z"
     },
     {
       "id": "hdw-utcs",
@@ -1554,7 +1766,10 @@
           "priceIncTax": 52580,
           "priceExTax": 47800,
           "jan": "4957180164731",
-          "status": "現行"
+          "status": "現行",
+          "stockLimited": true,
+          "successorSku": "HDW-UTCS8",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/"
         },
         {
           "sku": "HDW-UTCS8",
@@ -1582,7 +1797,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/index.htm",
-      "lastCheckedAt": "2026-11-25T01:45:22.881Z"
+      "lastCheckedAt": "2026-11-25T08:04:46.251Z"
     },
     {
       "id": "zhd4-utxr",
@@ -1664,7 +1879,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd4-utxr/",
-      "lastCheckedAt": "2026-11-25T01:45:27.952Z"
+      "lastCheckedAt": "2026-11-25T08:04:51.143Z"
     },
     {
       "id": "hdw-utb",
@@ -1700,7 +1915,9 @@
           "priceIncTax": 40260,
           "priceExTax": 36600,
           "jan": "4957180165639",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB2",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT4B",
@@ -1708,7 +1925,9 @@
           "priceIncTax": 56320,
           "priceExTax": 51200,
           "jan": "4957180165646",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB4",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT6B",
@@ -1716,7 +1935,9 @@
           "priceIncTax": 79640,
           "priceExTax": 72400,
           "jan": "4957180165653",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB6",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT8B",
@@ -1724,7 +1945,9 @@
           "priceIncTax": 101860,
           "priceExTax": 92600,
           "jan": "4957180165660",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB8",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT12B",
@@ -1732,7 +1955,9 @@
           "priceIncTax": 132770,
           "priceExTax": 120700,
           "jan": "4957180165677",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB12",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT16B",
@@ -1740,7 +1965,9 @@
           "priceIncTax": 157410,
           "priceExTax": 143100,
           "jan": "4957180165684",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB16",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT24B",
@@ -1748,7 +1975,10 @@
           "priceIncTax": 292710,
           "priceExTax": 266100,
           "jan": "4957180165691",
-          "status": "生産終了"
+          "status": "生産終了",
+          "madeToOrder": true,
+          "successorSku": "HDW-UTNB24",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT32B",
@@ -1756,7 +1986,10 @@
           "priceIncTax": 391160,
           "priceExTax": 355600,
           "jan": "4957180165707",
-          "status": "生産終了"
+          "status": "生産終了",
+          "madeToOrder": true,
+          "successorSku": "HDW-UTNB32",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT40B",
@@ -1764,11 +1997,14 @@
           "priceIncTax": 489610,
           "priceExTax": 445100,
           "jan": "4957180165714",
-          "status": "生産終了"
+          "status": "生産終了",
+          "madeToOrder": true,
+          "successorSku": "HDW-UTNB40",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utb/index.htm",
-      "lastCheckedAt": "2026-11-25T01:45:33.139Z"
+      "lastCheckedAt": "2026-11-25T08:04:56.161Z"
     },
     {
       "id": "hdw-utc",
@@ -1812,7 +2048,9 @@
           "priceIncTax": 48950,
           "priceExTax": 44500,
           "jan": "4957180161518",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTCS4",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/"
         },
         {
           "sku": "HDW-UTC8",
@@ -1820,7 +2058,9 @@
           "priceIncTax": 85800,
           "priceExTax": 78000,
           "jan": "4957180161525",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTCS8",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/"
         },
         {
           "sku": "HDW-UTC12",
@@ -1828,7 +2068,9 @@
           "priceIncTax": 108240,
           "priceExTax": 98400,
           "jan": "4957180161532",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTCS12",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/"
         },
         {
           "sku": "HDW-UTC16",
@@ -1836,11 +2078,13 @@
           "priceIncTax": 132770,
           "priceExTax": 120700,
           "jan": "4957180161549",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTCS16",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utc/index.htm",
-      "lastCheckedAt": "2026-11-25T01:45:38.254Z"
+      "lastCheckedAt": "2026-11-25T08:05:01.076Z"
     },
     {
       "id": "zhd2-utx",
@@ -1875,7 +2119,9 @@
           "priceIncTax": 48180,
           "priceExTax": 43800,
           "jan": "4957180116242",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB2",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "ZHD2-UTX4",
@@ -1883,7 +2129,9 @@
           "priceIncTax": 59180,
           "priceExTax": 53800,
           "jan": "4957180116259",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB4",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "ZHD2-UTX6",
@@ -1891,7 +2139,9 @@
           "priceIncTax": 70180,
           "priceExTax": 63800,
           "jan": "4957180116266",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB6",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "ZHD2-UTX8",
@@ -1899,7 +2149,9 @@
           "priceIncTax": 97680,
           "priceExTax": 88800,
           "jan": "4957180116273",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB8",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "ZHD2-UTX12",
@@ -1907,7 +2159,9 @@
           "priceIncTax": 152680,
           "priceExTax": 138800,
           "jan": "4957180118277",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB12",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "ZHD2-UTX16",
@@ -1915,11 +2169,13 @@
           "priceIncTax": 207680,
           "priceExTax": 188800,
           "jan": "4957180123967",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB16",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd2-utx/",
-      "lastCheckedAt": "2026-11-25T01:45:43.300Z"
+      "lastCheckedAt": "2026-11-25T08:05:06.246Z"
     },
     {
       "id": "hds2-utxs",
@@ -1954,7 +2210,9 @@
           "priceIncTax": 112860,
           "priceExTax": 102600,
           "jan": "4957180133898",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB12",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDS2-UTXS16",
@@ -1962,11 +2220,13 @@
           "priceIncTax": 133760,
           "priceExTax": 121600,
           "jan": "4957180133904",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB16",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hds2-utxs/",
-      "lastCheckedAt": "2026-11-25T01:45:48.206Z"
+      "lastCheckedAt": "2026-11-25T08:05:11.185Z"
     },
     {
       "id": "hdja-utrwhq",
@@ -2010,7 +2270,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utrwhq/",
-      "lastCheckedAt": "2026-11-25T01:46:02.995Z"
+      "lastCheckedAt": "2026-11-25T08:05:26.142Z"
     },
     {
       "id": "hdja-utwld",
@@ -2042,7 +2302,9 @@
           "priceIncTax": 32890,
           "priceExTax": 29900,
           "jan": "4957180141893",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN1/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         },
         {
           "sku": "HDJA-UT2W/LD",
@@ -2050,7 +2312,9 @@
           "priceIncTax": 39050,
           "priceExTax": 35500,
           "jan": "4957180141909",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN2/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         },
         {
           "sku": "HDJA-UT3W/LD",
@@ -2058,7 +2322,9 @@
           "priceIncTax": 44000,
           "priceExTax": 40000,
           "jan": "4957180141916",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN3/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         },
         {
           "sku": "HDJA-UT4W/LD",
@@ -2066,7 +2332,9 @@
           "priceIncTax": 57530,
           "priceExTax": 52300,
           "jan": "4957180141923",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN4/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         },
         {
           "sku": "HDJA-UT6W/LD",
@@ -2074,7 +2342,9 @@
           "priceIncTax": 73480,
           "priceExTax": 66800,
           "jan": "4957180141930",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN6/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         },
         {
           "sku": "HDJA-UT8W/LD",
@@ -2082,11 +2352,13 @@
           "priceIncTax": 89540,
           "priceExTax": 81400,
           "jan": "4957180141947",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN8/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utwld/",
-      "lastCheckedAt": "2026-11-25T01:46:08.141Z"
+      "lastCheckedAt": "2026-11-25T08:05:31.314Z"
     },
     {
       "id": "hdd-ut",
@@ -2119,7 +2391,9 @@
           "priceIncTax": 11990,
           "priceExTax": 10900,
           "jan": "4957180151069",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT1KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDD-UT1W",
@@ -2135,7 +2409,9 @@
           "priceIncTax": 13200,
           "priceExTax": 12000,
           "jan": "4957180151076",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT2KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDD-UT2W",
@@ -2143,7 +2419,9 @@
           "priceIncTax": 13200,
           "priceExTax": 12000,
           "jan": "4957180151137",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT2WB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDD-UT3K",
@@ -2167,7 +2445,9 @@
           "priceIncTax": 16940,
           "priceExTax": 15400,
           "jan": "4957180151090",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT4KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDD-UT4W",
@@ -2175,7 +2455,9 @@
           "priceIncTax": 16940,
           "priceExTax": 15400,
           "jan": "4957180151151",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT4WB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDD-UT6K",
@@ -2183,7 +2465,9 @@
           "priceIncTax": 24310,
           "priceExTax": 22100,
           "jan": "4957180151106",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT6KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDD-UT8K",
@@ -2191,11 +2475,13 @@
           "priceIncTax": 34100,
           "priceExTax": 31000,
           "jan": "4957180151113",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT8KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-ut/",
-      "lastCheckedAt": "2026-11-25T01:46:14.013Z"
+      "lastCheckedAt": "2026-11-25T08:05:36.607Z"
     },
     {
       "id": "hdcz-utc",
@@ -2235,7 +2521,9 @@
           "priceIncTax": 11990,
           "priceExTax": 10900,
           "jan": "4957180137353",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT1KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCZ-UT2WC",
@@ -2243,7 +2531,9 @@
           "priceIncTax": 13200,
           "priceExTax": 12000,
           "jan": "4957180137421",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT2WB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCZ-UT2KC",
@@ -2251,7 +2541,9 @@
           "priceIncTax": 13200,
           "priceExTax": 12000,
           "jan": "4957180137360",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT2KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCZ-UT3WC",
@@ -2275,7 +2567,9 @@
           "priceIncTax": 16940,
           "priceExTax": 15400,
           "jan": "4957180137445",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT4WB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCZ-UT4KC",
@@ -2283,7 +2577,9 @@
           "priceIncTax": 16940,
           "priceExTax": 15400,
           "jan": "4957180137384",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT4KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCZ-UT6KC",
@@ -2291,7 +2587,9 @@
           "priceIncTax": 25520,
           "priceExTax": 23200,
           "jan": "4957180137391",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT6KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCZ-UT8KC",
@@ -2299,11 +2597,13 @@
           "priceIncTax": 28050,
           "priceExTax": 25500,
           "jan": "4957180137407",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT8KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-utc/",
-      "lastCheckedAt": "2026-11-25T01:46:19.225Z"
+      "lastCheckedAt": "2026-11-25T08:05:41.725Z"
     },
     {
       "id": "zhd-utx",
@@ -2335,7 +2635,9 @@
           "priceIncTax": 30800,
           "priceExTax": 28000,
           "jan": "4957180114491",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN1/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         },
         {
           "sku": "ZHD-UTX2",
@@ -2343,7 +2645,9 @@
           "priceIncTax": 36300,
           "priceExTax": 33000,
           "jan": "4957180114507",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN2/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         },
         {
           "sku": "ZHD-UTX3",
@@ -2351,7 +2655,9 @@
           "priceIncTax": 41800,
           "priceExTax": 38000,
           "jan": "4957180114514",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN3/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         },
         {
           "sku": "ZHD-UTX4",
@@ -2359,7 +2665,9 @@
           "priceIncTax": 55550,
           "priceExTax": 50500,
           "jan": "4957180114521",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN4/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         },
         {
           "sku": "ZHD-UTX6",
@@ -2367,11 +2675,13 @@
           "priceIncTax": 83050,
           "priceExTax": 75500,
           "jan": "4957180118659",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN6/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd-utx/",
-      "lastCheckedAt": "2026-11-25T01:46:24.683Z"
+      "lastCheckedAt": "2026-11-25T08:05:47.012Z"
     },
     {
       "id": "hdcz-ut",
@@ -2411,7 +2721,9 @@
           "priceIncTax": 13420,
           "priceExTax": 12200,
           "jan": "4957180133799",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT1KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCZ-UT2WB",
@@ -2419,7 +2731,9 @@
           "priceIncTax": 15290,
           "priceExTax": 13900,
           "jan": "4957180133850",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT2WB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCZ-UT2KB",
@@ -2427,7 +2741,9 @@
           "priceIncTax": 15290,
           "priceExTax": 13900,
           "jan": "4957180133805",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT2KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCZ-UT3WB",
@@ -2451,7 +2767,9 @@
           "priceIncTax": 23870,
           "priceExTax": 21700,
           "jan": "4957180133874",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT4WB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCZ-UT4KB",
@@ -2459,7 +2777,9 @@
           "priceIncTax": 23870,
           "priceExTax": 21700,
           "jan": "4957180133829",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT4KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCZ-UT6KB",
@@ -2467,11 +2787,13 @@
           "priceIncTax": 49170,
           "priceExTax": 44700,
           "jan": "4957180133836",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT6KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-ut/",
-      "lastCheckedAt": "2026-11-25T01:46:29.996Z"
+      "lastCheckedAt": "2026-11-25T08:05:52.150Z"
     },
     {
       "id": "hdcl-ute",
@@ -2511,7 +2833,9 @@
           "priceIncTax": 11990,
           "priceExTax": 10900,
           "jan": "4957180122007",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT1KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCL-UTE2W",
@@ -2519,7 +2843,9 @@
           "priceIncTax": 13200,
           "priceExTax": 12000,
           "jan": "4957180122076",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT2WB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCL-UTE2K",
@@ -2527,7 +2853,9 @@
           "priceIncTax": 13200,
           "priceExTax": 12000,
           "jan": "4957180122014",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT2KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCL-UTE3W",
@@ -2551,7 +2879,9 @@
           "priceIncTax": 24310,
           "priceExTax": 22100,
           "jan": "4957180122090",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT4WB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCL-UTE4K",
@@ -2559,7 +2889,9 @@
           "priceIncTax": 24310,
           "priceExTax": 22100,
           "jan": "4957180122038",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT4KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCL-UTE5K",
@@ -2567,7 +2899,9 @@
           "priceIncTax": 46420,
           "priceExTax": 42200,
           "jan": "4957180122045",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT6KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         },
         {
           "sku": "HDCL-UTE6K",
@@ -2575,11 +2909,13 @@
           "priceIncTax": 57530,
           "priceExTax": 52300,
           "jan": "4957180122052",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDD-UT6KB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcl-ute/",
-      "lastCheckedAt": "2026-11-25T01:46:40.111Z"
+      "lastCheckedAt": "2026-11-25T08:06:02.291Z"
     },
     {
       "id": "rhd-ux",
@@ -2611,7 +2947,9 @@
           "priceIncTax": 20790,
           "priceExTax": 18900,
           "jan": "4957180069555",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN1/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         },
         {
           "sku": "RHD-UX500",
@@ -2619,7 +2957,9 @@
           "priceIncTax": 22000,
           "priceExTax": 20000,
           "jan": "4957180069562",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN1/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         },
         {
           "sku": "RHD-UX750",
@@ -2627,11 +2967,13 @@
           "priceIncTax": 26620,
           "priceExTax": 24200,
           "jan": "4957180069579",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-UTN1/LDB",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/rhd-ux/",
-      "lastCheckedAt": "2026-11-25T01:46:44.966Z"
+      "lastCheckedAt": "2026-11-25T08:06:07.611Z"
     },
     {
       "id": "hdja-sutr",
@@ -2659,7 +3001,9 @@
           "priceIncTax": 20570,
           "priceExTax": 18700,
           "jan": "4957180141749",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-SUTC1",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-sutc/"
         },
         {
           "sku": "HDJA-SUT2R",
@@ -2667,7 +3011,9 @@
           "priceIncTax": 25520,
           "priceExTax": 23200,
           "jan": "4957180141756",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-SUTC2",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-sutc/"
         },
         {
           "sku": "HDJA-SUT3R",
@@ -2675,11 +3021,13 @@
           "priceIncTax": 29260,
           "priceExTax": 26600,
           "jan": "4957180141763",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDJA-SUTC4",
+          "successorUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-sutc/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-sutr/index.htm",
-      "lastCheckedAt": "2026-11-25T01:47:10.261Z"
+      "lastCheckedAt": "2026-11-25T08:06:32.849Z"
     },
     {
       "id": "hdw-ut",
@@ -2713,7 +3061,9 @@
           "priceIncTax": 40260,
           "priceExTax": 36600,
           "jan": "4957180145815",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB2",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT4",
@@ -2721,7 +3071,9 @@
           "priceIncTax": 56320,
           "priceExTax": 51200,
           "jan": "4957180145822",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB4",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT6",
@@ -2729,7 +3081,9 @@
           "priceIncTax": 79640,
           "priceExTax": 72400,
           "jan": "4957180145839",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB6",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT8",
@@ -2737,7 +3091,9 @@
           "priceIncTax": 101860,
           "priceExTax": 92600,
           "jan": "4957180145846",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB8",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT12",
@@ -2745,7 +3101,9 @@
           "priceIncTax": 132770,
           "priceExTax": 120700,
           "jan": "4957180145853",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB12",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT16",
@@ -2753,7 +3111,9 @@
           "priceIncTax": 157410,
           "priceExTax": 143100,
           "jan": "4957180145860",
-          "status": "生産終了"
+          "status": "生産終了",
+          "successorSku": "HDW-UTNB16",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT24",
@@ -2761,7 +3121,10 @@
           "priceIncTax": 292710,
           "priceExTax": 266100,
           "jan": "4957180162218",
-          "status": "生産終了"
+          "status": "生産終了",
+          "madeToOrder": true,
+          "successorSku": "HDW-UTNB24",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT32",
@@ -2769,7 +3132,10 @@
           "priceIncTax": 391160,
           "priceExTax": 355600,
           "jan": "4957180162225",
-          "status": "生産終了"
+          "status": "生産終了",
+          "madeToOrder": true,
+          "successorSku": "HDW-UTNB32",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         },
         {
           "sku": "HDW-UT40",
@@ -2777,11 +3143,14 @@
           "priceIncTax": 489610,
           "priceExTax": 445100,
           "jan": "4957180162232",
-          "status": "生産終了"
+          "status": "生産終了",
+          "madeToOrder": true,
+          "successorSku": "HDW-UTNB40",
+          "successorUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/"
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-ut/index.htm",
-      "lastCheckedAt": "2026-11-25T01:47:15.105Z"
+      "lastCheckedAt": "2026-11-25T08:06:37.773Z"
     }
   ]
 }
