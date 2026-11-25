@@ -739,3 +739,16 @@ body {
   white-space: nowrap;
 }
 .site-header__tools { flex: 1 1 100% !important; }
+
+/* 在庫限り／後継品の表示 */
+.das-card__stock-note {
+  margin: 6px 0 0; padding: 6px 10px; font-size: 12.5px; line-height: 1.5;
+  background: var(--warn-bg); color: var(--warn); border-radius: 8px;
+}
+.das-card__stock-note a { color: inherit; font-weight: 700; text-decoration: underline; }
+.das-card__stock-sub { margin-left: 4px; font-size: 11.5px; opacity: .85; }
+.all-years-row__stock {
+  display: inline-block; margin-left: 6px; padding: 1px 6px; font-style: normal;
+  font-size: 10.5px; font-weight: 700; border-radius: 6px; background: var(--warn-bg); color: var(--warn);
+}
+.das-card__stock-note a { white-space: nowrap; }

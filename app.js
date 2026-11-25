@@ -707,6 +707,7 @@
     }
     if (p.warrantyYears) badges.push(`<span class="badge">${p.warrantyYears}年保証</span>`);
     if (best.status === "生産終了") badges.push(`<span class="badge badge--warn">生産終了品</span>`);
+    if (best.stockLimited) badges.push(`<span class="badge badge--warn">在庫限り</span>`);
 
     let enclosureNote = "";
     if (p.requiresSeparateEnclosure) {
@@ -746,6 +747,7 @@
           </label>
         </div>
         <div class="das-card__badges">${badges.join("")}</div>
+        ${stockNoteHtml(best)}
         ${enclosureNote}
         <div class="das-card__bottom-area" data-role="bottom-area">
           <div class="das-card__bottom" data-role="bottom">
@@ -789,6 +791,24 @@
     }
   }
 
+  // 「在庫限り／後継品: HDJA-UTN1C」の表示。公式ページの備考欄に「在庫限り」と書かれている
+  // 商品が対象。後継品のページURLが分かるときはリンクにする。
+  function stockNoteHtml(v) {
+    if (!v || !v.stockLimited) return "";
+    const succ = v.successorSku
+      ? (v.successorUrl
+        ? `<a href="${escapeAttr(v.successorUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(v.successorSku)} ↗</a>`
+        : escapeHtml(v.successorSku))
+      : "";
+    const mto = v.madeToOrder ? `<span class="das-card__stock-sub">（受注生産）</span>` : "";
+    return `<p class="das-card__stock-note"><b>在庫限り</b>${succ ? `／後継品: ${succ}` : ""}${mto}</p>`;
+  }
+
+  function stockPlainText(v) {
+    if (!v || !v.stockLimited) return "";
+    return "在庫限り" + (v.successorSku ? `／後継品: ${v.successorSku}` : "") + (v.madeToOrder ? "（受注生産）" : "");
+  }
+
   function priceHtml(v) {
     if (!v.priceIncTax) return `<span class="das-card__price-sub">価格は公式サイトでご確認ください</span>`;
     return `¥${v.priceIncTax.toLocaleString()}<span class="das-card__price-sub">（税抜 ¥${(v.priceExTax || 0).toLocaleString()}）</span>`;
@@ -797,7 +817,7 @@
   function allVariantsInnerHtml(variants) {
     return variants.map((v) => `
       <div class="all-years-row">
-        <span class="all-years-row__code">${escapeHtml(v.sku)}</span>
+        <span class="all-years-row__code">${escapeHtml(v.sku)}${v.stockLimited ? `<em class="all-years-row__stock">在庫限り${v.successorSku ? "→" + escapeHtml(v.successorSku) : ""}</em>` : ""}</span>
         <span class="all-years-row__years">${formatTB(v.capacityTB)}</span>
         <span class="all-years-row__price">${priceHtml(v)}</span>
         <button type="button" class="copy-mini" data-role="copy-one" data-sku="${escapeAttr(v.sku)}" aria-label="型番をコピー">⧉</button>
@@ -879,7 +899,7 @@
   // 行ごとに「比較に使う値（plain）」と「表示用HTML（html）」を分けて持つ。
   // plain側が全列で同じかどうかを見て、違いがある行だけハイライトする。
   function buildCompareRows(items) {
-    return [
+    const rows = [
       {
         label: "画像",
         noDiff: true,
@@ -960,6 +980,23 @@
         cells: items.map((it) => ({ plain: it.product.supports24h ? "○" : "—", html: it.product.supports24h ? "○" : "—" }))
       }
     ];
+    // 在庫限りの商品が1つでも含まれるときだけ「販売状況」の行を足す（全部現行のときは出さない）
+    if (items.some((it) => it.variant.stockLimited)) {
+      rows.splice(3, 0, {
+        label: "販売状況",
+        cells: items.map((it) => {
+          const v = it.variant;
+          if (!v.stockLimited) return { plain: "現行", html: "現行" };
+          const succ = v.successorSku
+            ? `<span class="compare-table__warn">後継品: ${v.successorUrl
+              ? `<a href="${escapeAttr(v.successorUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(v.successorSku)}</a>`
+              : escapeHtml(v.successorSku)}</span>`
+            : "";
+          return { plain: stockPlainText(v), html: `<b>在庫限り</b>${v.madeToOrder ? "（受注生産）" : ""}${succ}` };
+        })
+      });
+    }
+    return rows;
   }
 
   const COMPARE_NOTE_TEXT =
