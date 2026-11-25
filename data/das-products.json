@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T03:38:14.177Z",
+  "updatedAt": "2026-11-25T01:47:15.105Z",
   "products": [
     {
       "id": "hd1-reut",
@@ -22,6 +22,7 @@
       "supports24h": false,
       "raidModes": [],
       "compatNasSeries": {
+        "LANDISKLH": null,
         "LANDISKLX": null,
         "LANDISKL": true,
         "LANDISKH": true,
@@ -106,7 +107,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd1-reut/index.htm",
-      "lastCheckedAt": "2026-11-24T03:35:05.314Z"
+      "lastCheckedAt": "2026-11-25T01:44:01.190Z"
     },
     {
       "id": "hd4-utnc",
@@ -129,6 +130,7 @@
         "マルチディスクモード"
       ],
       "compatNasSeries": {
+        "LANDISKLH": true,
         "LANDISKLX": true,
         "LANDISKL": true,
         "LANDISKH": true,
@@ -197,7 +199,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utnc/index.htm",
-      "lastCheckedAt": "2026-11-24T03:35:10.832Z"
+      "lastCheckedAt": "2026-11-25T01:44:06.840Z"
     },
     {
       "id": "hd4-utn",
@@ -220,6 +222,7 @@
         "マルチディスクモード"
       ],
       "compatNasSeries": {
+        "LANDISKLH": true,
         "LANDISKLX": true,
         "LANDISKL": true,
         "LANDISKH": true,
@@ -288,7 +291,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hd4-utn/index.htm",
-      "lastCheckedAt": "2026-11-24T03:35:15.966Z"
+      "lastCheckedAt": "2026-11-25T01:44:11.960Z"
     },
     {
       "id": "hdw-utn",
@@ -310,6 +313,7 @@
         "マルチディスクモード"
       ],
       "compatNasSeries": {
+        "LANDISKLH": true,
         "LANDISKLX": true,
         "LANDISKL": true,
         "LANDISKH": true,
@@ -402,7 +406,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utn/",
-      "lastCheckedAt": "2026-11-24T03:35:20.891Z"
+      "lastCheckedAt": "2026-11-25T01:44:17.233Z"
     },
     {
       "id": "hdw-utnc",
@@ -424,7 +428,8 @@
         "マルチディスクモード"
       ],
       "compatNasSeries": {
-        "LANDISKLX": null,
+        "LANDISKLH": true,
+        "LANDISKLX": true,
         "LANDISKL": true,
         "LANDISKH": true,
         "LANDISKX": true,
@@ -524,7 +529,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnc/",
-      "lastCheckedAt": "2026-11-24T03:35:25.716Z"
+      "lastCheckedAt": "2026-11-25T01:44:22.107Z"
     },
     {
       "id": "hdw-utnb",
@@ -546,6 +551,7 @@
         "マルチディスクモード"
       ],
       "compatNasSeries": {
+        "LANDISKLH": true,
         "LANDISKLX": true,
         "LANDISKL": true,
         "LANDISKH": true,
@@ -646,7 +652,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utnb/",
-      "lastCheckedAt": "2026-11-24T03:35:30.875Z"
+      "lastCheckedAt": "2026-11-25T01:44:27.307Z"
     },
     {
       "id": "hdw-utu",
@@ -668,6 +674,7 @@
         "マルチディスクモード"
       ],
       "compatNasSeries": {
+        "LANDISKLH": true,
         "LANDISKLX": true,
         "LANDISKL": true,
         "LANDISKH": true,
@@ -712,7 +719,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utu/",
-      "lastCheckedAt": "2026-11-24T03:35:35.818Z"
+      "lastCheckedAt": "2026-11-25T01:44:32.204Z"
     },
     {
       "id": "hdja-utnc",
@@ -730,6 +737,7 @@
       "supports24h": true,
       "raidModes": [],
       "compatNasSeries": {
+        "LANDISKLH": true,
         "LANDISKLX": true,
         "LANDISKL": true,
         "LANDISKH": true,
@@ -830,7 +838,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnc/",
-      "lastCheckedAt": "2026-11-24T03:35:40.629Z"
+      "lastCheckedAt": "2026-11-25T01:44:37.123Z"
     },
     {
       "id": "hdja-utnb",
@@ -848,6 +856,7 @@
       "supports24h": true,
       "raidModes": [],
       "compatNasSeries": {
+        "LANDISKLH": true,
         "LANDISKLX": true,
         "LANDISKL": true,
         "LANDISKH": true,
@@ -948,7 +957,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnb/",
-      "lastCheckedAt": "2026-11-24T03:35:45.536Z"
+      "lastCheckedAt": "2026-11-25T01:44:42.357Z"
     },
     {
       "id": "hdja-utu",
@@ -966,6 +975,7 @@
       "supports24h": true,
       "raidModes": [],
       "compatNasSeries": {
+        "LANDISKLH": null,
         "LANDISKLX": null,
         "LANDISKL": true,
         "LANDISKH": true,
@@ -1010,7 +1020,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utu/",
-      "lastCheckedAt": "2026-11-24T03:35:50.447Z"
+      "lastCheckedAt": "2026-11-25T01:44:47.286Z"
     },
     {
       "id": "hdja-utnldc",
@@ -1028,9 +1038,10 @@
       "supports24h": true,
       "raidModes": [],
       "compatNasSeries": {
-        "LANDISKLX": null,
+        "LANDISKLH": true,
+        "LANDISKLX": true,
         "LANDISKL": true,
-        "LANDISKH": null,
+        "LANDISKH": true,
         "LANDISKX": null,
         "LANDISKT": null,
         "LANDISKA": null,
@@ -1128,7 +1139,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldc/",
-      "lastCheckedAt": "2026-11-24T03:35:55.517Z"
+      "lastCheckedAt": "2026-11-25T01:44:52.859Z"
     },
     {
       "id": "hdja-utnldb",
@@ -1146,9 +1157,10 @@
       "supports24h": true,
       "raidModes": [],
       "compatNasSeries": {
-        "LANDISKLX": null,
+        "LANDISKLH": true,
+        "LANDISKLX": true,
         "LANDISKL": true,
-        "LANDISKH": null,
+        "LANDISKH": true,
         "LANDISKX": null,
         "LANDISKT": null,
         "LANDISKA": null,
@@ -1246,7 +1258,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnldb/",
-      "lastCheckedAt": "2026-11-24T03:36:00.630Z"
+      "lastCheckedAt": "2026-11-25T01:44:58.108Z"
     },
     {
       "id": "hdja-utn",
@@ -1264,6 +1276,7 @@
       "supports24h": true,
       "raidModes": [],
       "compatNasSeries": {
+        "LANDISKLH": true,
         "LANDISKLX": true,
         "LANDISKL": true,
         "LANDISKH": true,
@@ -1299,7 +1312,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utn/",
-      "lastCheckedAt": "2026-11-24T03:36:05.517Z"
+      "lastCheckedAt": "2026-11-25T01:45:03.016Z"
     },
     {
       "id": "hdja-utnld",
@@ -1317,9 +1330,10 @@
       "supports24h": true,
       "raidModes": [],
       "compatNasSeries": {
-        "LANDISKLX": null,
+        "LANDISKLH": true,
+        "LANDISKLX": true,
         "LANDISKL": true,
-        "LANDISKH": null,
+        "LANDISKH": true,
         "LANDISKX": null,
         "LANDISKT": null,
         "LANDISKA": null
@@ -1344,7 +1358,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdja-utnld/",
-      "lastCheckedAt": "2026-11-24T03:36:10.315Z"
+      "lastCheckedAt": "2026-11-25T01:45:08.066Z"
     },
     {
       "id": "hdja-utr",
@@ -1413,7 +1427,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utr/",
-      "lastCheckedAt": "2026-11-24T03:36:15.102Z"
+      "lastCheckedAt": "2026-11-25T01:45:13.033Z"
     },
     {
       "id": "hdd-utb",
@@ -1497,7 +1511,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-utb/",
-      "lastCheckedAt": "2026-11-24T03:36:19.885Z"
+      "lastCheckedAt": "2026-11-25T01:45:17.896Z"
     },
     {
       "id": "hdw-utcs",
@@ -1568,7 +1582,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-utcs/index.htm",
-      "lastCheckedAt": "2026-11-24T03:36:24.834Z"
+      "lastCheckedAt": "2026-11-25T01:45:22.881Z"
     },
     {
       "id": "zhd4-utxr",
@@ -1650,7 +1664,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd4-utxr/",
-      "lastCheckedAt": "2026-11-24T03:36:29.904Z"
+      "lastCheckedAt": "2026-11-25T01:45:27.952Z"
     },
     {
       "id": "hdw-utb",
@@ -1754,7 +1768,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utb/index.htm",
-      "lastCheckedAt": "2026-11-24T03:36:35.056Z"
+      "lastCheckedAt": "2026-11-25T01:45:33.139Z"
     },
     {
       "id": "hdw-utc",
@@ -1826,7 +1840,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/bizhdd/hdw-utc/index.htm",
-      "lastCheckedAt": "2026-11-24T03:36:39.803Z"
+      "lastCheckedAt": "2026-11-25T01:45:38.254Z"
     },
     {
       "id": "zhd2-utx",
@@ -1905,7 +1919,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd2-utx/",
-      "lastCheckedAt": "2026-11-24T03:36:44.782Z"
+      "lastCheckedAt": "2026-11-25T01:45:43.300Z"
     },
     {
       "id": "hds2-utxs",
@@ -1952,7 +1966,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hds2-utxs/",
-      "lastCheckedAt": "2026-11-24T03:36:49.646Z"
+      "lastCheckedAt": "2026-11-25T01:45:48.206Z"
     },
     {
       "id": "hdja-utrwhq",
@@ -1996,7 +2010,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utrwhq/",
-      "lastCheckedAt": "2026-11-24T03:37:04.351Z"
+      "lastCheckedAt": "2026-11-25T01:46:02.995Z"
     },
     {
       "id": "hdja-utwld",
@@ -2072,7 +2086,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-utwld/",
-      "lastCheckedAt": "2026-11-24T03:37:09.377Z"
+      "lastCheckedAt": "2026-11-25T01:46:08.141Z"
     },
     {
       "id": "hdd-ut",
@@ -2181,7 +2195,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdd-ut/",
-      "lastCheckedAt": "2026-11-24T03:37:14.190Z"
+      "lastCheckedAt": "2026-11-25T01:46:14.013Z"
     },
     {
       "id": "hdcz-utc",
@@ -2289,7 +2303,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-utc/",
-      "lastCheckedAt": "2026-11-24T03:37:19.465Z"
+      "lastCheckedAt": "2026-11-25T01:46:19.225Z"
     },
     {
       "id": "zhd-utx",
@@ -2357,7 +2371,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/zhd-utx/",
-      "lastCheckedAt": "2026-11-24T03:37:24.601Z"
+      "lastCheckedAt": "2026-11-25T01:46:24.683Z"
     },
     {
       "id": "hdcz-ut",
@@ -2457,7 +2471,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcz-ut/",
-      "lastCheckedAt": "2026-11-24T03:37:29.866Z"
+      "lastCheckedAt": "2026-11-25T01:46:29.996Z"
     },
     {
       "id": "hdcl-ute",
@@ -2565,7 +2579,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdcl-ute/",
-      "lastCheckedAt": "2026-11-24T03:37:39.669Z"
+      "lastCheckedAt": "2026-11-25T01:46:40.111Z"
     },
     {
       "id": "rhd-ux",
@@ -2617,7 +2631,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/rhd-ux/",
-      "lastCheckedAt": "2026-11-24T03:37:44.609Z"
+      "lastCheckedAt": "2026-11-25T01:46:44.966Z"
     },
     {
       "id": "hdja-sutr",
@@ -2665,7 +2679,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdja-sutr/index.htm",
-      "lastCheckedAt": "2026-11-24T03:38:09.150Z"
+      "lastCheckedAt": "2026-11-25T01:47:10.261Z"
     },
     {
       "id": "hdw-ut",
@@ -2767,7 +2781,7 @@
         }
       ],
       "sourceUrl": "https://www.iodata.jp/product/hdd/hdd/hdw-ut/index.htm",
-      "lastCheckedAt": "2026-11-24T03:38:14.177Z"
+      "lastCheckedAt": "2026-11-25T01:47:15.105Z"
     }
   ]
 }
