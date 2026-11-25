@@ -246,14 +246,31 @@ function extractOwnVariants(html) {
       const janMatch = rowText.match(/\b(\d{13})\b/);
       const status = /生産終了/.test(rowText) ? "生産終了" : "現行";
 
-      variants.push({
+      const variant = {
         sku: cells[0],
         capacityTB,
         priceIncTax: Number(priceMatch[1].replace(/,/g, "")),
         priceExTax: priceMatch[2] ? Number(priceMatch[2].replace(/,/g, "")) : null,
         jan: janMatch ? janMatch[1] : "",
         status
-      });
+      };
+      // 備考欄の「在庫限り」「後継品〇〇」「受注生産」を拾う。
+      // 実例（2026-11-25確認）：
+      //   「在庫限り 2026/4/1価格改定 後継品<a href="/product/hdd/bizhdd/hdja-utnc/">HDJA-UTN1C</a>」
+      // 販売状況(status)は従来どおり「現行/生産終了」のまま変えず、追加情報として別フィールドに持つ
+      // （既存の絞り込みや「生産終了品を含める」の動きを壊さないため）。
+      if (/在庫限り/.test(rowText)) variant.stockLimited = true;
+      if (/受注生産/.test(rowText) || /alt="受注生産"/.test(rowHtml)) variant.madeToOrder = true;
+      const succMatch = rowHtml.match(/後継品[\s\S]{0,40}?<a[^>]+href="([^"]+)"[^>]*>([^<]+)<\/a>/i);
+      if (succMatch) {
+        variant.successorSku = succMatch[2].replace(/\s+/g, "").trim();
+        try {
+          variant.successorUrl = new URL(succMatch[1], "https://www.iodata.jp/").href;
+        } catch {
+          // URLとして解釈できない場合は型番だけ残す
+        }
+      }
+      variants.push(variant);
     }
   }
   // 同じSKUが複数箇所（トップページ＋価格表等）に重複して載ることがあるので、SKU単位でまとめる
